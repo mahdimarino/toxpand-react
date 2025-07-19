@@ -1,15 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Rajdhani:wght@700&display=swap');
 @import "tailwindcss";
 
-@theme {
+  @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+}  
 
-html,
+ /* @theme {
+  --font-sans: "Montserrat", "Rajdhani", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}  */
+ /* html,
 body {
   @apply bg-white dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}  */
+
+h1{
+  font-family: 'Rajdhani', sans-serif;}
+
+ html,
+body {
+  @apply bg-white dark:bg-gray-950 font-sans;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+  background-color: black;
+} 
+
+.brand-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(103, 31, 156, 1) 0%, rgba(63, 80, 183, 1) 100%);
+
+  border: 2px solid white;
+  border-radius: 999px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #8d4cfb;
+  
+}
+
+.brand-button:hover {
+  background: #8d4cfb;
+  box-shadow: 0 0 10px #8d4cfb, 0 0 20px #8d4cfb;
+}
+
+.journey-div {
+  /* background: linear-gradient(90deg, rgba(103, 31, 156, 1) 0%, rgba(63, 80, 183, 1) 100%); */
+  clip-path: polygon(0 1%, 200% 0, 100% 50%, 50% 100%, 0 50%);
+  height: 200px;
+  width: 200px;
+}
+
+.journey-diamand{
+  height: 50px;
+  width: 50px;
+  
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.journey-text{
+  width: 200px;
 }

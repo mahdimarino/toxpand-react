@@ -15,13 +15,11 @@ export function meta({ }: MetaArgs) {
   ];
 }
 
-export default function Home() {
+export default function EngagementTactics() {
   return (
     <>
-       <Navbar />
-      {/* <Welcome />  */}
-     
-      
+      <Navbar />
+      <Welcome />
     </>
   );
 }

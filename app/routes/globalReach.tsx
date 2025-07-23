@@ -9,9 +9,7 @@ export default function globalReach() {
                 className="p-12"
                 style={{
                     backgroundImage: "url('/backgrounds/GALAXY 5.png')",
-
                     backgroundSize: 'cover',
-
                 }}
             >
                 <div className="p-12 flex-col inset-0 bg-opacity-50 flex items-center justify-center z-10">

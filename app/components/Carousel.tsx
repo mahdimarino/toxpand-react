@@ -65,8 +65,8 @@ export default function Carousel() {
     };
 
     return (
-        <section className='bg-black p-8 text-white'>
-        <div className="relative max-w-7xl mx-auto p-4 bg-black text-white">
+        <section className=' p-8 text-white'>
+        <div className="relative max-w-7xl mx-auto p-4 text-white">
             <h1 className="text-center text-3xl mt-2 font-bold mb-8">
                 TESTIMONIALS
             </h1>

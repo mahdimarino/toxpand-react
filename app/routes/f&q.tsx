@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const FAQItem = ({ question, answer }: { question: any; answer: any }) => {
-
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -10,7 +9,7 @@ const FAQItem = ({ question, answer }: { question: any; answer: any }) => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex w-full items-center justify-between bg-white p-4 text-left text-black hover:bg-gray-100 transition-colors duration-200"
             >
-                <p className="font-medium">{question}</p>
+                <p className="text-sm md:text-base font-medium">{question}</p>
                 <span className="ml-4 transition-transform duration-200">
                     {isOpen ? (
                         <span className="bg-[#6A1B9A] rounded-full p-1 flex items-center justify-center">
@@ -30,7 +29,7 @@ const FAQItem = ({ question, answer }: { question: any; answer: any }) => {
 
             {isOpen && (
                 <div className="bg-[#6A1B9A] p-4 text-white">
-                    <p>{answer}</p>
+                    <p className="text-sm md:text-base">{answer}</p>
                 </div>
             )}
         </div>
@@ -40,7 +39,7 @@ const FAQItem = ({ question, answer }: { question: any; answer: any }) => {
 export default function Fandq() {
     const faqs = [
         {
-            category: "🛠 Campaign Execution",
+            category: "Campaign Execution",
             questions: [
                 {
                     question: "Do you outsource any part of your campaigns?",
@@ -57,7 +56,7 @@ export default function Fandq() {
             ]
         },
         {
-            category: "🎯 Data & Targeting",
+            category: "Data & Targeting",
             questions: [
                 {
                     question: "Where does your data come from?",
@@ -74,7 +73,7 @@ export default function Fandq() {
             ]
         },
         {
-            category: "🤖 DemandFusion™ AI",
+            category: "DemandFusion™ AI",
             questions: [
                 {
                     question: "What is DemandFusion™?",
@@ -87,7 +86,7 @@ export default function Fandq() {
             ]
         },
         {
-            category: "🚀 Lead Quality & Delivery",
+            category: "Lead Quality & Delivery",
             questions: [
                 {
                     question: "What makes a lead 'sales-ready'?",
@@ -104,7 +103,7 @@ export default function Fandq() {
             ]
         },
         {
-            category: "📊 Reporting & Optimization",
+            category: "Reporting & Optimization",
             questions: [
                 {
                     question: "Do I get performance reporting?",
@@ -117,7 +116,7 @@ export default function Fandq() {
             ]
         },
         {
-            category: "👥 Support & Collaboration",
+            category: "Support & Collaboration",
             questions: [
                 {
                     question: "Will we have a dedicated services team?",
@@ -133,11 +132,12 @@ export default function Fandq() {
 
     return (
         <>
-            <section className='p-12 text-white'>
-                <div className='w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col p-12'>
-                    <h1 className='text-5xl text-[#7852A9]'>FREQUENTLY ASKED QUESTIONS</h1>
-                    <h2 className='text-xl'>Real Answers. No Black Boxes.</h2>
-                    <p className='my-6'>
+            {/* FAQ Header Section */}
+            <section className='p-6 md:p-12 text-white bg-black'>
+                <div className='max-w-4xl mx-auto'>
+                    <h1 className='text-3xl md:text-5xl text-[#7852A9] font-bold'>FREQUENTLY ASKED QUESTIONS</h1>
+                    <h2 className='text-lg md:text-xl mt-2'>Real Answers. No Black Boxes.</h2>
+                    <p className='my-4 md:my-6 text-sm md:text-base'>
                         At ToXPAND, we believe transparency builds trust. Every campaign
                         is designed, launched, and optimized 100% in-house – never outsourced, never offloaded.
                         From data capture to signal activation, what you see is what we deliver. This FAQ page
@@ -145,149 +145,154 @@ export default function Fandq() {
                         and how we fuel your pipeline.
                     </p>
                 </div>
+            </section>
 
-                <div className='mx-8 border rounded-4xl border-[#00ffff]'>
+            {/* FAQ Content Section */}
+            <section className='p-4 md:p-8 bg-black'>
+                <div className='max-w-6xl mx-auto border rounded-3xl border-[#00ffff] overflow-hidden'>
                     {faqs.map((section, index) => (
-                        <div key={index} className='w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col py-12 border-b-2 border-solid border-[#00ffff]'>
-                            <h2 className='text-xl mb-6'><b>{section.category}</b></h2>
-                            {section.questions.map((item, qIndex) => (
-                                <FAQItem key={qIndex} question={item.question} answer={item.answer} />
-                            ))}
+                        <div key={index} className='p-4 md:p-8 border-b border-[#00ffff] last:border-b-0'>
+                            <h2 className='text-lg md:text-xl font-bold text-white mb-4'><b>{section.category}</b></h2>
+                            <div className='space-y-4'>
+                                {section.questions.map((item, qIndex) => (
+                                    <FAQItem key={qIndex} question={item.question} answer={item.answer} />
+                                ))}
+                            </div>
                         </div>
                     ))}
                 </div>
             </section>
+
+            {/* Under the Hood Section */}
             <section
-                className='p-12'
+                className='p-6 md:p-12 bg-cover bg-center'
                 style={{
                     backgroundImage: "url('/backgrounds/GALAXY 3.png')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
-                >
-                    <h1 className="text-center text-5xl mt-2 font-bold text-[#7852A9]">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h1 className="text-2xl md:text-4xl font-bold text-[#7852A9]">
                         UNDER THE HOOD:
                     </h1>
-                    <h1 className="text-center text-5xl mt-2 text-white">
+                    <h1 className="text-2xl md:text-4xl mt-2 text-white">
                         HOW WE OPERATE (AND PROVE IT)
                     </h1>
-                    <p className="text-center text-1xl mt-6 text-white">
+                    <p className="text-sm md:text-base mt-4 text-white">
                         We understand that some partners want to dive deeper — into consent models, legal bases, capture methods, and data suppression.
                     </p>
-                    <p className="text-center text-1xl mt-2 text-white">
+                    <p className="text-sm md:text-base mt-2 text-white">
                         This section outlines how we run things behind the curtain — so you can trust we're not just compliant, but conscientious.
                     </p>
                 </div>
-                <div className='w-full max-w-[75%] md:max-w-[75%] mx-auto mx-8 border rounded-2xl p-3 border-[#00ffff]'>
-                    <div className='bg-white rounded-2xl p-12 '>
-                       
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>NATURE OF BUSINESS</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• ToXPAND is an AI-powered pipeline generation platform, not a publisher, aggregator, or list vendor.</li>
-                                <li className='text-sm'>• We operate on performance-based models — clients only pay if satisfied.</li>
-                                <li className='text-sm'>• Our programs use first-party opt-in data and emphasize email as the primary channel (telemarketing available if requested).</li>
-                                <li className='text-sm'>• All deployments originate from our in-house teams.</li>
-                            </ul>
-                        </div>
 
-                       
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>CAMPAIGN FULFILLMENT TACTICS</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• Standard guaranteed lead programs are fulfilled via 1:1 targeted email sends.</li>
-                                <li className='text-sm'>• Telemarketing is available (with native English, German, French, and Spanish speakers), but not required for program success.</li>
-                                <li className='text-sm'>• We do not use newsletters, mass e-blasts, or publisher networks.</li>
-                            </ul>
-                        </div>
-
-                     
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>LEGAL BASIS FOR PROCESSING DATA</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• We rely on explicit consent and legitimate interest under GDPR, CCPA, and CASL.</li>
-                                <li className='text-sm'>• Consent is recorded on all landing pages and telemarketing interactions and stored securely.</li>
-                                <li className='text-sm'>• Legitimate Interest Assessments (LIAs) are conducted for every client campaign, and outcomes are respected.</li>
-                            </ul>
-                        </div>
-
-                      
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>CAPTURE POINTS & CONSENT</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• Data is collected via:</li>
-                                <li className='ml-4'>o Landing pages</li>
-                                <li className='ml-4'>o Email forms</li>
-                                <li className='ml-4'>o Telemarketing calls</li>
-                                <li className='text-sm'>• Consent is logged per contact, with evidence stored and updated.</li>
-                                <li className='text-sm'>• Our capture pages clearly display privacy policies, and our callers provide them post-confirmation.</li>
-                            </ul>
-                        </div>
-
-                        
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>PRIVACY, SUPPRESSION & OPT-OUT MANAGEMENT</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• We clean and update suppression files daily.</li>
-                                <li className='text-sm'>• All marketing emails include unsubscribe links.</li>
-                                <li className='text-sm'>• Requests to opt out, suppress, or amend contact details are processed within 24 hours.</li>
-                                <li className='text-sm'>• Contacts can update preferences via unsubscribe pages or by emailing us directly at privacy@toxpand.com.</li>
-                            </ul>
-                        </div>
-
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>TELEMARKETING SPECIFICS</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• Yes, we offer telemarketing — but always clean numbers daily against TPS and CTPS.</li>
-                                <li className='text-sm'>• No outreach occurs to numbers registered for more than 28 days.</li>
-                                <li className='text-sm'>• Consent is recorded via call recordings and LIA documentation is available upon request.</li>
-                            </ul>
-                        </div>
-
-                   
-                        <div className='py-6 border-b-2 border-solid border-[#00ffff]'>
-                            <h4 className='text-xl text-[#7852A9]'><b>DATA INTEGRITY & TRAINING</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• Our data is validated daily via tech tools and human review.</li>
-                                <li className='text-sm'>• Staff are trained quarterly on privacy laws and CTPS compliance via certified trainers (e.g. Laurel Institute).</li>
-                                <li className='text-sm'>• All staff are equipped to answer how data was sourced and when consent was captured.</li>
-                            </ul>
-                        </div>
-
-                     
-                        <div className='pt-6'>
-                            <h4 className='text-xl text-[#7852A9]'><b>WE DO NOT...</b></h4>
-                            <ul className='my-6'>
-                                <li className='text-sm'>• Rent or buy third-party data</li>
-                                <li className='text-sm'>• Use co-registration lists or publisher inventory</li>
-                                <li className='text-sm'>• Push generic "spray-and-pray" email blasts</li>
-                                <li className='text-sm'>• Hide our brand behind shadow domains</li>
-
-                                
-                            </ul>
-                        </div>
+                <div className='max-w-6xl mx-auto mt-8 border rounded-2xl border-[#00ffff] overflow-hidden'>
+                    <div className='bg-white rounded-2xl p-4 md:p-8'>
+                        {/* Compliance Sections */}
+                        {[
+                            {
+                                title: "NATURE OF BUSINESS",
+                                items: [
+                                    "ToXPAND is an AI-powered pipeline generation platform, not a publisher, aggregator, or list vendor.",
+                                    "We operate on performance-based models — clients only pay if satisfied.",
+                                    "Our programs use first-party opt-in data and emphasize email as the primary channel (telemarketing available if requested).",
+                                    "All deployments originate from our in-house teams."
+                                ]
+                            },
+                            {
+                                title: "CAMPAIGN FULFILLMENT TACTICS",
+                                items: [
+                                    "Standard guaranteed lead programs are fulfilled via 1:1 targeted email sends.",
+                                    "Telemarketing is available (with native English, German, French, and Spanish speakers), but not required for program success.",
+                                    "We do not use newsletters, mass e-blasts, or publisher networks."
+                                ]
+                            },
+                            {
+                                title: "LEGAL BASIS FOR PROCESSING DATA",
+                                items: [
+                                    "We rely on explicit consent and legitimate interest under GDPR, CCPA, and CASL.",
+                                    "Consent is recorded on all landing pages and telemarketing interactions and stored securely.",
+                                    "Legitimate Interest Assessments (LIAs) are conducted for every client campaign, and outcomes are respected."
+                                ]
+                            },
+                            {
+                                title: "CAPTURE POINTS & CONSENT",
+                                items: [
+                                    "Data is collected via:",
+                                    "• Landing pages",
+                                    "• Email forms",
+                                    "• Telemarketing calls",
+                                    "Consent is logged per contact, with evidence stored and updated.",
+                                    "Our capture pages clearly display privacy policies, and our callers provide them post-confirmation."
+                                ]
+                            },
+                            {
+                                title: "PRIVACY, SUPPRESSION & OPT-OUT MANAGEMENT",
+                                items: [
+                                    "We clean and update suppression files daily.",
+                                    "All marketing emails include unsubscribe links.",
+                                    "Requests to opt out, suppress, or amend contact details are processed within 24 hours.",
+                                    "Contacts can update preferences via unsubscribe pages or by emailing us directly at privacy@toxpand.com."
+                                ]
+                            },
+                            {
+                                title: "TELEMARKETING SPECIFICS",
+                                items: [
+                                    "Yes, we offer telemarketing — but always clean numbers daily against TPS and CTPS.",
+                                    "No outreach occurs to numbers registered for more than 28 days.",
+                                    "Consent is recorded via call recordings and LIA documentation is available upon request."
+                                ]
+                            },
+                            {
+                                title: "DATA INTEGRITY & TRAINING",
+                                items: [
+                                    "Our data is validated daily via tech tools and human review.",
+                                    "Staff are trained quarterly on privacy laws and CTPS compliance via certified trainers (e.g. Laurel Institute).",
+                                    "All staff are equipped to answer how data was sourced and when consent was captured."
+                                ]
+                            },
+                            {
+                                title: "WE DO NOT...",
+                                items: [
+                                    "Rent or buy third-party data",
+                                    "Use co-registration lists or publisher inventory",
+                                    "Push generic 'spray-and-pray' email blasts",
+                                    "Hide our brand behind shadow domains"
+                                ]
+                            }
+                        ].map((section, index) => (
+                            <div key={index} className='py-4 md:py-6 border-b border-[#00ffff] last:border-b-0'>
+                                <h4 className='text-lg md:text-xl text-[#7852A9] font-bold'>{section.title}</h4>
+                                <ul className='mt-2 md:mt-4 space-y-2'>
+                                    {section.items.map((item, i) => (
+                                        <li key={i} className='text-xs md:text-sm'>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center p-12">
-                    <h1 className="text-center text-2xl mt-2 font-bold text-[#7852A9]">
+
+                {/* CTA Section */}
+                <div className="max-w-4xl mx-auto text-center mt-8 md:mt-12">
+                    <h1 className="text-xl md:text-2xl font-bold text-[#7852A9]">
                         HAVE A COMPLIANCE OR DUE DILIGENCE QUESTION WE HAVEN'T ANSWERED?
                     </h1>
-                    <p className="text-center text-lg text-white">
+                    <p className="text-sm md:text-base text-white mt-2">
                         Reach out to our Privacy Officer at privacy@taxpand.com or request our full compliance playbook.
                     </p>
-                    <h1 className="text-center text-3xl mt-4 font-bold text-[#7852A9]">
-                        LET'S BUILD TACTICS THAT  <span className="text-white">SPARK PIPELINE</span>
+                    <h1 className="text-xl md:text-3xl mt-4 md:mt-6 font-bold text-[#7852A9]">
+                        LET'S BUILD TACTICS THAT <span className="text-white">SPARK PIPELINE</span>
                     </h1>
-                    <p className="text-center text-lg text-white">
+                    <p className="text-sm md:text-base text-white mt-2">
                         Tell us your ICP and growth goals – we'll fuse the rest.
                     </p>
-                    <div className="gap-4 flex flex-row items-center justify-between mt-6">
-                        <button className="brand-button text-white">REQUEST A PROPOSAL</button>
-                        <button className="brand-button text-white">BOOK STRATEGY</button>
-
+                    <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
+                        <button className="brand-button text-white">
+                            REQUEST A PROPOSAL
+                        </button>
+                        <button className="brand-button text-white">
+                            BOOK STRATEGY
+                        </button>
                     </div>
                 </div>
             </section>

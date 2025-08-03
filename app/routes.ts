@@ -7,6 +7,11 @@ export default [
     route("Fandq", "routes/f&q.tsx"),
     route("ScoreCard","routes/piplineScorecard.tsx"),
     route("HomePage","routes/homePage.tsx"),
+    route("RoiCalculator","routes/roiCalculator.tsx"),
+    route("RealTimeInsights","routes/realTimeInsights.tsx"),
+
+    
+
 
 
 

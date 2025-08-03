@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     // Sample card data
     const cards = [
@@ -14,8 +15,21 @@ export default function Carousel() {
         { id: 7, star: 4.5, name: 'Robert Wilson', text: 'A trusted partner for all our demand generation needs.' },
     ];
 
+    // Check if mobile on mount and resize
+    useEffect(() => {
+        const checkIfMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkIfMobile();
+        window.addEventListener('resize', checkIfMobile);
+
+        return () => window.removeEventListener('resize', checkIfMobile);
+    }, []);
+
     const nextSlide = () => {
-        if (currentIndex < cards.length - 3) {
+        const maxIndex = isMobile ? cards.length - 1 : cards.length - 3;
+        if (currentIndex < maxIndex) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -27,12 +41,11 @@ export default function Carousel() {
     };
 
     // Star rating component
-    const StarRating = ({ rating }:{rating:any}) => {
+    const StarRating = ({ rating }: { rating: number }) => {
         const fullStars = Math.floor(rating);
         const hasHalfStar = rating % 1 !== 0;
 
         return (
-            
             <div className="flex justify-center mb-3">
                 {[...Array(5)].map((_, i) => {
                     if (i < fullStars) {
@@ -64,65 +77,78 @@ export default function Carousel() {
         );
     };
 
+    // Calculate visible cards based on screen size
+    const getVisibleCards = () => {
+        if (isMobile) {
+            return [cards[currentIndex]];
+        }
+        return cards.slice(currentIndex, currentIndex + 3);
+    };
+
     return (
-        <section className=' p-8 text-white'>
-        <div className="relative max-w-7xl mx-auto p-4 text-white">
-            <h1 className="text-center text-3xl mt-2 font-bold mb-8">
-                TESTIMONIALS
-            </h1>
+        <section className="py-12 px-4 md:px-8 bg-black">
+            <div className="max-w-7xl mx-auto">
+                <h1 className="text-center text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12">
+                    TESTIMONIALS
+                </h1>
 
-            <div className="relative overflow-hidden">
-                {/* Left Arrow */}
-                <button
-                    onClick={prevSlide}
-                    disabled={currentIndex === 0}
-                    className={`absolute left-[-5px] top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
+                <div className="relative">
+                    {/* Left Arrow */}
+                    <button
+                        onClick={prevSlide}
+                        disabled={currentIndex === 0}
+                        className={`absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        aria-label="Previous testimonial"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
 
-                {/* Cards Container */}
-                <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}>
-                    {cards.map((card) => (
-                        <div key={card.id} className="flex-shrink-0 w-1/3 p-4 text-center">
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-700 hover:shadow-lg transition h-full">
-                                <div className="p-6 flex flex-col h-full">
-                                    <StarRating rating={card.star} />
-                                    <div className='border-t-[3px] border-[#6A1B9A] pt-4 flex-grow text-white'>
-                                        <p className=" text-sm mb-4 italic text-black">"{card.text}"</p>
-                                        <h3 className="text-xl font-semibold text-[#6A1B9A] mt-auto">{card.name}</h3>
+                    {/* Cards Container */}
+                    <div className="mx-auto max-w-4xl">
+                        <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-3'} gap-4 md:gap-6`}>
+                            {getVisibleCards().map((card) => (
+                                <div key={card.id} className="flex-shrink-0 w-full">
+                                    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition h-full">
+                                        <div className="p-6 flex flex-col h-full">
+                                            <StarRating rating={card.star} />
+                                            <div className='border-t-2 border-[#6A1B9A] pt-4 flex-grow'>
+                                                <p className="text-sm md:text-base text-gray-700 mb-4 italic">"{card.text}"</p>
+                                                <h3 className="text-lg md:text-xl font-semibold text-[#6A1B9A] mt-auto">{card.name}</h3>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Right Arrow */}
+                    <button
+                        onClick={nextSlide}
+                        disabled={isMobile ? currentIndex >= cards.length - 1 : currentIndex >= cards.length - 3}
+                        className={`absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition ${isMobile ? currentIndex >= cards.length - 1 : currentIndex >= cards.length - 3 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        aria-label="Next testimonial"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
 
-                {/* Right Arrow */}
-                <button
-                    onClick={nextSlide}
-                    disabled={currentIndex >= cards.length - 3}
-                    className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition ${currentIndex >= cards.length - 3 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
+                {/* Indicators */}
+                <div className="flex justify-center mt-8 space-x-2">
+                    {Array.from({ length: isMobile ? cards.length : cards.length - 2 }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentIndex(index)}
+                            className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#00ffff]' : 'bg-gray-400'}`}
+                            aria-label={`Go to testimonial ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
-
-            {/* Indicators */}
-            <div className="flex justify-center mt-8 space-x-2">
-                {Array.from({ length: cards.length - 2 }).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentIndex(index)}
-                        className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#00ffff]' : 'bg-white'}`}
-                    />
-                ))}
-            </div>
-        </div>
-    </section>
+        </section>
     );
 }

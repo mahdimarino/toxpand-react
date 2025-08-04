@@ -39,93 +39,99 @@ export default function RealTimeInsights() {
                 <div className='flex flex-col md:flex-row gap-4 px-4 md:px-12'>
                     <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center justify-center">
                         <h1 className='text-3xl font-bold text-white'>
-                            TOP ENGAGEMENT BY COMPANY SIZE
+                            TOP SURGING INTENT KEYWORDS
                         </h1>
                         <p className='text-white'>
                             (By Job Function)
                         </p>
                         
-                        <div className='my-6 flex flex-col gap-6'>
+                        <div className='my-6 flex flex-col px-6 border-b-2 border-white'>
+                            <div className="flex justify-end">
+                                <div className="flex justify-center p-4 bg-[#2F3D86] w-[55%]">
+                                    <p className="text-sm text-white">Trending Keywords</p>
+                                </div>
+                            </div>
                             {/* Card 1 */}
-                            <div className="flex items-center p-4  border-b-1 border-[#00ffff]">
+                            <div className="flex items-center p-4  border-b-1 border-[#2F3D86]">
                                 <div className="flex items-center">
                                     {/* Circular Image */}
-                                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <div className=" mr-4">
                                         <img
-                                            src="/icons/Predictive Targeting.png"
+                                            src="/icons/ITt.png"
                                             alt="Card 1"
-                                            className="w-full h-full object-cover"
+                                            width={60}
                                         />
                                     </div>
 
                                     {/* Text Content - Now in a row with gap */}
                                     <div className="flex items-center gap-10">
-                                        <h3 className="text-lg text-white">Healthcare</h3>
-                                        <p className="text-sm text-white">Detect, prioritize, and engage based on live intent on live intent</p>
+                                        <h3 className="text-lg text-white">IT Security</h3>
+                                        <p className="text-sm text-white">Ransomware, Zero Trust, SIEM, XDR</p>
                                     </div>
                                 </div>
                             </div>
                             {/* Card 2 */}
-                            <div className="flex items-center p-4  border-b-1 border-[#00ffff]">
+                            <div className="flex items-center p-4  border-b-1 border-[#2F3D86]">
                                 <div className="flex items-center">
                                     {/* Circular Image */}
-                                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <div className=" mr-4">
                                         <img
-                                            src="/icons/Predictive Targeting.png"
+                                            src="/icons/marketingt.png"
                                             alt="Card 1"
-                                            className="w-full h-full object-cover"
+                                            width={60}
                                         />
                                     </div>
 
                                     {/* Text Content - Now in a row with gap */}
                                     <div className="flex items-center gap-10">
-                                        <h3 className="text-lg text-white">Healthcare</h3>
-                                        <p className="text-sm text-white">Detect, prioritize, and engage based on live intent on live intent</p>
+                                        <h3 className="text-lg text-white">Marketing</h3>
+                                        <p className="text-sm text-white">ABM, Demand Gen AI, Lead Scoring</p>
                                     </div>
                                 </div>
                             </div>
                             {/* Card 3 */}
-                            <div className="flex items-center p-4  border-b-1 border-[#00ffff]">
+                            <div className="flex items-center p-4  border-b-1 border-[#2F3D86]">
                                 <div className="flex items-center">
                                     {/* Circular Image */}
-                                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <div className=" mr-4">
                                         <img
-                                            src="/icons/Predictive Targeting.png"
+                                            src="/icons/financet.png"
                                             alt="Card 1"
-                                            className="w-full h-full object-cover"
+                                            width={60}
                                         />
                                     </div>
 
                                     {/* Text Content - Now in a row with gap */}
                                     <div className="flex items-center gap-10">
-                                        <h3 className="text-lg text-white">Healthcare</h3>
-                                        <p className="text-sm text-white">Detect, prioritize, and engage based on live intent on live intent</p>
+                                        <h3 className="text-lg text-white">Finance</h3>
+                                        <p className="text-sm text-white">Spend Management, AI Forecasting</p>
                                     </div>
                                 </div>
                             </div>
                             {/* Card 3 */}
-                            <div className="flex items-center p-4  border-b-1 border-[#00ffff]">
+                            <div className="flex items-center p-4  ">
                                 <div className="flex items-center">
                                     {/* Circular Image */}
-                                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <div className=" mr-4">
                                         <img
-                                            src="/icons/Predictive Targeting.png"
+                                            src="/icons/HRt.png"
                                             alt="Card 1"
-                                            className="w-full h-full object-cover"
+                                            width={60}
                                         />
                                     </div>
 
                                     {/* Text Content - Now in a row with gap */}
                                     <div className="flex items-center gap-10">
-                                        <h3 className="text-lg text-white">Healthcare</h3>
-                                        <p className="text-sm text-white">Detect, prioritize, and engage based on live intent on live intent</p>
+                                        <h3 className="text-lg text-white">HR</h3>
+                                        <p className="text-sm text-white">DEI Tools, Retention Strategy</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex gap-4 my-6">
-                            <button className="brand-button text-white">LEARN MORE</button>
-                        </div>
+                        <p className='text-[#00ffff] px-6'>
+                            "We've seen a 42% spike in ‘Ransomware’ research among IT Security Managers in the last 90 days."
+                        </p>
+                        
                     </div>
                     <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center justify-center">
                         <h1 className='text-3xl text-white'>
@@ -134,19 +140,20 @@ export default function RealTimeInsights() {
                         
                         <div className='my-6 flex flex-col gap-3'>
                             {/* Card 1 */}
-                            <div className="flex items-center bg-[#6A1B9A] pr-4 rounded-lg">
+                            <div className="flex items-center bg-[#6A1B9A] pr-4 rounded-l-4xl">
                                 <div className="flex items-center">
                                     {/* Circular Image */}
-                                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                    <div className=" rounded-full overflow-hidden mr-4">
                                         <img
-                                            src="/icons/Predictive Targeting.png"
+                                            src="/icons/Healthcaret.png"
                                             alt="Card 1"
-                                            className="w-full h-full object-cover"
+                                           width={100}
+                                           className='h-full'
                                         />
                                     </div>
 
                                     {/* Text Content - Now in a row with gap */}
-                                    <div className="flex items-center gap-10">
+                                    <div className="flex items-center py-4 gap-10">
                                         <h3 className="text-lg font-bold text-[#00ffff]">Healthcare</h3>
                                         <p className="text-sm text-white">Detect, prioritize, and engage based on live intent on live intent</p>
                                     </div>

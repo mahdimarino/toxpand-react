@@ -1,11 +1,23 @@
 import React from 'react'
 import Carousel from '~/components/Carousel';
+import { Navbar } from '~/header/navbar';
 
+interface MetaArgs {
+    params?: Record<string, string>;
+    location?: Location;
+}
 
+export function meta({ }: MetaArgs) {
+    return [
+        { title: "New React Router App" },
+        { name: "description", content: "Welcome to React Router!" },
+    ];
+}
 
 export default function HomePage() {
     return (
         <>
+        <Navbar/>
             <section className='p-12'>
 
                 <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
@@ -250,7 +262,7 @@ export default function HomePage() {
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-center item-center px-4 md:px-10 ">
                     {/* Card 1 */}
-                    <div className="rounded-xl shadow-lg py-10 text-center blueBorder">
+                    <div className="rounded-xl shadow-lg py-10 text-center ">
                         <div className="m-1 text-white p-4 rounded-lg">
                             <div className="rounded-lg mx-auto">
                                 <img
@@ -274,7 +286,7 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    <div className="rounded-xl shadow-lg py-10 text-center blueBorder">
+                    <div className="rounded-xl shadow-lg py-10 text-center ">
                         <div className="m-1 text-white p-4 rounded-lg">
                             <div className="rounded-lg mx-auto">
                                 <img

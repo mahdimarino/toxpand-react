@@ -86,8 +86,8 @@ export default function Carousel() {
     };
 
     return (
-        <section className="py-12 px-4 md:px-8 bg-black">
-            <div className="max-w-7xl mx-auto">
+        <section className="py-12 px-4 md:px-12 bg-black">
+            <div className=" mx-auto">
                 <h1 className="text-center text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12">
                     TESTIMONIALS
                 </h1>
@@ -106,7 +106,7 @@ export default function Carousel() {
                     </button>
 
                     {/* Cards Container */}
-                    <div className="mx-auto max-w-4xl">
+                    <div className="mx-auto max-w-7xl">
                         <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-3'} gap-4 md:gap-6`}>
                             {getVisibleCards().map((card) => (
                                 <div key={card.id} className="flex-shrink-0 w-full">

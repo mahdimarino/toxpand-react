@@ -57,7 +57,7 @@ export function Navbar() {
                             <a href="">|</a>
 
                             <a href="/ScoreCard" className="text-sm hover:text-[#9A2CAD]">PIPELINE PERFORMANCE SCORECARD</a>
-                            <div className="flex w-[25] flex-col md:flex-row items-center justify-end gap-3  space-y-2  md:space-y-0">
+                            <div className="flex flex-col md:flex-row items-center justify-end gap-3  space-y-2  md:space-y-0">
 
                                 <button className="brand-button text-white w-full md:w-auto">REQUEST PROPOSAL</button>
                                 <button className="brand-button text-white w-full md:w-auto">Schedule a Call</button>

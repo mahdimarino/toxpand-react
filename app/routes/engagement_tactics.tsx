@@ -2,6 +2,8 @@
 import { Welcome } from "../welcome/welcome";
 import { Navbar } from "../header/navbar";
 import Carousel from '~/components/Carousel';
+import { Footer } from '~/footer/footer';
+
 
 // If you're using TypeScript with React Router v6
 // interface MetaArgs {
@@ -342,63 +344,7 @@ export default function EngagementTactics() {
                    </section>
    
                    {/* Footer */}
-                   <footer className="bg-black text-white py-8 md:py-12 px-4 md:px-12">
-                       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-                           {/* Logo Column */}
-                           <div className="flex flex-col items-start">
-                               <img
-                                   src="https://toxpand.com/assets/images/icons/xlogo2light.png"
-                                   alt="Logo"
-                                   className="w-32 md:w-40 mb-4"
-                               />
-                           </div>
-   
-                           {/* Company Links */}
-                           <div>
-                               <h3 className="font-bold mb-2 md:mb-4 text-lg">Company</h3>
-                               <ul className="space-y-2 mt-2 md:mt-4">
-                                   <li><a href="/about" className="hover:underline text-sm md:text-base">Awards</a></li>
-                                   <li><a href="/careers" className="hover:underline text-sm md:text-base">Careers</a></li>
-                                   <li><a href="/contact" className="hover:underline text-sm md:text-base">About us</a></li>
-                                   <li><a href="/contact" className="hover:underline text-sm md:text-base">FAQs</a></li>
-                               </ul>
-                           </div>
-   
-                           {/* Quick Links */}
-                           <div>
-                               <h3 className="font-bold mb-2 md:mb-4 text-lg">Quick Links</h3>
-                               <ul className="space-y-2 mt-2 md:mt-4">
-                                   <li><a href="/lead-generation" className="hover:underline text-sm md:text-base">Engagement Tactics</a></li>
-                                   <li><a href="/email-marketing" className="hover:underline text-sm md:text-base">Global Reach</a></li>
-                                   <li><a href="/consulting" className="hover:underline text-sm md:text-base">Real-Time Insights</a></li>
-                                   <li><a href="/consulting" className="hover:underline text-sm md:text-base">Pipeline Performance Scorecard</a></li>
-                               </ul>
-                           </div>
-   
-                           {/* Newsletter & Links */}
-                           <div>
-                               <h3 className="font-bold mb-2 md:mb-4 text-lg">Stay Updated</h3>
-                               <form className="flex gap-2 mt-2">
-                                   <input
-                                       type="email"
-                                       placeholder="Your email"
-                                       className="rounded bg-white text-black px-3 py-1 text-sm md:text-base flex-grow"
-                                   />
-                                   <button
-                                       type="submit"
-                                       className="bg-[#6A1B9A] hover:bg-[#7d2ba9] text-white font-bold py-1 px-3 rounded text-xs md:text-sm"
-                                   >
-                                       SIGNUP
-                                   </button>
-                               </form>
-                               <ul className="space-y-2 mt-4 md:mt-6">
-                                   <li><a href="/blog" className="hover:underline text-sm md:text-base">ROI Calculator</a></li>
-                                   <li><a href="/newsletter" className="hover:underline text-sm md:text-base">Request Proposal</a></li>
-                                   <li><a href="/privacy-policy" className="hover:underline text-sm md:text-base">Schedule a Call</a></li>
-                               </ul>
-                           </div>
-                       </div>
-                   </footer>
+                  <Footer/>
                </>
   );
 }

@@ -41,7 +41,7 @@ body {
 
   border: 2px solid white;
   border-radius: 999px;
-  padding: 12px 24px;
+  padding: 7px 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 8px #8d4cfb;
@@ -212,6 +212,26 @@ body {
   box-shadow: 0 0 10px #8d4cfb, 0 0 20px #8d4cfb;
 }
 
+
+
+.footer-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(103, 31, 156, 1) 0%, rgba(63, 80, 183, 1) 100%);
+  border: 2px solid white;
+  padding: 9px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #8d4cfb;
+}
+
+.footer-button:hover {
+  background: #8d4cfb;
+  box-shadow: 0 0 10px #8d4cfb, 0 0 20px #8d4cfb;
+}
+
 .whyitmatter {
   background-image: url('/backgrounds/GALAXY 2.png');
   box-sizing: 100%;
@@ -325,4 +345,19 @@ body {
 footer a {
   color: #00ffff;
 }
+
+
+ .chart-arrow {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 240px;
+    color: #7852A9;
+    z-index: 10;
+  }
+
+
+
+
 

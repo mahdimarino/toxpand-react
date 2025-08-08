@@ -1,4 +1,7 @@
 import React from 'react'
+import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
+
 
 export default function About() {
     const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -20,6 +23,7 @@ export default function About() {
 
     return (
         <>
+        <Navbar/>
             {/* Video Hero Section */}
             <section className="relative">
                 <video
@@ -359,6 +363,7 @@ export default function About() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     );
 }

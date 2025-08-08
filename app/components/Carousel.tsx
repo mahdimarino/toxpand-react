@@ -111,7 +111,7 @@ export default function Carousel() {
                             {getVisibleCards().map((card) => (
                                 <div key={card.id} className="flex-shrink-0 w-full">
                                     <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition h-full">
-                                        <div className="p-6 flex flex-col h-full">
+                                        <div className="p-6 flex flex-col h-full text-center">
                                             <StarRating rating={card.star} />
                                             <div className='border-t-2 border-[#6A1B9A] pt-4 flex-grow'>
                                                 <p className="text-sm md:text-base text-gray-700 mb-4 italic">"{card.text}"</p>

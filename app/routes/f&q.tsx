@@ -1,38 +1,44 @@
 import React, { useState } from 'react';
+import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
+
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="mb-4 overflow-hidden rounded-lg">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex w-full items-center justify-between bg-white p-4 text-left text-black hover:bg-gray-100 transition-colors duration-200"
-            >
-                <p className="text-sm md:text-base font-medium">{question}</p>
-                <span className="ml-4 transition-transform duration-200">
-                    {isOpen ? (
-                        <span className="bg-[#6A1B9A] rounded-full p-1 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" style={{ color: '#00ffff' }} clipRule="evenodd" />
-                            </svg>
-                        </span>
-                    ) : (
-                        <span className="bg-[#6A1B9A] rounded-full p-1 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" style={{ color: 'white' }} clipRule="evenodd" />
-                            </svg>
-                        </span>
-                    )}
-                </span>
-            </button>
+       
+        
+            <div className="mb-4 overflow-hidden rounded-lg">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="flex w-full items-center justify-between bg-white p-4 text-left text-black hover:bg-gray-100 transition-colors duration-200"
+                >
+                    <p className="text-sm md:text-base font-medium">{question}</p>
+                    <span className="ml-4 transition-transform duration-200">
+                        {isOpen ? (
+                            <span className="bg-[#6A1B9A] rounded-full p-1 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" style={{ color: '#00ffff' }} clipRule="evenodd" />
+                                </svg>
+                            </span>
+                        ) : (
+                            <span className="bg-[#6A1B9A] rounded-full p-1 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" style={{ color: 'white' }} clipRule="evenodd" />
+                                </svg>
+                            </span>
+                        )}
+                    </span>
+                </button>
 
-            {isOpen && (
-                <div className="bg-[#6A1B9A] p-4 text-white">
-                    <p className="text-sm md:text-base">{answer}</p>
-                </div>
-            )}
-        </div>
+                {isOpen && (
+                    <div className="bg-[#6A1B9A] p-4 text-white">
+                        <p className="text-sm md:text-base">{answer}</p>
+                    </div>
+                )}
+            </div>
+       
     );
 };
 
@@ -132,6 +138,7 @@ export default function Fandq() {
 
     return (
         <>
+            <Navbar />
             {/* FAQ Header Section */}
             <section className='p-6 md:p-12 text-white bg-black'>
                 <div className='max-w-4xl mx-auto'>
@@ -296,6 +303,7 @@ export default function Fandq() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     );
 }

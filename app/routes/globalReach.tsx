@@ -1,8 +1,13 @@
 import React from 'react'
+import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
+
 
 export default function globalReach() {
     return (
         <>
+                    <Navbar />
+        
             <section
                 className="p-6 md:p-12"
                 style={{
@@ -267,6 +272,7 @@ export default function globalReach() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     )
 }

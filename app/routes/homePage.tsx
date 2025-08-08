@@ -1,6 +1,8 @@
 import React from 'react'
 import Carousel from '~/components/Carousel';
 import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
+
 
 interface MetaArgs {
     params?: Record<string, string>;
@@ -315,6 +317,7 @@ export default function HomePage() {
 
 
             </section>
+            <Footer/>
         </>
     )
 }

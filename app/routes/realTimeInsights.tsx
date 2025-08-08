@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
 
 
 export default function RealTimeInsights() {
@@ -380,6 +381,7 @@ export default function RealTimeInsights() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     )
 

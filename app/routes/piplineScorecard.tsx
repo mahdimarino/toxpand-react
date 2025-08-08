@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Navbar } from '~/header/navbar';
+import { Footer } from '~/footer/footer';
+
 
 
 export default function ScoreCard() {
@@ -72,6 +75,7 @@ export default function ScoreCard() {
 
     return (
         <>
+        <Navbar/>
             <section className='p-12 text-white border-b-20 border-[#7852A9]'>
                 <div className='w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col p-12 justify-center text-center'>
                     <h1 className='text-6xl md:px-[10rem] text-[#7852A9]'>PIPELINE PERFORMANCE SCORECARD</h1>
@@ -366,6 +370,7 @@ export default function ScoreCard() {
                     </div>
                 </div>
             </section>
+            <Footer/>
 
         </>
     );

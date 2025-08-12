@@ -71,18 +71,16 @@ body {
   width: 200px;
 }
 
-.outer-circle {
-  /* width: 200px;
-  height: 200px; */
+/* .outer-circle {
+ 
   padding: 2rem;
   border-radius: 50%;
-  position: relative;
-  display: flex;
+border-radius: 50%;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.outer-circle::before {
+/* .outer-circle::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -90,10 +88,10 @@ body {
   border: 10px solid white;
   border-radius: 50%;
   border-bottom-right-radius: 0;
-  /* border-bottom: none; */
+  
   border-right: none;
   
-}
+} */
 
 /* CSS Grid layout for the navbar */
 .navbar {
@@ -358,6 +356,86 @@ footer a {
   }
 
 
+
+  
+
 /* ///////////////////////////////////////////////////////// */
 
  
+/* animations.css */
+@keyframes moveIn-first-left {
+  to {
+    transform: translate(-200px, 0);
+  }
+}
+
+@keyframes moveIn-first-right {
+  to {
+    transform: translate(200px, 0);
+  }
+}
+
+/* Second row animations (300px) */
+@keyframes moveIn-second-left {
+  to {
+    transform: translate(-300px, 0);
+  }
+}
+
+@keyframes moveIn-second-right {
+  to {
+    transform: translate(300px, 0);
+  }
+}
+
+/* Third row animations (200px) */
+@keyframes moveIn-third-left {
+  to {
+    transform: translate(-200px, 0);
+  }
+}
+
+@keyframes moveIn-third-right {
+  to {
+    transform: translate(200px, 0);
+  }
+}
+
+.link-box {
+  position: relative;
+  width: 12rem;
+  /* 48px */
+  height: 12rem;
+  /* 48px */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease-out;
+  cursor: pointer;
+}
+
+.link-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.link-box-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.link-box-overlay:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.link-box-text {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}

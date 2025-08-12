@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 import Carousel from '~/components/Carousel';
 import { Navbar } from '~/header/navbar';
 import { Footer } from '~/footer/footer';
 
-
 interface MetaArgs {
     params?: Record<string, string>;
     location?: Location;
+}
+
+interface LinkBoxProps {
+    imageUrl: string;
+    text: string;
+    rowType: string;
+
+    delay: number;
+  //  initialPosition: { x: number; y: number };
+    finalPosition: { x: number; y: number };
 }
 
 export function meta({ }: MetaArgs) {
@@ -16,10 +25,175 @@ export function meta({ }: MetaArgs) {
     ];
 }
 
+const LinkBox: React.FC<LinkBoxProps> = ({
+    imageUrl,
+    text,
+    delay,
+    finalPosition,
+    rowType, // 'first' | 'second' | 'third'
+}) => {
+    const getAnimationClass = () => {
+        if (rowType === 'second') {
+            return finalPosition.x > 0
+                ? 'moveIn-second-right'
+                : 'moveIn-second-left';
+        } else if (rowType === 'third') {
+            return finalPosition.x > 0
+                ? 'moveIn-third-right'
+                : 'moveIn-third-left';
+        }
+        return finalPosition.x > 0
+            ? 'moveIn-first-right'
+            : 'moveIn-first-left';
+    };
+
+    return (
+        <div
+            className="link-box"
+            style={{
+                backgroundImage: `url(${imageUrl})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                animation: `${getAnimationClass()} 1s ${delay}s forwards`
+            }}
+        >
+            <div className="link-box-overlay" style={{backgroundColor:'transparent !important'}}>
+                <span className="link-box-text">{text}</span>
+            </div>
+        </div>
+    );
+};
+
 export default function HomePage() {
+    
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const startedOnceRef = useRef(false); // tracks if video has already looped
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handleEnded = () => {
+            // On first end, start playing again from 7 seconds
+            if (!startedOnceRef.current) {
+                startedOnceRef.current = true;
+                video.currentTime = 11; // jump to 7 seconds
+                video.play();
+            } else {
+                // After that, loop from 7 seconds every time
+                video.currentTime = 11;
+                video.play();
+            }
+        };
+
+        video.addEventListener("ended", handleEnded);
+        return () => {
+            video.removeEventListener("ended", handleEnded);
+        };
+    }, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const container = document.getElementById('links-container');
+            if (container) {
+                container.style.opacity = '1';
+                container.style.transition = 'opacity 1s ease-in';
+            }
+        }, 8000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
-        <Navbar/>
+            <Navbar />
+            <section className="relative h-screen w-full overflow-hidden">
+                {/* Video Background */}
+                <div className="absolute inset-0 z-0 w-full h-full">
+                    <video
+
+                        ref={videoRef}
+                        autoPlay
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                        onError={(e) => {
+                            const error = (e.target as HTMLVideoElement).error;
+                            console.error("Video error:", error);
+                        }}
+                    >
+                        <source src="/videos/toxpand.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                {/* Links Container - Initially hidden */}
+                <div
+                    className="absolute inset-0 flex flex-col items-center justify-center z-10"
+                    id="links-container"
+                    style={{ opacity: 0 }}
+                >
+                    {/* Row 1 */}
+                    <div className="flex justify-center space-x-24 mb-12">
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 1"
+                            delay={0.1}
+                            finalPosition={{ x: -200, y: 0 }}
+                            rowType="first"
+                        />
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 2"
+                            delay={0.1}
+                            finalPosition={{ x: 200, y: 0 }}
+                            rowType="first"
+                        />
+                    </div>
+
+                    {/* Second Row (300px) */}
+                    <div className="flex justify-center space-x-24 mb-12">
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 3"
+                            delay={0.3}
+                            finalPosition={{ x: -300, y: 0 }}
+                            rowType="second"
+                        />
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 4"
+                            delay={0.3}
+                            finalPosition={{ x: 300, y: 0 }}
+                            rowType="second"
+                        />
+                    </div>
+
+                    {/* Third Row (200px) */}
+                    <div className="flex justify-center space-x-24">
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 5"
+                            delay={0.5}
+                            finalPosition={{ x: -200, y: 0 }}
+                            rowType="third"
+                        />
+                        <LinkBox
+                            imageUrl="/icons/atom.png"
+                            text="Link 6"
+                            delay={0.5}
+                            finalPosition={{ x: 200, y: 0 }}
+                            rowType="third"
+                        />
+                    </div>
+                </div>
+            </section>
+    
+
+
+
+
             <section className='p-12'>
 
                 <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
@@ -187,7 +361,7 @@ export default function HomePage() {
                     {/* Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 p-12 md:px-12 place-items-center">
                         {/* Card 1 */}
-                        <div className="outer-circle">
+                        <div className="rounded-full border-10 p-6 border-white">
                             <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
                                 <div className="text-white">
                                     <div className="mx-auto">
@@ -207,7 +381,7 @@ export default function HomePage() {
 
 
                         {/* Card 2 */}
-                        <div className="outer-circle">
+                        <div className="rounded-full border-10 p-6 border-white">
                             <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
                                 <div className="text-white">
                                     <div className="mx-auto">
@@ -227,7 +401,7 @@ export default function HomePage() {
 
 
                         {/* Card 3 */}
-                        <div className="outer-circle">
+                        <div className="rounded-full border-10 p-6 border-white">
                             <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
                                 <div className="text-white">
                                     <div className="mx-auto">

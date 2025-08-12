@@ -28,8 +28,8 @@ export default function About() {
             <section className="relative">
                 <video
                     ref={videoRef}
-                    src="/videos/video-galaxy.mp4"
-                    className="w-full h-auto max-h-[80vh] object-cover"
+                    src="/videos/about.mp4"
+                    className="w-full h-auto  object-cover"
                     controls
                     autoPlay
                     muted={isMuted}

@@ -267,8 +267,8 @@ export default function globalReach() {
                         Build geo-aligned, function-targeted, industry-specific demand – globally.
                     </p>
                     <div className="gap-3 md:gap-4 flex flex-col md:flex-row items-center justify-between mt-4 md:mt-6 w-full md:w-auto">
-                        <button className="brand-button text-white w-full md:w-auto">REQUEST A PROPOSAL</button>
-                        <button className="brand-button text-white w-full md:w-auto">TALK TO A TARGETING SPECIALIST</button>
+                        <a href='/RequestProposal' className="brand-button text-white w-full md:w-auto">REQUEST A PROPOSAL</a>
+                        <a href='/Contact'  className="brand-button text-white w-full md:w-auto">TALK TO A TARGETING SPECIALIST</a>
                     </div>
                 </div>
             </section>

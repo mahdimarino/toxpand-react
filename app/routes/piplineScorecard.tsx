@@ -366,7 +366,7 @@ export default function ScoreCard() {
                         Let TDXPAND analyze your lead sources, conversion flows, and ROI opportunities:
                     </p>
                     <div className="gap-4 flex flex-row items-center justify-between mt-6">
-                        <button className="brand-button text-white">REQUEST FREE AUDIT</button>
+                        <a href='/Contact'  className="brand-button text-white">REQUEST FREE AUDIT</a>
                     </div>
                 </div>
             </section>

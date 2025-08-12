@@ -58,7 +58,7 @@ export default function EngagementTactics() {
                                Every campaign we build is tailored to your goals & ICP, powered by AI, and designed to convert signal into sales momentum.
                            </p>
                            {/* Call-to-Action Button */}
-                           <button className="strategy-button">BOOK A STRATEGY CALL</button>
+                           <a href="/Contact" className="strategy-button">BOOK A STRATEGY CALL</a>
                        </div>
                    </div>
    
@@ -333,12 +333,12 @@ export default function EngagementTactics() {
                                Tell us your ICP and growth goals – we'll fuse the rest.
                            </p>
                            <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
-                               <button className="brand-button">
+                      <a href="/RequestProposal" className="brand-button">
                                    REQUEST A PROPOSAL
-                               </button>
-                           <button className="brand-button">
+                               </a>
+                           <a href="/Contact" className="brand-button">
                                    BOOK STRATEGY
-                               </button>
+                               </a>
                            </div>
                        </div>
                    </section>

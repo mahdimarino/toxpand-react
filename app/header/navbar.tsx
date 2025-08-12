@@ -59,8 +59,8 @@ export function Navbar() {
                             <a href="/ScoreCard" className="text-sm hover:text-[#9A2CAD]">PIPELINE PERFORMANCE SCORECARD</a>
                             <div className="flex flex-col md:flex-row items-center justify-end gap-3  space-y-2  md:space-y-0">
 
-                                <button className="brand-button text-white w-full md:w-auto">REQUEST PROPOSAL</button>
-                                <button className="brand-button text-white w-full md:w-auto">Schedule a Call</button>
+                                <a href="/RequestProposal" className="brand-button text-white w-full md:w-auto">REQUEST PROPOSAL</a>
+                                <a href="/Contact" className="brand-button text-white w-full md:w-auto">Schedule a Call</a>
                             </div>
                         </div>
 
@@ -90,8 +90,8 @@ export function Navbar() {
                         <a href="/EngagementTactics" className="text-sm hover:text-[#9A2CAD]">ENGAGEMENT TACTICS</a>
                         <a href="/globalReach" className="text-sm hover:text-[#9A2CAD]">GLOBAL REACH</a>
                         <a href="/RealTimeInsights" className="text-sm hover:text-[#9A2CAD]">REAL-TIME INSIGHTS</a>
-                        <button className="brand-button w-full">REQUEST PROPOSAL</button>
-                        <button className="brand-button w-full">Schedule a Call</button>
+                        <a href="/RequestProposal" className="brand-button w-full">REQUEST PROPOSAL</a>
+                        <a href="/Contact" className="brand-button w-full">Schedule a Call</a>
 
                         
 

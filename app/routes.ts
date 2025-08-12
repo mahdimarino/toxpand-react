@@ -10,6 +10,10 @@ export default [
     route("RoiCalculator","routes/roiCalculator.tsx"),
     route("RealTimeInsights","routes/realTimeInsights.tsx"),
     route("EngagementTactics","routes/engagement_tactics.tsx"),
+    route("RequestProposal","routes/requestProposal.tsx"),
+    route("Contact","routes/contact.tsx"),
+
+
 
 
     

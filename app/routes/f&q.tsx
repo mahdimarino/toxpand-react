@@ -294,12 +294,12 @@ export default function Fandq() {
                         Tell us your ICP and growth goals – we'll fuse the rest.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center mt-6">
-                        <button className="brand-button text-white">
+                        <a href='/RequestProposal' className="brand-button text-white">
                             REQUEST A PROPOSAL
-                        </button>
-                        <button className="brand-button text-white">
+                        </a>
+                        <a href='/Contact' className="brand-button text-white">
                             BOOK STRATEGY
-                        </button>
+                        </a>
                     </div>
                 </div>
             </section>

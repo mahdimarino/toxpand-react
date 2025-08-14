@@ -51,7 +51,7 @@ export function Navbar() {
                     <div className="w-full hidden md:block md:flex-1 md:w-3/4 ">
                         {/* Row 1 - 3 Links + 2 Buttons */}
                         <div className="flex flex-col md:flex-row items-center gap-13  space-y-2 py-4 md:space-y-0">
-                            <a href="/Fandq" className="text-sm hover:text-[#9A2CAD]">FAQS</a>
+                            <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
                             <a href="">|</a>
                             <a href="/RoiCalculator" className="text-sm hover:text-[#9A2CAD]">ROI CALCULATOR</a>
                             <a href="">|</a>
@@ -66,7 +66,8 @@ export function Navbar() {
 
                         {/* Row 2 - 5 Links */}
                         <div className="flex flex-col md:flex-row items-center gap-10 space-y-2 md:space-y-0 py-6 border-t-1 border-[#7852A9]">
-                            <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
+                            
+                            <a href="/Fandq" className="text-sm hover:text-[#9A2CAD]">FAQS</a>
                             <a href="">|</a>
                             <a href="/About" className="text-sm hover:text-[#9A2CAD]">ABOUT US</a>
                             <a href="">|</a>

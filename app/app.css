@@ -29,7 +29,7 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
-  background-color: black;
+  background-color: #07071B;
 } 
 
 .brand-button {
@@ -403,7 +403,7 @@ footer a {
 
 .link-box {
   position: relative;
-  width: 12rem;
+  width: 15rem;
   /* 48px */
   height: 12rem;
   /* 48px */
@@ -414,10 +414,10 @@ footer a {
   cursor: pointer;
 }
 
-.link-box:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
+/* .link-box:hover {
+  transform: scale(1.1) !important;
+  
+} */
 
 .link-box-overlay {
   position: absolute;
@@ -427,12 +427,13 @@ footer a {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  padding: 2rem;
 }
 
-.link-box-overlay:hover {
+/* .link-box-overlay:hover {
   transform: scale(1.1);
   background-color: rgba(0, 0, 0, 0.2);
-}
+} */
 
 .link-box-text {
   color: white;

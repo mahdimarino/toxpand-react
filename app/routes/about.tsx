@@ -25,7 +25,7 @@ export default function About() {
         <>
         <Navbar/>
             {/* Video Hero Section */}
-            <section className="relative">
+            {/* <section className="relative">
                 <video
                     ref={videoRef}
                     src="/videos/about.mp4"
@@ -53,7 +53,7 @@ export default function About() {
                         )}
                     </button>
                 </div>
-            </section>
+            </section> */}
 
             {/* About Us Section */}
             <section className="p-6 md:p-12 text-white bg-black">

@@ -14,7 +14,7 @@ interface LinkBoxProps {
     rowType: string;
 
     delay: number;
-  //  initialPosition: { x: number; y: number };
+    //  initialPosition: { x: number; y: number };
     finalPosition: { x: number; y: number };
 }
 
@@ -57,7 +57,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({
                 animation: `${getAnimationClass()} 1s ${delay}s forwards`
             }}
         >
-            <div className="link-box-overlay" style={{backgroundColor:'transparent !important'}}>
+            <div className="link-box-overlay text-center" style={{ backgroundColor: 'transparent !important' }}>
                 <span className="link-box-text">{text}</span>
             </div>
         </div>
@@ -65,7 +65,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({
 };
 
 export default function HomePage() {
-    
+
     const videoRef = useRef<HTMLVideoElement>(null);
     const startedOnceRef = useRef(false); // tracks if video has already looped
 
@@ -104,6 +104,23 @@ export default function HomePage() {
         return () => clearTimeout(timer);
     }, []);
 
+    const videoRef2 = React.useRef<HTMLVideoElement>(null);
+    const [isMuted, setIsMuted] = React.useState(true);
+
+    const handleStop = () => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+    };
+
+    const handleMute = () => {
+        if (videoRef.current) {
+            videoRef.current.muted = !videoRef.current.muted;
+            setIsMuted(videoRef.current.muted);
+        }
+    };
+
     return (
         <>
             <Navbar />
@@ -138,14 +155,14 @@ export default function HomePage() {
                     <div className="flex justify-center space-x-24 mb-12">
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 1"
+                            text="100% FIRST PARTY DATA"
                             delay={0.1}
                             finalPosition={{ x: -200, y: 0 }}
                             rowType="first"
                         />
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 2"
+                            text="BEST IN CLASS SERVICE"
                             delay={0.1}
                             finalPosition={{ x: 200, y: 0 }}
                             rowType="first"
@@ -156,14 +173,14 @@ export default function HomePage() {
                     <div className="flex justify-center space-x-24 mb-12">
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 3"
+                            text="LIVE INTENT TRACKING"
                             delay={0.3}
                             finalPosition={{ x: -300, y: 0 }}
                             rowType="second"
                         />
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 4"
+                            text="PIPELINE ESTIMATOR "
                             delay={0.3}
                             finalPosition={{ x: 300, y: 0 }}
                             rowType="second"
@@ -174,14 +191,14 @@ export default function HomePage() {
                     <div className="flex justify-center space-x-24">
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 5"
+                            text="SIGNAL-LED TACTICS"
                             delay={0.5}
                             finalPosition={{ x: -200, y: 0 }}
                             rowType="third"
                         />
                         <LinkBox
                             imageUrl="/icons/atom.png"
-                            text="Link 6"
+                            text="CLARITY AT SCALE  "
                             delay={0.5}
                             finalPosition={{ x: 200, y: 0 }}
                             rowType="third"
@@ -189,7 +206,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-    
+
 
 
 
@@ -215,7 +232,7 @@ export default function HomePage() {
 
             </section>
             <section
-                className="bg-black p-12 border-b-20 border-[#7852A9]"
+                className=" p-12 border-b-20 border-[#7852A9]"
                 style={{
                     backgroundImage: "url('/backgrounds/GALAXY 2.png')",
                     backgroundSize: 'cover',
@@ -289,22 +306,28 @@ export default function HomePage() {
                 </div>
 
             </section>
-            <section className="bg-black md:p-12 border-b-20 border-[#7852A9]">
+            <section className='p-12'>
 
+                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
+                >
+                    <h1 className="text-center text-4xl mt-2 font-bold text-[#7852A9]">
+                        DEMANDFUSION AI
+                    </h1>
+                    <p className="text-center text-1xl mt-2 text-white">
+                        Our proprietary engine fusing real-time signals with campaign execution.
+                    </p>
+                    <p className="text-center text-1xl text-white">
+                        DemandFusion powers every campaign with:
+                    </p>
+
+                    {/* <div className="gap-4 flex flex-row items-center justify-between mt-6">
+                        <button className="brand-button text-white">HOW IT WORKS</button>
+                    </div> */}
+                </div>
                 <div className='flex flex-col md:flex-row gap-8 md:px-12'>
-                    <div className="md:w-1/2 w-full text-white p-8 flex flex-col">
-                        <h1 className='text-3xl font-bold text-[#7852A9]'>
-                            DEMANDFUSION AI
-                        </h1>
-                        <div className='my-4'>
-                            <p>
-                                Our proprietary engine fusing real-time signals with campaign execution.
-                            </p>
-                            <p>
-                                DemandFusion powers every campaign with:
-                            </p>
-                        </div>
-                        <div className='my-6 flex flex-col gap-6'>
+                    <div className=" w-full text-white p-8 flex flex-col">
+
+                        <div className='my-6 flex flex-col md:flex-row gap-6'>
                             {/* Card 1 */}
                             <div className="flex items-center bg-[#6A1B9A]  p-4">
                                 <img
@@ -342,15 +365,48 @@ export default function HomePage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex gap-4 my-6">
+                        {/* <div className="flex gap-4 my-6">
                             <button className="brand-button text-white">LEARN MORE</button>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="md:w-1/2 w-full bg-white text-black p-8  flex items-center justify-center">
-                        {/* Right column content */}
-                        <h2 className="text-2xl font-bold">Column 2</h2>
-                    </div>
+
                 </div>
+
+            </section>
+
+            <section className=" md:px-12 border-b-20 border-[#7852A9]">
+
+                <section className="relative px-12">
+                    <video
+                        ref={videoRef2}
+                        src="/videos/about.mp4"
+                        className=""
+                        controls
+                        autoPlay
+                        muted={isMuted}
+                        playsInline
+                    />
+                    <div className="absolute bottom-4 right-4 flex gap-2">
+                        {/* <button
+                            onClick={handleMute}
+                            className=" bg-opacity-50 text-white p-2 rounded-full"
+                            aria-label={isMuted ? "Unmute video" : "Mute video"}
+                        >
+                            {isMuted ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clipRule="evenodd" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                                </svg>
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M12 6a7.975 7.975 0 015.657 2.343m0 0a7.975 7.975 0 010 11.314m-11.314 0a7.975 7.975 0 010-11.314m0 0a7.975 7.975 0 015.657-2.343" />
+                                </svg>
+                            )}
+                        </button> */}
+                    </div>
+                </section>
+
+
                 <div className='md:p-12'>
                     <div className="w-full mx-auto flex flex-col items-center justify-center m-7 border-t-2 border-white pt-6">
                         <h1 className="text-center text-4xl text-[#7852A9]">
@@ -425,30 +481,30 @@ export default function HomePage() {
                 </div>
             </section>
             <section
-                
+
                 style={{
                     backgroundImage: "url('/backgrounds/GALAXY 6.png')",
                     backgroundSize: 'cover',
-                   
+
                 }}
             >
                 <Carousel />
             </section>
-            <section className="bg-black container-fluid mx-auto py-12 bg-black text-white px-10">
+            <section className=" container-fluid mx-auto py-12  text-white px-10">
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-center item-center px-4 md:px-10 ">
                     {/* Card 1 */}
-                    <div className="rounded-xl shadow-lg py-10 text-center ">
+                    <div className="rounded-xl shadow-lg  text-center ">
                         <div className="m-1 text-white p-4 rounded-lg">
-                            <div className="rounded-lg mx-auto">
+                            <div className="rounded-lg relative top-10 mx-auto">
                                 <img
                                     src="/icons/target smarter.png"
                                     alt="Card 1"
                                     className="mx-auto"
                                 />
                             </div>
-                            <div className='p-6 border-1 border-white rounded-xl'>
-                                <div>
+                            <div className='p-6 border-1 border-white rounded-xl '>
+                                <div className='relative top-10'>
                                     <h2 className="text-2xl font-bold">TARGET SMARTER,</h2>
                                     <h2 className="text-4xl font-extrabold text-[#7852A9]">ANYWHERE</h2>
 
@@ -457,22 +513,22 @@ export default function HomePage() {
                                     <p className='mt-2'>By Job Function, By Industry, By Region, By Company Size</p>
                                 </div>
 
-                                <button className="brand-button mt-10 ">SEE OUR GLOBAL REACH</button>
+                                <button className="brand-button mt-10 relative top-10">SEE OUR GLOBAL REACH</button>
                             </div>
                         </div>
                     </div>
 
-                    <div className="rounded-xl shadow-lg py-10 text-center ">
+                    <div className="rounded-xl shadow-lg  text-center ">
                         <div className="m-1 text-white p-4 rounded-lg">
-                            <div className="rounded-lg mx-auto">
+                            <div className="rounded-lg relative top-10 mx-auto">
                                 <img
                                     src="/icons/ready to build.png"
                                     alt="Card 1"
                                     className="mx-auto"
                                 />
                             </div>
-                            <div className='p-6 border-1 border-white rounded-xl'>
-                                <div>
+                            <div className='p-6 border-1 border-white rounded-xl '>
+                                <div className='relative top-10'>
                                     <h2 className="text-2xl font-bold">READY TO BUILD</h2>
                                     <h2 className="text-4xl font-extrabold text-[#7852A9]">SMARTER PIPELINE?</h2>
 
@@ -482,7 +538,7 @@ export default function HomePage() {
                                     <p className='mt-2'>Just verified engagement at scale.</p>
                                 </div>
 
-                                <button className="brand-button mt-10 ">BOOK A STRATEGY CALL</button>
+                                <button className="brand-button mt-10 relative top-10">BOOK A STRATEGY CALL</button>
                             </div>
                         </div>
                     </div>
@@ -491,7 +547,7 @@ export default function HomePage() {
 
 
             </section>
-            <Footer/>
+            <Footer />
         </>
     )
 }

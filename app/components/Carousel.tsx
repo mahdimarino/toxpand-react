@@ -40,6 +40,14 @@ export default function Carousel() {
         }
     };
 
+    // Calculate translateX value based on currentIndex
+    const getTranslateX = () => {
+        if (isMobile) {
+            return `translateX(-${currentIndex * 100}%)`;
+        }
+        return `translateX(-${currentIndex * (100 / 3)}%)`;
+    };
+
     // Star rating component
     const StarRating = ({ rating }: { rating: number }) => {
         const fullStars = Math.floor(rating);

@@ -73,7 +73,7 @@ export default function EngagementTactics() {
                    {/* Cards */}
                    <div style={{ marginTop: '7rem' }} className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 mt-10 md:px-10 ">
                        {/* Card 1 */}
-                       <div className="rounded-xl shadow-lg p-10 text-center blueBorder">
+                       <div className="rounded-xl shadow-lg p-10  text-center blueBorder">
                            <div className="m-1 bg-white text-black p-4 rounded-lg">
                                <div className=" img-div p-4 rounded-lg mb-4 mx-auto">
                                    <img
@@ -83,13 +83,15 @@ export default function EngagementTactics() {
                                    />
                                </div>
                                <div className='moveup'>
-                                   <h2 className="text-xl brandcolor2 font-bold mb-2">Tailored Campaigns</h2>
-                                   <p>Every campaign is crafted with your unique goals and ideal customer profile in mind.</p>
+                              <h2 className="text-xl brandcolor2 font-bold mb-2">Signal-Driven</h2>
+                              <p>Activated by real-time
+                                  engagement, intent, and
+                                  predictive signals</p>
                                </div>
                            </div>
                        </div>
                        {/* Card 2 */}
-                       <div className="rounded-xl shadow-lg p-10 text-center blueBorder">
+                       <div className="rounded-xl shadow-lg p-10 mt-10 md:mt-0 text-center blueBorder">
                            <div className="m-1 bg-white text-black p-4 rounded-lg">
                                <div className=" img-div p-4 rounded-lg mb-4 mx-auto">
                                    <img
@@ -100,13 +102,15 @@ export default function EngagementTactics() {
                                </div>
    
                                <div className='moveup'>
-                                   <h2 className="text-xl brandcolor2 font-bold mb-2">Tailored Campaigns</h2>
-                                   <p>Every campaign is crafted with your unique goals and ideal customer profile in mind.</p>
+                              <h2 className="text-xl brandcolor2 font-bold  mb-2">ICP-Centric</h2>
+                              <p>Modeled around the personas
+                                  and buying stages that drive
+                                  your growth</p>
                                </div>
                            </div>
                        </div>
                        {/* Card 3 */}
-                       <div className="rounded-xl shadow-lg p-10 text-center blueBorder">
+                  <div className="rounded-xl shadow-lg p-10 text-center mt-10 md:mt-0 blueBorder">
                            <div className="m-1 bg-white text-black p-4 rounded-lg">
                                <div className=" img-div p-4 rounded-lg mb-4 mx-auto">
                                    <img
@@ -116,8 +120,9 @@ export default function EngagementTactics() {
                                    />
                                </div>
                                <div className='moveup'>
-                                   <h2 className="text-xl brandcolor2 font-bold mb-2">Tailored Campaigns</h2>
-                                   <p>Every campaign is crafted with your unique goals and ideal customer profile in mind.</p>
+                              <h2 className="text-xl brandcolor2 font-bold mb-2">Outcome-Oriented</h2>
+                              <p>Built to eliminate guesswork
+                                  and accelerate salesreadiness</p>
                                </div>
                            </div>
                        </div>
@@ -134,14 +139,14 @@ export default function EngagementTactics() {
    
             
                    {/* Atomic Engineering Section */}
-                   <section className="bg-black py-8 md:py-12 text-white px-4 md:px-10">
-                       <div className="max-w-6xl mx-auto">
+                   <section className="py-8 md:py-12 text-white px-4 md:px-10">
+                       <div className="md:px-10 mx-auto">
                            {/* Titles */}
-                           <div className="text-center mb-8 md:mb-12 px-2">
+                  <div className="text-center mb-8 md:px-12 md:mb-12 px-2">
                                <h1 className="text-2xl md:text-3xl font-bold text-[#7852A9]">
                                    EVERY TACTIC. <span className="text-white">ATOMICALLY ENGINEERED.</span>
                                </h1>
-                               <h2 className="text-lg md:text-2xl mt-2 md:mt-4">
+                               <h2 className="text-lg md:text-2xl mt-2 md:px-12 md:mt-4">
                                    We architect campaigns like molecular frameworks — every move intentional,
                                    interconnected, and designed to react.
                                </h2>
@@ -152,38 +157,38 @@ export default function EngagementTactics() {
                                {[
                                    {
                                        icon: "/icons/brand awareness.png",
-                                       title: "Tailored Campaigns",
-                                       description: "Every campaign is crafted with your unique goals and ideal customer profile in mind. Every campaign is crafted with your unique goals and ideal customer profile in mind."
+                                       title: "BRAND AWARENESS CAMPAIGNS",
+                                       description: "Reach the right buyers before they enter the funnel. Using DemandFusion™, we activate targeted outreach across your ideal personas and accounts – building recognition and early-stage engagement."
                                    },
                                    {
                                        icon: "/icons/content syndication.png",
-                                       title: "Content Syndication",
-                                       description: "Every campaign is crafted with your unique goals and ideal customer profile in mind. Every campaign is crafted with your unique goals and ideal customer profile in mind."
+                                       title: "CONTENT SYNDICATION CAMPAIGNS",
+                                       description: "Powered by DemandFusion, we can mirror your target account list – or build a lookalike audience based on your best customers – and scale it with precision."
                                    },
                                    {
                                        icon: "/icons/sales enablement.png",
-                                       title: "Sales Enablement",
-                                       description: "Every campaign is crafted with your unique goals and ideal customer profile in mind. Every campaign is crafted with your unique goals and ideal customer profile in mind."
+                                       title: "SALES ENABLEMENT CAMPAIGNS",
+                                       description: "Every lead is curated with intent – using targeted profiling and qualifying questions to uncover buying stage and readiness."
                                    },
                                    {
                                        icon: "/icons/full funnel campaign.png",
-                                       title: "Full Funnel",
-                                       description: "Every campaign is crafted with your unique goals and ideal customer profile in mind. Every campaign is crafted with your unique goals and ideal customer profile in mind."
+                                       title: "FULL-FUNNEL CAMPAIGNS",
+                                       description: "Activate demand at every stage of the buyer journey – from early interest to sales-ready."
                                    }
                                ].map((card, index) => (
-                                   <div key={index} className="rounded-xl shadow-lg p-6 md:p-8 text-center border border-[#00ffff]">
-                                       <div className="p-4 mb-4 mx-auto">
+                                   <div key={index} className="rounded-xl shadow-lg p-3 md:p-4 text-center border border-[#00ffff] flex flex-col" >
+                                       <div className="p-2 mb-4 mx-auto">
                                            <img
                                                src={card.icon}
                                                alt={card.title}
-                                               className="mx-auto w-16 h-16 md:w-20 md:h-20 object-contain"
+                                               className="mx-auto object-contain"
                                            />
                                        </div>
-                                       <div>
+                                       <div className="md:pb-6">
                                            <h2 className="text-lg md:text-xl font-bold mb-2">{card.title}</h2>
-                                           <p className='text-xs md:text-sm mt-3'>{card.description}</p>
+                                           <p className='text-xs md:text-xs mt-3 md:leading-6'>{card.description}</p>
                                        </div>
-                                       <button className="mt-6 md:mt-8 mb-2 brand-button">
+                                       <button className="mt-6 md:mt-auto mb-2 brand-button self-center">
                                            READ MORE
                                        </button>
                                    </div>
@@ -191,8 +196,8 @@ export default function EngagementTactics() {
                            </div>
    
                            {/* Integration Text */}
-                           <div className="text-center mt-8 md:mt-12 px-2">
-                               <p className="text-base md:text-xl">
+                           <div className="text-center mt-8 md:mt-12 md:px-12 px-2">
+                      <p className="text-base md:text-xl md:px-12">
                                    We make the lead handoff seamless. We can integrate with your CRM or any Marketing Automation System. Our delivery capabilities include (but not limited to:)
                                    <br className="hidden md:block" /> Leads delivered seamlessly to:
                                </p>
@@ -234,8 +239,13 @@ export default function EngagementTactics() {
                    </section>
    
                    {/* Email Process Section */}
-                   <section className='bg-black py-8 md:py-12 text-white px-4 '>
-                       <div className="max-w-8xl mx-auto border border-[#00ffff] rounded-xl p-6 md:p-12">
+          <section style={{
+              backgroundImage: "url('/backgrounds/GALAXY 3.png')",
+              backgroundSize: 'cover',
+          }} className=' py-8 md:py-12 text-white px-4 md:px-12 '>
+              <div style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              }} className="max-w-8xl mx-auto border border-[#00ffff] rounded-xl p-6 md:p-12">
                            <div className="text-center mb-8 md:mb-12">
                                <h1 className="text-2xl md:text-3xl font-bold">
                                    EMAIL MARKETING PROCESS
@@ -244,15 +254,15 @@ export default function EngagementTactics() {
    
                            <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
                                {/* Pyramid Column */}
-                               <div className="w-full md:w-6/12 py-6 px-2 md:px-6">
+                               <div className="w-full hidden md:block md:w-5/12 py-6 px-2 md:px-6">
                                    <div className="pyramid">
                                        {[
-                                           { text: "Lead Capture", bg: "bg-[#1b2a6d]" },
-                                           { text: "text dd", bg: "bg-[#3f51b5]" },
-                                           { text: "text dd", bg: "bg-[#9c27b0]" },
-                                           { text: "text dd", bg: "bg-[#6a1b9a]" },
-                                           { text: "text", bg: "bg-[#7851a9]" },
-                                           { text: "text\ntext", bg: "bg-[#4c2e86]" }
+                                  { text: "Lead Capture", bg: "bg-[#1b2a6d]" },
+                                  { text: "Welcome Email", bg: "bg-[#3f51b5]" },
+                                  { text: "Nurture Sequence", bg: "bg-[#9c27b0]" },
+                                  { text: "Promo/Offer", bg: "bg-[#6a1b9a]" },
+                                  { text: "Conversion", bg: "bg-[#7851a9]" },
+                                  { text: "Re-Engagement", bg: "bg-[#4c2e86]" }
                                        ].map((item, index) => (
                                            <div key={index} className={`pyramid__section flex justify-center items-center ${item.bg}`}>
                                                {item.text}
@@ -262,23 +272,53 @@ export default function EngagementTactics() {
                                </div>
    
                                {/* Process Cards Column */}
-                               <div className="w-full md:w-6/12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                               <div className="w-full md:w-7/12 grid grid-cols-1 sm:grid-cols-3 gap-2">
                                    {[
-                                       { icon: "/icons/lead capture.png", title: "Lead Capture", bg: "bg-[#1b2a6d]" },
-                                       { icon: "/icons/Promo.png", title: "Promo", bg: "bg-[#3f51b5]" },
-                                       { icon: "/icons/welcome email.png", title: "Welcome Email", bg: "bg-[#9c27b0]" },
-                                       { icon: "/icons/Conversion.png", title: "Conversion", bg: "bg-[#6a1b9a]" },
-                                       { icon: "/icons/nurture sequence.png", title: "Nurture", bg: "bg-[#7851a9]" },
-                                       { icon: "/icons/re engagement.png", title: "Re-engagement", bg: "bg-[#4c2e86]" }
+                              {
+                                  icon: "/icons/lead capture.png",
+                                  title: "Lead Capture",
+                                  description: "Turn website visitors into subscribers by offering high-value lead samples, reports, or exclusive data insights in exchange for their email.",
+                                  bg: "bg-[#1b2a6d]"
+                              },
+                              {
+                                  icon: "/icons/Promo.png",
+                                  title: "Promo/Offer",
+                                  description: "Drive conversions with time-sensitive discounts, bulk deals, or bonus leads–create urgency to motivate quick purchasing decisions.",
+                                  bg: "bg-[#3f51b5]"
+                              },
+                              {
+                                  icon: "/icons/welcome email.png",
+                                  title: "Welcome Email",
+                                  description: "Impress new subscribers with instant value-deliver free leads, build credibility, and introduce your data solutions within 24 hours.",
+                                  bg: "bg-[#9c27b0]"
+                              },
+                              {
+                                  icon: "/icons/Conversion.png",
+                                  title: "Conversion",
+                                  description: "Finalize sales with clear CTAs, seamless checkout, and post-purchase upsells to maximize customer lifetime value.",
+                                  bg: "bg-[#6a1b9a]"
+                              },
+                              {
+                                  icon: "/icons/nurture sequence.png",
+                                  title: "Nurture",
+                                  description: "Educate leads over 7-14 days with case studies, trend reports, and testimonials to prove your data's accuracy and RDI potential.",
+                                  bg: "bg-[#7851a9]"
+                              },
+                              {
+                                  icon: "/icons/re engagement.png",
+                                  title: "Re-engagement",
+                                  description: "Recapture inactive subscribers by offering fresh lead samples, limited-time deals, or personalized data recommendations.",
+                                  bg: "bg-[#4c2e86]"
+                              }
                                    ].map((item, index) => (
                                        <div key={index} className="p-4">
                                            <div className="flex flex-col items-center">
                                                <img width={48} height={48} src={item.icon} alt={item.title} className="w-12 h-12 md:w-16 md:h-16" />
-                                               <div className={`mt-3 ${item.bg} py-2 w-full text-center text-sm md:text-base`}>
+                                               <div className={`mt-3 ${item.bg} p-2 w-50  text-center text-sm md:text-base`}>
                                                    {item.title}
                                                </div>
                                                <div className='mt-3 text-xs text-center'>
-                                                   <p>fkafksa ksd askdmkas asd maskdmask asdmmaskdmaskm kamsdmaksdmaksm askmdaksdaksmd</p>
+                                                   <p className="md:leading-6">{item.description}</p>
                                                </div>
                                            </div>
                                        </div>

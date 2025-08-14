@@ -38,7 +38,7 @@ export default function globalReach() {
                 </div>
             </section>
 
-            <section className="bg-black px-6 md:px-12">
+            <section className=" px-6 md:px-12">
                 <div className="w-full max-w-full md:max-w-[75%] mx-auto flex flex-col items-center justify-center my-6 md:my-12">
                     <h1 className="text-center text-2xl md:text-3xl text-white">
                         EXPLORE OUR GLOBAL REACH

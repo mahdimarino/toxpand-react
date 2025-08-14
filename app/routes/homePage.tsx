@@ -276,24 +276,24 @@ export default function HomePage() {
                         ].map((card, index) => (
                             <div
                                 key={index}
-                                className="relative rounded-full w-48 h-48 md:w-56 md:h-56 flex-shrink-0 flex items-center justify-center"
+                                className="relative rounded-full w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 flex-shrink-0 flex items-center justify-center mx-2"
                             >
                                 <img
                                     src={card.img}
                                     alt=""
                                     className="absolute w-full h-full object-cover"
                                 />
-                                <div className="relative z-10 text-center p-4 bg-opacity-40 rounded-full w-full h-full flex flex-col items-center justify-center">
+                                <div className="relative z-10 text-center p-2 md:p-4 bg-opacity-40 rounded-full w-full h-full flex flex-col items-center justify-center">
                                     {card.title && (
-                                        <h2 className="text-2xl md:text-3xl mb-1 font-bold text-white px-2">
+                                        <h2 className="text-lg md:text-2xl lg:text-3xl mb-1 font-bold text-white px-1 md:px-2">
                                             {card.title}
                                         </h2>
                                     )}
-
-                                    <p className="text-xs md:text-sm uppercase tracking-wider text-white px-2">
-                                        {card.content}
-                                    </p>
-
+                                    
+                                        <p className="text-[10px] md:text-xs uppercase tracking-wider text-white px-1">
+                                            {card.content}
+                                        </p>
+                                    
                                 </div>
                             </div>
                         ))}
@@ -325,7 +325,7 @@ export default function HomePage() {
                     </div> */}
                 </div>
                 <div className='flex flex-col md:flex-row  md:px-12'>
-                    <div className=" w-full text-white p-8 flex flex-col">
+                    <div className=" w-full text-white md:p-8 flex flex-col">
 
                         <div className='my-6 flex flex-col md:flex-row  gap-2 md:gap-6'>
                             {/* Card 1 */}
@@ -376,7 +376,7 @@ export default function HomePage() {
 
             <section className=" md:px-12 border-b-20 border-[#7852A9]">
 
-                <section className="relative px-12">
+                <section className="relative md:px-12">
                     <video
                         ref={videoRef2}
                         src="/videos/about.mp4"
@@ -415,68 +415,61 @@ export default function HomePage() {
                     </div>
 
                     {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-12 md:px-12 place-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-12 place-items-center">
                         {/* Card 1 */}
-                        <div className="rounded-full border-10 p-6 border-white">
-                            <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
+                        <div className="rounded-full border-4 md:border-10 p-3 md:p-6 border-white">
+                            <div className="shadow-lg text-center rounded-full border-2 border-[#00ffff] w-40 h-40 md:w-64 md:h-64 flex items-center justify-center">
                                 <div className="text-white">
                                     <div className="mx-auto">
                                         <img
-                                            width={100}
-                                            src="/icons/signal.png"
-                                            alt="ETHICAL FIRST-PARTY DATA"
-                                            className="mx-auto"
-                                        />
-                                    </div>
-                                    <div>
-                                        <p className="text-3xl">SIGNAL</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {/* Card 2 */}
-                        <div className="rounded-full border-10 p-6 border-white">
-                            <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
-                                <div className="text-white">
-                                    <div className="mx-auto">
-                                        <img
-                                            width={100}
-                                            src="/icons/delivery.png"
-                                            alt="ETHICAL FIRST-PARTY DATA"
-                                            className="mx-auto"
-                                        />
-                                    </div>
-                                    <div>
-                                        <p className="text-3xl">DELIVRY</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {/* Card 3 */}
-                        <div className="rounded-full border-10 p-6 border-white">
-                            <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
-                                <div className="text-white">
-                                    <div className="mx-auto">
-                                        <img
-                                            width={100}
                                             src="/icons/roi.png"
                                             alt="ETHICAL FIRST-PARTY DATA"
-                                            className="mx-auto"
+                                            className="mx-auto w-[60px] md:w-[100px]"
                                         />
                                     </div>
                                     <div>
-                                        <p className="text-3xl">ROI </p>
-                                        <p className='text-sm'>DASHBOARD</p>
+                                        <p className="text-xl md:text-3xl">SIGNAL</p>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
+                        {/* Card 2 */}
+                        <div className="rounded-full border-4 md:border-10 p-3 md:p-6 border-white">
+                            <div className="shadow-lg text-center rounded-full border-2 border-[#00ffff] w-40 h-40 md:w-64 md:h-64 flex items-center justify-center">
+                                <div className="text-white">
+                                    <div className="mx-auto">
+                                        <img
+                                            src="/icons/roi.png"
+                                            alt="ETHICAL FIRST-PARTY DATA"
+                                            className="mx-auto w-[60px] md:w-[100px]"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-xl md:text-3xl">DELIVERY</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="rounded-full border-4 md:border-10 p-3 md:p-6 border-white">
+                            <div className="shadow-lg text-center rounded-full border-2 border-[#00ffff] w-40 h-40 md:w-64 md:h-64 flex items-center justify-center">
+                                <div className="text-white">
+                                    <div className="mx-auto">
+                                        <img
+                                            src="/icons/roi.png"
+                                            alt="ETHICAL FIRST-PARTY DATA"
+                                            className="mx-auto w-[60px] md:w-[100px]"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm md:text-3xl">ROI</p>
+                                        <p className="text-xs md:text-sm">DASHBOARD</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

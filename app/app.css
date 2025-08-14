@@ -363,41 +363,43 @@ footer a {
 
  
 /* animations.css */
-@keyframes moveIn-first-left {
-  to {
-    transform: translate(-200px, 0);
+@media (min-width: 768px) {
+  @keyframes moveIn-first-left {
+    to {
+      transform: translate(-200px, 0);
+    }
   }
-}
 
-@keyframes moveIn-first-right {
-  to {
-    transform: translate(200px, 0);
+  @keyframes moveIn-first-right {
+    to {
+      transform: translate(200px, 0);
+    }
   }
-}
 
-/* Second row animations (300px) */
-@keyframes moveIn-second-left {
-  to {
-    transform: translate(-300px, 0);
+  /* Second row animations (300px) */
+  @keyframes moveIn-second-left {
+    to {
+      transform: translate(-300px, 0);
+    }
   }
-}
 
-@keyframes moveIn-second-right {
-  to {
-    transform: translate(300px, 0);
+  @keyframes moveIn-second-right {
+    to {
+      transform: translate(300px, 0);
+    }
   }
-}
 
-/* Third row animations (200px) */
-@keyframes moveIn-third-left {
-  to {
-    transform: translate(-200px, 0);
+  /* Third row animations (200px) */
+  @keyframes moveIn-third-left {
+    to {
+      transform: translate(-200px, 0);
+    }
   }
-}
 
-@keyframes moveIn-third-right {
-  to {
-    transform: translate(200px, 0);
+  @keyframes moveIn-third-right {
+    to {
+      transform: translate(200px, 0);
+    }
   }
 }
 

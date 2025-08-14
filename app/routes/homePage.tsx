@@ -211,11 +211,11 @@ export default function HomePage() {
 
 
 
-            <section className='p-12'>
+            <section className='p-6 md:p-12'>
 
-                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
+                <div className="w-full  md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
                 >
-                    <h1 className="text-center text-4xl mt-2 font-bold text-[#7852A9]">
+                    <h1 className="text-center text-3xl md:text-5xl mt-2 font-bold text-[#7852A9]">
                         AI-POWERED PIPELINE. BUILT THE RIGHT WAY.
                     </h1>
                     <p className="text-center text-1xl mt-2 text-white">
@@ -232,7 +232,7 @@ export default function HomePage() {
 
             </section>
             <section
-                className=" p-12 border-b-20 border-[#7852A9]"
+                className=" p-6 md:p-12 border-b-20 border-[#7852A9]"
                 style={{
                     backgroundImage: "url('/backgrounds/GALAXY 2.png')",
                     backgroundSize: 'cover',
@@ -242,7 +242,7 @@ export default function HomePage() {
             >
                 {/* Your content here */}
 
-                <div className="w-full mx-auto flex flex-col items-center justify-center m-6"
+                <div className="w-full mx-auto flex flex-col items-center justify-center md:m-6"
                 >
 
                     <div className='m-6 '>
@@ -306,11 +306,11 @@ export default function HomePage() {
                 </div>
 
             </section>
-            <section className='p-12'>
+            <section className='p-6 md:p-12'>
 
-                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center m-6"
+                <div className="w-full  mx-auto flex flex-col items-center justify-center md:m-6"
                 >
-                    <h1 className="text-center text-4xl mt-2 font-bold text-[#7852A9]">
+                    <h1 className="text-center text-2xl md:text-4xl mt-2 font-bold text-[#7852A9]">
                         DEMANDFUSION AI
                     </h1>
                     <p className="text-center text-1xl mt-2 text-white">
@@ -324,16 +324,16 @@ export default function HomePage() {
                         <button className="brand-button text-white">HOW IT WORKS</button>
                     </div> */}
                 </div>
-                <div className='flex flex-col md:flex-row gap-8 md:px-12'>
+                <div className='flex flex-col md:flex-row  md:px-12'>
                     <div className=" w-full text-white p-8 flex flex-col">
 
-                        <div className='my-6 flex flex-col md:flex-row gap-6'>
+                        <div className='my-6 flex flex-col md:flex-row  gap-2 md:gap-6'>
                             {/* Card 1 */}
-                            <div className="flex items-center bg-[#6A1B9A]  p-4">
+                            <div className="flex items-center bg-[#6A1B9A] p-2 md:p-4">
                                 <img
                                     src="/icons/Predictive Targeting.png"
                                     alt="Card 1"
-                                    className="w-16 h-16 object-cover rounded-md mr-4"
+                                    className="w-16 h-16 object-cover rounded-md mr-1 md:mr-4"
                                 />
                                 <div>
                                     <h3 className="text-lg font-bold text-[#00ffff]">PREDICTIVE TARGETING</h3>
@@ -345,7 +345,7 @@ export default function HomePage() {
                                 <img
                                     src="/icons/earth.png"
                                     alt="Card 1"
-                                    className="w-16 h-16 object-cover rounded-md mr-4"
+                                    className="w-16 h-16 object-cover rounded-md mr-1 md:mr-4"
                                 />
                                 <div>
                                     <h3 className="text-lg font-bold text-[#00ffff]">SIGNAL-DRIVEN DELIVERY</h3>
@@ -415,7 +415,7 @@ export default function HomePage() {
                     </div>
 
                     {/* Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 p-12 md:px-12 place-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-12 md:px-12 place-items-center">
                         {/* Card 1 */}
                         <div className="rounded-full border-10 p-6 border-white">
                             <div className="shadow-lg  text-center rounded-full border-2 border-[#00ffff] w-64 h-64 flex items-center justify-center">
@@ -490,12 +490,12 @@ export default function HomePage() {
             >
                 <Carousel />
             </section>
-            <section className=" container-fluid mx-auto py-12  text-white px-10">
+            <section className=" container-fluid mx-auto py-12  text-white md:px-10">
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 justify-center item-center px-4 md:px-10 ">
                     {/* Card 1 */}
                     <div className="rounded-xl shadow-lg  text-center ">
-                        <div className="m-1 text-white p-4 rounded-lg">
+                        <div className="m-1 text-white p-2 md:p-4 rounded-lg">
                             <div className="rounded-lg relative top-10 mx-auto">
                                 <img
                                     src="/icons/target smarter.png"
@@ -505,8 +505,8 @@ export default function HomePage() {
                             </div>
                             <div className='p-6 border-1 border-white rounded-xl '>
                                 <div className='relative top-10'>
-                                    <h2 className="text-2xl font-bold">TARGET SMARTER,</h2>
-                                    <h2 className="text-4xl font-extrabold text-[#7852A9]">ANYWHERE</h2>
+                                    <h2 className="text-xl md:text-2xl font-bold">TARGET SMARTER,</h2>
+                                    <h2 className="text-2xl md:text-4xl font-extrabold text-[#7852A9]">ANYWHERE</h2>
 
 
                                     <p className='font-rajdhani text-sm mt-3'>Whether you're focused on IT, Marketing, Finance – or targeting the US, EMEA, or APAC – we connect you to the right buyers, in the right moment.</p>
@@ -519,7 +519,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="rounded-xl shadow-lg  text-center ">
-                        <div className="m-1 text-white p-4 rounded-lg">
+                        <div className="m-1 text-white p-2 md:p-4 rounded-lg">
                             <div className="rounded-lg relative top-10 mx-auto">
                                 <img
                                     src="/icons/ready to build.png"
@@ -529,8 +529,8 @@ export default function HomePage() {
                             </div>
                             <div className='p-6 border-1 border-white rounded-xl '>
                                 <div className='relative top-10'>
-                                    <h2 className="text-2xl font-bold">READY TO BUILD</h2>
-                                    <h2 className="text-4xl font-extrabold text-[#7852A9]">SMARTER PIPELINE?</h2>
+                                    <h2 className="text-xl md:text-2xl font-bold">READY TO BUILD</h2>
+                                    <h2 className="text-2xl md:text-4xl font-extrabold text-[#7852A9]">SMARTER PIPELINE?</h2>
 
 
                                     <p className='font-rajdhani text-sm mt-3'>Let's create demand that drives real outcomes.</p>

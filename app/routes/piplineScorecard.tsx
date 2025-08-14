@@ -76,24 +76,21 @@ export default function ScoreCard() {
     return (
         <>
         <Navbar/>
-            <section className='p-12 text-white border-b-20 border-[#7852A9]'>
-                <div className='w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col p-12 justify-center text-center'>
-                    <h1 className='text-6xl md:px-[10rem] text-[#7852A9]'>PIPELINE PERFORMANCE SCORECARD</h1>
-                    <h2 className='text-3xl my-6'><b>IS YOUR PIPELINE BUILT FOR SCALE — OR <span className='text-[#00ffff]'>JUST NOISE</span>?</b></h2>
-                    <p className='my-6 text-xl'>
-                        Take this quick, 2-minute self-assessment to uncover how your pipeline really stacks up. From lead quality to tech efficiency and ROI visibility, this scorecard helps B2B growth teams pinpoint where they're optimized – and where they're leaking revenue.
-                    </p>
-                    <p className='my-6 text-xl'>
-                        No fluff. Just a clear, honest look at how ready your funnel is to scale.
+            <section className='p-4 md:p-12 text-white border-b-20 border-[#7852A9]'>
+                <div className='w-full md:max-w-[75%] mx-auto flex flex-col p-2 md:p-12 justify-center text-center'>
+                    <h1 className='text-xl md:text-6xl md:px-[10rem] text-[#7852A9]'>PIPELINE PERFORMANCE SCORECARD</h1>
+                    <h2 className='text-lg md:text-3xl my-4 md:my-6'><b>IS YOUR PIPELINE BUILT FOR SCALE — OR <span className='text-[#00ffff]'>JUST NOISE</span>?</b></h2>
+                    <p className='my-4 md:my-6 text-sm md:text-xl'>
+                        Take this quick, 2-minute self-assessment to uncover how your pipeline really stacks up.
                     </p>
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-4 px-12'>
-
-                    <div className="md:w-3/4 w-full bg-white text-black px-8 py-4  ">
-                        <h1 className='text-2xl p-3 text-[#7852A9] border-b-3 border-[#00ffff]'>
+                <div className='flex flex-col md:flex-row gap-2 md:gap-4 px-1 md:px-12'>
+                    <div className="md:w-3/4 w-full bg-white text-black px-2 md:px-8 py-4">
+                        <h1 className='text-xl md:text-2xl p-3 text-[#7852A9] border-b-3 border-[#00ffff]'>
                             SCORING BREAKDOWN
                         </h1>
+                        <div className="overflow-x-auto md:overflow-x-visible -mx-2 md:mx-0">
                         <table className="min-w-full bg-white rounded-lg">
                             <thead>
                                 <tr>
@@ -159,9 +156,9 @@ export default function ScoreCard() {
                                 </tr>
                             </tbody>
                         </table>
-
+                        </div>
                     </div>
-                    <div className="md:w-1/4 w-full bg-white text-black py-4 px-4 ">
+                    <div className="md:w-1/4 w-full bg-white text-black py-4 px-2 md:px-4">
                         <h1 className='text-2xl p-3 text-[#7852A9] border-b-2 border-[#00ffff]'>
                             SCORING BREAKDOWN
                         </h1>
@@ -205,17 +202,11 @@ export default function ScoreCard() {
                 </div>
 
             </section>
-            <section className='p-12' style={{
-                backgroundImage: "url('/backgrounds/GALAXY 3.png')",
-                backgroundSize: 'cover',
-            }}>
-                <div className=" text-white px-8 py-4">
-
-
-
-                    {sections.map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="mb-8 p-8 my-6 bg-black">
-                            <h2 className='text-xl p-3 text-white border-b-2 border-[#00ffff]'>
+          <section className='p-4 md:p-12' style={{ backgroundImage: "url('/backgrounds/GALAXY 3.png')" }}>
+    <div className="text-white px-2 md:px-8 py-4">
+        {sections.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="mb-4 md:mb-8 p-4 md:p-8 my-4 md:my-6 bg-black">
+                <h2 className='text-lg md:text-xl p-2 md:p-3 text-white border-b-2 border-[#00ffff]'>
                                 <b> <span className='text-[#7852A9]'>{section.sectionNumber}</span> {section.title}</b>
                             </h2>
 
@@ -261,79 +252,81 @@ export default function ScoreCard() {
 
                 
                 </div>
-                <div className='flex flex-col md:flex-row gap-4 px-12'>
-
-                    <div className="md:w-3/4 w-full text-white px-8 py-4  bg-black">
-                        <h1 className='text-2xl p-3 text-[#00ffff] border-b-3 border-[#00ffff]'>
+                <div className='flex flex-col md:flex-row gap-2 md:gap-4 px-2 md:px-12'>
+                    <div className="md:w-3/4 w-full text-white px-2 md:px-8 py-4 bg-black">
+                        <h1 className='text-xl md:text-2xl p-2 md:p-3 text-[#00ffff] border-b-3 border-[#00ffff]'>
                             SCORING BREAKDOWN
                         </h1>
-                        <table className="min-w-full rounded-lg">
-                            <thead>
-                                <tr>
-                                    <th
-                                        className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
-                                        style={{
-                                            borderBottomColor: '#7852A9',
-                                            borderBottomWidth: '2px',
-                                            borderBottomStyle: 'solid',
-                                        }}
-                                    >
-                                        Score Range
-                                    </th>
-                                    <th
-                                        className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
-                                        style={{
-                                            borderBottomColor: '#7852A9',
-                                            borderBottomWidth: '2px',
-                                            borderBottomStyle: 'solid',
-                                        }}
-                                    >
-                                        Pipeline Profile
-                                    </th>
-                                    <th
-                                        className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
-                                        style={{
-                                            borderBottomColor: '#7852A9',
-                                            borderBottomWidth: '2px',
-                                            borderBottomStyle: 'solid',
-                                        }}
-                                    >
-                                        Recommended Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>60 - 75</td>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Elite Pipeline Machine</td>
-                                    <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>You're optimized – let's scale you up with AI</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>40 - 59</td>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Solid but Leaking</td>
-                                    <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Strong core, but optimization gaps exist</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>20 - 39</td>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Underperforming</td>
-                                    <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Major inefficiencies – AI can transform this</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white">
-                                        Below 20
-                                    </td>
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm text-white">
-                                        Reactive & Risky
-                                    </td>
-                                    <td className="px-6 py-2 text-sm text-white">
-                                        Time for a pipeline reset – let's talk now!
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className="overflow-x-auto md:overflow-x-visible -mx-2 md:mx-0">
+                            <table className="min-w-full rounded-lg">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
+                                            style={{
+                                                borderBottomColor: '#7852A9',
+                                                borderBottomWidth: '2px',
+                                                borderBottomStyle: 'solid',
+                                            }}
+                                        >
+                                            Score Range
+                                        </th>
+                                        <th
+                                            className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
+                                            style={{
+                                                borderBottomColor: '#7852A9',
+                                                borderBottomWidth: '2px',
+                                                borderBottomStyle: 'solid',
+                                            }}
+                                        >
+                                            Pipeline Profile
+                                        </th>
+                                        <th
+                                            className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider border-b-4"
+                                            style={{
+                                                borderBottomColor: '#7852A9',
+                                                borderBottomWidth: '2px',
+                                                borderBottomStyle: 'solid',
+                                            }}
+                                        >
+                                            Recommended Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>60 - 75</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Elite Pipeline Machine</td>
+                                        <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>You're optimized – let's scale you up with AI</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>40 - 59</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Solid but Leaking</td>
+                                        <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Strong core, but optimization gaps exist</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>20 - 39</td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Underperforming</td>
+                                        <td className="px-6 py-2 text-sm text-white border-b" style={{ borderBottomColor: '#7852A9', borderBottomWidth: '2px', borderBottomStyle: 'solid' }}>Major inefficiencies – AI can transform this</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-white">
+                                            Below 20
+                                        </td>
+                                        <td className="px-6 py-2 whitespace-nowrap text-sm text-white">
+                                            Reactive & Risky
+                                        </td>
+                                        <td className="px-6 py-2 text-sm text-white">
+                                            Time for a pipeline reset – let's talk now!
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                       
 
                     </div>
-                    <div className="md:w-1/4 w-full bg-black text-white py-4 px-4 ">
+                    <div className="md:w-1/4 w-full bg-black text-white py-4 px-2 md:px-4">
                         <div className="mt-8 p-4  rounded-lg">
                             <h3 className="text-2xl text-[#00ffff] mb-2">Your Total Score: {totalScore}</h3>
                             <p className="text-xl">
@@ -357,10 +350,9 @@ export default function ScoreCard() {
 
                     </div>
                 </div>
-                <div className="w-full max-w-[75%] md:max-w-[75%] mx-auto flex flex-col items-center justify-center p-12">
-                   
-                    <h1 className="text-center text-3xl mt-4 font-bold text-[#7852A9]">
-                        WANT A PERSONALIZED  <span className="text-white">AI-DRIVEN PIPELINE AUDIT?</span>
+                <div className="w-full max-w-full md:max-w-[75%] mx-auto flex flex-col items-center justify-center p-4 md:p-12">
+                    <h1 className="text-center text-xl md:text-3xl mt-2 md:mt-4 font-bold text-[#7852A9]">
+                        WANT A PERSONALIZED <span className="text-white">AI-DRIVEN PIPELINE AUDIT?</span>
                     </h1>
                     <p className="text-center text-lg text-white">
                         Let TDXPAND analyze your lead sources, conversion flows, and ROI opportunities:

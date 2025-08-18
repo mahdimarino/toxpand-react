@@ -201,10 +201,10 @@ export default function globalReach() {
                 backgroundImage: "url('/backgrounds/GALAXY 3.png')",
                 backgroundSize: 'cover',
             }}>
-                <div className='flex flex-col gap-6 md:gap-12 md:flex-row px-4 md:px-12 m-2 md:m-3'>
+                <div className='flex flex-col gap-6 md:gap-12 md:flex-row px-1 md:px-12 m-2 md:m-3'>
                     <div style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    }} className="w-full  text-white p-6 md:p-12 flex flex-col border-solid border-[rgba(255,255,255,0.6)] border rounded-xl md:rounded-2xl">
+                    }} className="w-full  text-white p-4 md:p-12 flex flex-col border-solid border-[rgba(255,255,255,0.6)] border rounded-xl md:rounded-2xl">
                         <h1 className="text-center text-xl md:text-4xl mt-2 font-bold text-[#7852A9]">
                             THE PEOPLE BEHIND THE DATA
                         </h1>
@@ -233,7 +233,7 @@ export default function globalReach() {
                     </div>
                     <div style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    }} className="w-full text-white p-6 md:p-12 flex flex-col border-solid border-[rgba(255,255,255,0.6)] border rounded-xl md:rounded-2xl">
+                    }} className="w-full text-white p-4 md:p-12 flex flex-col border-solid border-[rgba(255,255,255,0.6)] border rounded-xl md:rounded-2xl">
                         <h1 className="text-center text-xl md:text-4xl mt-2 font-bold text-[#7852A9]">
                             INDUSTRY PENETRATION
                         </h1>

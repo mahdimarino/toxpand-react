@@ -17,15 +17,15 @@ export default function RealTimeInsights() {
                     // Ensures the section is tall enough to show the bottom
                 }}
             >
-                <div className='p-12'>
-                    <h1 className='my-6 text-white text-5xl'><b>REAL-TIME <span className='text-[#7852A9]'>INSIGHTS</span></b></h1>
+                <div className='p-2 md:p-12'>
+                    <h1 className='my-6 text-white text-2xl md:text-5xl'><b>REAL-TIME <span className='text-[#7852A9]'>INSIGHTS</span></b></h1>
                     <p className='my-6 text-xl text-white'>Get Closer to the Signal. Monthly</p>
                     <p className='my-6 text-white'>We don’t just reach your buyers – we understand them. Every month, we surface fresh behavioral intelligence from our 62M+ first-party subscribers. <br /> What they’re searching for. What content they’re consuming. Who’s engaging, and how.</p>
                     <p className='my-6 text-white'>These aren’t static personas – these are real people, in motion. And this is how they’re behaving, right now.</p>
 
                 </div>
             </section>
-            <section className="px-6 md:px-12" style={{
+            <section className="px-1 md:px-12" style={{
                 backgroundImage: "url('/backgrounds/GALAXY 3.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center', // This will align the bottom of the image with the bottom of the container
@@ -41,14 +41,14 @@ export default function RealTimeInsights() {
                 </div>
                 <div className='flex flex-col md:flex-row gap-4 px-4 md:px-12'>
                     <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center justify-center">
-                        <h1 className='text-3xl font-bold text-white'>
+                        <h1 className='text-xl md:text-3xl font-bold text-white'>
                             TOP SURGING INTENT KEYWORDS
                         </h1>
                         <p className='text-white'>
                             (By Job Function)
                         </p>
 
-                        <div className='my-6 flex flex-col px-6 border-b-2 border-white'>
+                        <div className='my-6 flex flex-col px-1 md:px-6 border-b-2 border-white'>
                             <div className="flex justify-end">
                                 <div className="flex justify-center p-4 bg-[#2F3D86] w-[55%]">
                                     <p className="text-sm text-white">Trending Keywords</p>
@@ -99,63 +99,61 @@ export default function RealTimeInsights() {
                         </p>
 
                     </div>
-                    <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center justify-center">
-                        <h1 className='text-3xl text-white'>
+                    <div className="md:w-1/2 w-full bg-black text-black p-2 md:p-8 flex flex-col items-center justify-center">
+                        <h1 className='text-xl md:text-3xl text-white'>
                             TOP ENGAGEMENT BY COMPANY SIZE
                         </h1>
 
                         <div className='my-6 flex flex-col gap-3'>
-                            {/* Header Row */}
-                            <div className="grid grid-cols-[100px_200px_1fr] items-center text-white p-4 border-b border-[#2F3D86] rounded-tl-4xl">
+                            {/* Header Row - Hidden on small screens */}
+                            <div className="hidden md:grid grid-cols-[100px_200px_1fr] items-center text-white p-4 border-b border-[#2F3D86] rounded-tl-4xl">
                                 <div className="w-[100px] rounded-full overflow-hidden"></div>
                                 <h3 className="text-lg font-bold text-[#00ffff]">Industry</h3>
                                 <p className="text-lg font-bold text-white">Engagement Highlights</p>
                             </div>
 
                             {/* Card 1 */}
-                            <div className="grid grid-cols-[100px_200px_1fr] items-center bg-[#3f51b5]  border-b border-[#2F3D86]  rounded-l-[100px] pr-2">
-                                <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
+                            <div className="flex flex-col md:grid md:grid-cols-[100px_200px_1fr] items-center bg-[#3f51b5] border-b border-[#2F3D86] md:rounded-l-[100px] md:pr-2 p-4 md:p-0">
+                                <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden mx-auto md:mx-0">
                                     <img src="/icons/Healthcaret.png" alt="Healthcare" className="w-full h-full object-cover" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00ffff] pl-4">Healthcare</h3>
-                                <p className="text-md text-white">Strong AI/Automation content performance</p>
+                                <h3 className="text-lg font-bold text-[#00ffff] text-center md:text-left md:pl-4 mt-2 md:mt-0">Healthcare</h3>
+                                <p className="text-md text-white text-center md:text-left mt-2 md:mt-0">Strong AI/Automation content performance</p>
                             </div>
 
                             {/* Card 2 */}
-                            <div className="grid grid-cols-[100px_200px_1fr] items-center bg-[#6a1b9a]  border-b border-[#2F3D86]  rounded-l-[100px] pr-2">
-                                <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
+                            <div className="flex flex-col md:grid md:grid-cols-[100px_200px_1fr] items-center bg-[#6a1b9a] border-b border-[#2F3D86] md:rounded-l-[100px] md:pr-2 p-4 md:p-0">
+                                <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden mx-auto md:mx-0">
                                     <img src="/icons/Financial Servicest.png" alt="Financial Services" className="w-full h-full object-cover" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00ffff] pl-4">Financial Services</h3>
-                                <p className="text-md text-white">High interest in compliance + risk materials</p>
+                                <h3 className="text-lg font-bold text-[#00ffff] text-center md:text-left md:pl-4 mt-2 md:mt-0">Financial Services</h3>
+                                <p className="text-md text-white text-center md:text-left mt-2 md:mt-0">High interest in compliance + risk materials</p>
                             </div>
 
                             {/* Card 3 */}
-                            <div className="grid grid-cols-[100px_200px_1fr] items-center bg-[#7851a9]  border-b border-[#2F3D86]  rounded-l-[100px] pr-2">
-                                <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
+                            <div className="flex flex-col md:grid md:grid-cols-[100px_200px_1fr] items-center bg-[#7851a9] border-b border-[#2F3D86] md:rounded-l-[100px] md:pr-2 p-4 md:p-0">
+                                <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden mx-auto md:mx-0">
                                     <img src="/icons/Manufacturingt.png" alt="Manufacturing" className="w-full h-full object-cover" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00ffff] pl-4">Manufacturing</h3>
-                                <p className="text-md text-white">Surging research in digital twins, IoT</p>
+                                <h3 className="text-lg font-bold text-[#00ffff] text-center md:text-left md:pl-4 mt-2 md:mt-0">Manufacturing</h3>
+                                <p className="text-md text-white text-center md:text-left mt-2 md:mt-0">Surging research in digital twins, IoT</p>
                             </div>
 
                             {/* Card 4 */}
-                            <div className="grid grid-cols-[100px_200px_1fr] items-center bg-[#9c27b0]  border-b border-[#2F3D86]  rounded-l-[100px] pr-2">
-
-                                <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
+                            <div className="flex flex-col md:grid md:grid-cols-[100px_200px_1fr] items-center bg-[#9c27b0] border-b border-[#2F3D86] md:rounded-l-[100px] md:pr-2 p-4 md:p-0">
+                                <div className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden mx-auto md:mx-0">
                                     <img src="/icons/Technologyt.png" alt="Technology" className="w-full h-full object-cover" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00ffff] pl-4">Technology</h3>
-                                <p className="text-md text-white">Always-on demand for product comparisons</p>
+                                <h3 className="text-lg font-bold text-[#00ffff] text-center md:text-left md:pl-4 mt-2 md:mt-0">Technology</h3>
+                                <p className="text-md text-white text-center md:text-left mt-2 md:mt-0">Always-on demand for product comparisons</p>
                             </div>
-
                         </div>
 
                     </div>
                 </div>
-                <div className='flex flex-col md:flex-row gap-4 px-4 md:px-12 mt-6'>
-                    <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center ">
-                        <h1 className='text-3xl font-bold text-white'>
+                <div className='flex flex-col md:flex-row gap-4 px-1 md:px-12 mt-6'>
+                    <div className="md:w-1/2 w-full bg-black text-black p-2 md:p-8 flex flex-col items-center ">
+                        <h1 className='text-xl md:text-3xl font-bold text-white'>
                             Top Performing Content Types
                         </h1>
                         <p className='text-white text-xl'>
@@ -207,7 +205,7 @@ export default function RealTimeInsights() {
                         </div>
 
 
-                        <p className='text-[#00ffff] text-2xl px-6'>
+                        <p className='text-[#00ffff] text-xl md;text-2xl px-2 md:px-6'>
                             <b>
                                 "Interactive formats like webinars and benchmarks consistently outperform static PDFs across senior-level tech audiences."
 
@@ -217,7 +215,7 @@ export default function RealTimeInsights() {
                     </div>
                     <div className="md:w-1/2 w-full text-black gap-4  flex flex-col items-center justify-center">
                         <div className="py-6 w-full bg-black text-black  flex flex-col items-center justify-center">
-                            <h1 className='text-3xl font-bold text-white'>
+                            <h1 className='text-xl md:text-3xl font-bold text-white'>
                                 Top Engagement by Company Size
                             </h1>
 
@@ -269,7 +267,7 @@ export default function RealTimeInsights() {
 
                         </div>
                         <div className="py-6 w-full bg-black text-black  flex flex-col items-center justify-center">
-                            <h1 className='text-3xl font-bold text-white'>
+                            <h1 className='text-xl md:text-3xl font-bold text-white'>
                                 Top Engagement by Job Level Title
                             </h1>
 
@@ -322,8 +320,8 @@ export default function RealTimeInsights() {
                         </div>
                     </div>
                 </div>
-                <section className='p-12'>
-                    <div className='p-4 border-2 border-[#00ffff]'>
+                <section className='p-2 md:p-12'>
+                    <div className='md:p-4 border-2 border-[#00ffff]'>
                         <div className="w-full max-w-full bg-black border-white mx-auto flex flex-col items-center justify-center py-6 ">
                             <div className="w-full max-w-full  mx-auto flex flex-col items-center justify-center py-6 md:py-12">
                                 <h1 className="text-center text-2xl md:text-3xl text-white">

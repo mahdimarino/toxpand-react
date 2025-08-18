@@ -341,7 +341,7 @@ export default function HomePage() {
                                 </div>
                             </div>
                             {/* Card 2 */}
-                            <div className="flex items-center bg-[#6A1B9A]  p-4">
+                            <div className="flex items-center bg-[#6A1B9A]  p-2 md:p-4">
                                 <img
                                     src="/icons/earth.png"
                                     alt="Card 1"
@@ -353,7 +353,7 @@ export default function HomePage() {
                                 </div>
                             </div>
                             {/* Card 3 */}
-                            <div className="flex items-center bg-[#6A1B9A]  p-4">
+                            <div className="flex items-center bg-[#6A1B9A]  p-2 md:p-4">
                                 <img
                                     src="/icons/Performance Reference.png"
                                     alt="Card 1"

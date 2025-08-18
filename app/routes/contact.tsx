@@ -217,7 +217,7 @@ export default function Contact() {
 
 
                     <div className="w-full max-w-full md:max-w-[75%] mx-auto border p-2 md:p-3 border-[#00ffff]">
-                        <div className="bg-white p-4 md:p-12">
+                        <div className="bg-white  md:p-12">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Section 1: Contact Information */}
                             <div className="p-6 bg-gray-50 rounded-lg border-l-4 border-[#00ffff]">

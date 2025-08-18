@@ -50,7 +50,7 @@ export function Navbar() {
                     {/* Column 2 - Navigation Links */}
                     <div className="w-full hidden md:block md:flex-1 md:w-3/4 ">
                         {/* Row 1 - 3 Links + 2 Buttons */}
-                        <div className="flex flex-col md:flex-row items-center gap-13  space-y-2 py-4 md:space-y-0">
+                        <div className="flex flex-col md:flex-row items-center md:gap-13  space-y-2 py-4 md:space-y-0">
                             <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
                             <a href="">|</a>
                             <a href="/RoiCalculator" className="text-sm hover:text-[#9A2CAD]">ROI CALCULATOR</a>

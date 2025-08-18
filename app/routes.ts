@@ -12,6 +12,14 @@ export default [
     route("EngagementTactics","routes/engagement_tactics.tsx"),
     route("RequestProposal","routes/requestProposal.tsx"),
     route("Contact","routes/contact.tsx"),
+    route("TermsAndConditions","routes/terms-and-conditions.tsx"),
+    route("DoNotSellMyInfo","routes/doNotSellMyInfo.tsx"),
+
+
+   
+
+
+    
 
 
 

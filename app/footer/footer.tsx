@@ -22,10 +22,10 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold mb-2 md:mb-4 text-lg">Company</h3>
                         <ul className="space-y-2 mt-2 md:mt-4">
-                            <li><a href="/about" className="hover:underline text-sm md:text-base">Awards</a></li>
+                            <li><a href="/Home" className="hover:underline text-sm md:text-base">Home</a></li>
                             <li><a href="/careers" className="hover:underline text-sm md:text-base">Careers</a></li>
-                            <li><a href="/contact" className="hover:underline text-sm md:text-base">About us</a></li>
-                            <li><a href="/contact" className="hover:underline text-sm md:text-base">FAQs</a></li>
+                            <li><a href="/About" className="hover:underline text-sm md:text-base">About us</a></li>
+                            <li><a href="/Fandq" className="hover:underline text-sm md:text-base">FAQs</a></li>
                         </ul>
                     </div>
 
@@ -33,10 +33,10 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold mb-2 md:mb-4 text-lg">Quick Links</h3>
                         <ul className="space-y-2 mt-2 md:mt-4">
-                            <li><a href="/lead-generation" className="hover:underline text-sm md:text-base">Engagement Tactics</a></li>
-                            <li><a href="/email-marketing" className="hover:underline text-sm md:text-base">Global Reach</a></li>
-                            <li><a href="/consulting" className="hover:underline text-sm md:text-base">Real-Time Insights</a></li>
-                            <li><a href="/consulting" className="hover:underline text-sm md:text-base">Pipeline Performance Scorecard</a></li>
+                            <li><a href="/EngagementTactics" className="hover:underline text-sm md:text-base">Engagement Tactics</a></li>
+                            <li><a href="/globalReach" className="hover:underline text-sm md:text-base">Global Reach</a></li>
+                            <li><a href="/RealTimeInsights" className="hover:underline text-sm md:text-base">Real-Time Insights</a></li>
+                            <li><a href="/ScoreCard" className="hover:underline text-sm md:text-base">Pipeline Performance Scorecard</a></li>
                         </ul>
                     </div>
 
@@ -57,9 +57,9 @@ export function Footer() {
                             </button>
                         </form>
                         <ul className="space-y-2 mt-4 md:mt-6">
-                            <li><a href="/blog" className="hover:underline text-sm md:text-base">ROI Calculator</a></li>
-                            <li><a href="/newsletter" className="hover:underline text-sm md:text-base">Request Proposal</a></li>
-                            <li><a href="/privacy-policy" className="hover:underline text-sm md:text-base">Schedule a Call</a></li>
+                            <li><a href="/RoiCalculator" className="hover:underline text-sm md:text-base">ROI Calculator</a></li>
+                            <li><a href="/RequestProposal" className="hover:underline text-sm md:text-base">Request Proposal</a></li>
+                            <li><a href="/Contact" className="hover:underline text-sm md:text-base">Schedule a Call</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,12 +72,12 @@ export function Footer() {
                 </div>
                 <div className="flex md:justify-center">
                     <div className="flex flex-col md:flex-row md:items-center gap-3  space-y-2 md:space-y-0">
-                        <a href="/Fandq" className="text-sm hover:text-[#9A2CAD]"> Privacy Policy</a>
+                        <a href="/https://app.termly.io/policy-viewer/policy.html?policyUUID=26cb9492-d883-4376-af54-14d5aeca132c" className="text-sm hover:text-[#9A2CAD]"> Privacy Policy</a>
                         <p className='hidden md:block'>|</p>
-                        <a href="/RoiCalculator" className="text-sm hover:text-[#9A2CAD]">Terms of Service</a>
+                        <a href="/TermsAndConditions" className="text-sm hover:text-[#9A2CAD]">Terms & Conditions</a>
                         <p className='hidden md:block'>|</p>
 
-                        <a href="/ScoreCard" className="text-sm hover:text-[#9A2CAD]">Cookie Policy</a>
+                        <a href="/doNotSellMyInfo" className="text-sm hover:text-[#9A2CAD]">Personal Information</a>
                     </div>
                 </div>
                 <div className="flex md:justify-end">

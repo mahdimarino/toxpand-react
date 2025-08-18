@@ -223,7 +223,7 @@ export default function CampaignBookingForm() {
                         <h1 className="text-center text-3xl md:text-5xl mt-2 text-white">
                             Book Your <span className='text-[#7852A9]'>Campaign</span>
                         </h1>
-                        <div className='mt-3 px-4 text-center'>
+                        <div className='mt-3 md:px-4 text-center'>
                             <p className="text-xl md:text-2xl mt-4 md:mt-6 text-white">
                                 <b>Fill out the form below to get started with your customized marketing campaign</b>
                             </p>
@@ -234,7 +234,7 @@ export default function CampaignBookingForm() {
 
 
                     <div className="w-full max-w-full md:max-w-[75%] mx-auto border p-2 md:p-3 border-[#00ffff]">
-                        <div className="p-4 md:p-12">
+                        <div className=" md:p-12">
                             <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Section 1: Contact Information */}
                             <div className="p-6 bg-gray-50 rounded-lg border-l-4 border-[#00ffff]">

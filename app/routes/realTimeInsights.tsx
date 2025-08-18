@@ -205,7 +205,7 @@ export default function RealTimeInsights() {
                         </div>
 
 
-                        <p className='text-[#00ffff] text-xl md;text-2xl px-2 md:px-6'>
+                        <p className='text-[#00ffff] md:text-xl md;text-2xl px-2 md:px-6'>
                             <b>
                                 "Interactive formats like webinars and benchmarks consistently outperform static PDFs across senior-level tech audiences."
 
@@ -327,7 +327,7 @@ export default function RealTimeInsights() {
                                 <h1 className="text-center text-2xl md:text-3xl text-white">
                                     SIGNAL HIGHLIGHTS <span className='text-[#7852A9]'>& TAKEAWAYS</span>
                                 </h1>
-                                <p className='text-white'>
+                                <p className='text-white text-center'>
                                     (A few editorial-style callouts, refreshed monthly)
                                 </p>
                             </div>
@@ -335,21 +335,21 @@ export default function RealTimeInsights() {
                             <div className='flex flex-col md:flex-row gap-4 p-4 md:px-12'>
                                 {/* Cybersecurity Card */}
                                 <div className="bg-[#D6D6D8] rounded-lg p-6 text-black text-center flex-1 min-h-[180px]">
-                                    <p className="text-xl leading-relaxed">
+                                    <p className="text-xl md:leading-relaxed">
                                         "Content featuring Zero Trust frameworks saw a 61% engagement increase among VP+ roles in financial services."
                                     </p>
                                 </div>
 
                                 {/* HR Tech Card */}
                                 <div className="bg-[#D6D6D8] rounded-lg p-6 text-black text-center flex-1 min-h-[180px]">
-                                    <p className="text-xl leading-relaxed">
+                                    <p className="text-xl md:leading-relaxed">
                                         "We're tracking increased demand for AI in workforce planning among HR professionals at mid-sized firms."
                                     </p>
                                 </div>
 
                                 {/* Marketing Card */}
                                 <div className="bg-[#D6D6D8] rounded-lg p-6 text-black text-center flex-1 min-h-[180px]">
-                                    <p className="text-xl leading-relaxed">
+                                    <p className="text-xl md:leading-relaxed">
                                         "Directors of Marketing are 2.3x more likely to engage with ABM content tagged with predictive intelligence."
                                     </p>
                                 </div>

@@ -47,7 +47,7 @@ export default function globalReach() {
                 <div className='flex flex-col md:flex-row gap-4 px-4 md:px-12'>
                     <div className="md:w-1/3 w-full bg-white text-black p-4 md:p-8 flex flex-col items-center justify-center">
                         <p className='mb-4 text-center text-sm md:text-base'>
-                            hello my name is mahdi and I'm developing a new project that will revolutionize the way new project that will revolutionize the way
+                            Select your target Job Function and Geography to see how many subscribers we have in your market
                         </p>
                         <div className='my-4 md:my-6 w-full'>
                             <select className="w-full border-0 border-t-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base">

@@ -40,7 +40,9 @@ export default function RealTimeInsights() {
                     </p>
                 </div>
                 <div className='flex flex-col md:flex-row gap-4 px-4 md:px-12'>
-                    <div className="md:w-1/2 w-full bg-black text-black p-4 md:p-8 flex flex-col items-center justify-center">
+                    <div style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    }} className="md:w-1/2 w-full text-black p-4 md:p-8 flex flex-col items-center justify-center">
                         <h1 className='text-xl md:text-3xl font-bold text-white'>
                             TOP SURGING INTENT KEYWORDS
                         </h1>
@@ -99,7 +101,9 @@ export default function RealTimeInsights() {
                         </p>
 
                     </div>
-                    <div className="md:w-1/2 w-full bg-black text-black p-2 md:p-8 flex flex-col items-center justify-center">
+                    <div style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    }} className="md:w-1/2 w-full  text-black p-2 md:p-8 flex flex-col items-center justify-center">
                         <h1 className='text-xl md:text-3xl text-white'>
                             TOP ENGAGEMENT BY COMPANY SIZE
                         </h1>
@@ -151,8 +155,10 @@ export default function RealTimeInsights() {
 
                     </div>
                 </div>
-                <div className='flex flex-col md:flex-row gap-4 px-1 md:px-12 mt-6'>
-                    <div className="md:w-1/2 w-full bg-black text-black p-2 md:p-8 flex flex-col items-center ">
+                <div  className='flex flex-col md:flex-row gap-4 px-1 md:px-12 mt-6'>
+                    <div style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    }} className="md:w-1/2 w-full text-black p-2 md:p-8 flex flex-col items-center ">
                         <h1 className='text-xl md:text-3xl font-bold text-white'>
                             Top Performing Content Types
                         </h1>
@@ -213,8 +219,10 @@ export default function RealTimeInsights() {
                         </p>
 
                     </div>
-                    <div className="md:w-1/2 w-full text-black gap-4  flex flex-col items-center justify-center">
-                        <div className="py-6 w-full bg-black text-black  flex flex-col items-center justify-center">
+                    <div  className="md:w-1/2 w-full text-black gap-4  flex flex-col items-center justify-center">
+                        <div style={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        }} className="py-6 w-full  text-black  flex flex-col items-center justify-center">
                             <h1 className='text-xl md:text-3xl font-bold text-white'>
                                 Top Engagement by Company Size
                             </h1>
@@ -266,7 +274,9 @@ export default function RealTimeInsights() {
                             </div>
 
                         </div>
-                        <div className="py-6 w-full bg-black text-black  flex flex-col items-center justify-center">
+                        <div style={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        }} className="py-6 w-full text-black  flex flex-col items-center justify-center">
                             <h1 className='text-xl md:text-3xl font-bold text-white'>
                                 Top Engagement by Job Level Title
                             </h1>
@@ -322,7 +332,9 @@ export default function RealTimeInsights() {
                 </div>
                 <section className='p-2 md:p-12'>
                     <div className='md:p-4 border-2 border-[#00ffff]'>
-                        <div className="w-full max-w-full bg-black border-white mx-auto flex flex-col items-center justify-center py-6 ">
+                        <div style={{
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        }} className="w-full max-w-full  border-white mx-auto flex flex-col items-center justify-center py-6 ">
                             <div className="w-full max-w-full  mx-auto flex flex-col items-center justify-center py-6 md:py-12">
                                 <h1 className="text-center text-2xl md:text-3xl text-white">
                                     SIGNAL HIGHLIGHTS <span className='text-[#7852A9]'>& TAKEAWAYS</span>

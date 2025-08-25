@@ -11,11 +11,11 @@ export function Navbar() {
                 <div className="flex flex-col md:flex-row items-center px-12">
 
                     {/* Column 1 - Logo */}
-                    <div className="w-full md:w-1/4 mb-4 md:mb-0 flex items-center justify-between">
+                    <div className="w-full md:w-1/4 mb-4 md:mb-0 flex items-center pl-6">
                         {/* Logo */}
                         <div className="md:h-12 w-20 md:w-40 flex items-center justify-center rounded">
                             <img
-                                src="https://toxpand.com/assets/images/icons/xlogo2light.png"
+                                src="/backgrounds/xlogo2light.webp"
                                 alt=""
                             />
                         </div>

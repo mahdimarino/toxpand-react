@@ -56,127 +56,130 @@ export default function About() {
             </section> */}
 
             {/* About Us Section */}
-            <section className="p-6 md:p-12 text-white bg-black">
-                <div className="max-w-7xl mx-auto">
-                    <div className="mb-8 md:mb-12">
-                        <h1 className='text-3xl md:text-5xl font-bold'>ABOUT US</h1>
-                    </div>
+            <div style={{
+                backgroundImage: 'url("/backgrounds/bgabout.jpg")',
+                backgroundSize: 'cover',}}>
+                <section className="p-6 md:p-12 text-white ">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="mb-8 md:mb-12">
+                            <h1 className='text-3xl md:text-5xl font-bold'>ABOUT US</h1>
+                        </div>
 
-                    <div>
-                        <h2 className='text-xl md:text-2xl mt-4 mb-6 md:mb-12 pb-4 text-[#7852A9] border-b-2 border-[#00ffff]'>
-                            BUILDING PIPELINE, THE RIGHT WAY.
+                        <div>
+                            <h2 className='text-xl md:text-2xl mt-4 mb-6 md:mb-12 pb-4 text-[#7852A9] border-b-2 border-[#00ffff]'>
+                                BUILDING PIPELINE, THE RIGHT WAY.
+                            </h2>
+
+                            <div className="space-y-4 md:space-y-6">
+                                <p>
+                                    At ToXPAND, we didn't set out to become another lead gen agency. We set out to fix lead generation – with transparency, accountability, and AI intelligence at the core.
+                                </p>
+                                <p>
+                                    We've seen what goes wrong in B2B demand gen: opaque data, recycled contacts, and "spray-and-pray" content syndication. So we built something different – a pipeline partner that doesn't just promise performance, but proves it.
+                                </p>
+                                <p>
+                                    Our mission is simple: Help B2B marketers escape content syndication pitfalls and generate demand that actually converts. Everything we deliver is in-house, first-party, and validated – with visibility at every stage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Our Journey Section */}
+                <section className="p-6 md:p-12 text-white ">
+                    <div className="max-w-7xl mx-auto">
+                        <h2 className='text-xl md:text-2xl mt-4 mb-6 md:mb-12 pb-4 text-white border-b-2 border-[#00ffff]'>
+                            OUR JOURNEY
                         </h2>
 
-                        <div className="space-y-4 md:space-y-6">
-                            <p>
-                                At ToXPAND, we didn't set out to become another lead gen agency. We set out to fix lead generation – with transparency, accountability, and AI intelligence at the core.
-                            </p>
-                            <p>
-                                We've seen what goes wrong in B2B demand gen: opaque data, recycled contacts, and "spray-and-pray" content syndication. So we built something different – a pipeline partner that doesn't just promise performance, but proves it.
-                            </p>
-                            <p>
-                                Our mission is simple: Help B2B marketers escape content syndication pitfalls and generate demand that actually converts. Everything we deliver is in-house, first-party, and validated – with visibility at every stage.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Our Journey Section */}
-            <section className="p-6 md:p-12 text-white bg-black">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className='text-xl md:text-2xl mt-4 mb-6 md:mb-12 pb-4 text-white border-b-2 border-[#00ffff]'>
-                        OUR JOURNEY
-                    </h2>
 
 
 
 
 
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6">
+                            <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
+                                <img src="/icons/the spark.png" width={200} alt="" />
+                                <div className='journey-div text-center pt-12 bg-[#6A1B9A]'>
+                                    <h3 className="text-3xl">2022</h3>
+                                </div>
+                                <div className='journey-diamand bg-[#6A1B9A] mt-4'>
+                                </div>
+                                <div className='journey-text py-3 text-center mt-4 bg-[#6A1B9A]'>
+                                    <p className='text-sm'>
+                                        THE SPARK
+                                    </p>
+                                </div>
+                                <div className='text-center py-6'>
+                                    <p className='text-sm'>
+                                        Founder <b>Uky Chong</b> launches TOXPAND with a small, ambitious team – determined to challenge the legacy lead gen playbook and do things differently.
+                                    </p>
+                                </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6">
-                        <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
-                            <img src="/icons/the spark.png" width={200} alt="" />
-                            <div className='journey-div text-center pt-12 bg-[#6A1B9A]'>
-                                <h3 className="text-3xl">2022</h3>
                             </div>
-                            <div className='journey-diamand bg-[#6A1B9A] mt-4'>
+                            <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
+                                <img src="/icons/momentum builds.png" width={200} alt="" />
+                                <div className='journey-div text-center pt-12 bg-[#9C28B1]'>
+                                    <h3 className="text-3xl">2023</h3>
+                                </div>
+                                <div className='journey-diamand bg-[#9C28B1] mt-4'>
+                                </div>
+                                <div className='journey-text py-3 text-center mt-4 bg-[#9C28B1]'>
+                                    <p className='text-sm'>
+                                        MOMENTUM BUILDS
+                                    </p>
+                                </div>
+                                <div className='text-center py-6'>
+                                    <p className='text-sm'>
+                                        TOXPAND partners with some of the <b>biggest brands in B2B</b>, earning a reputation as a long-term strategic ally – not a transactional vendor. </p>
+                                </div>
                             </div>
-                            <div className='journey-text py-3 text-center mt-4 bg-[#6A1B9A]'>
-                                <p className='text-sm'>
-                                    THE SPARK
-                                </p>
+                            <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
+                                <img src="/icons/intelligence in motion.png" width={200} alt="" />
+                                <div className='journey-div text-center pt-12 bg-[#3F51B5]'>
+                                    <h3 className="text-3xl">2024</h3>
+                                </div>
+                                <div className='journey-diamand bg-[#3F51B5] mt-4'>
+                                </div>
+                                <div className='journey-text py-3 text-center mt-4 bg-[#3F51B5]'>
+                                    <p className='text-sm'>
+                                        INTELLIGENCE IN MOTION
+                                    </p>
+                                </div>
+                                <div className='text-center py-6'>
+                                    <p className='text-sm'>
+                                        We launch our <b>client-facing Campaign Performance dashboard</b>, giving customers full visibility into engagement and results – powered by real-time first-party data and actionable insights.
+                                    </p>
+                                </div>
                             </div>
-                            <div className='text-center py-6'>
-                                <p className='text-sm'>
-                                    Founder <b>Uky Chong</b> launches TOXPAND with a small, ambitious team – determined to challenge the legacy lead gen playbook and do things differently.
-                                </p>
+                            <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
+                                <img src="/icons/global expansion.png" width={200} alt="" />
+                                <div className='journey-div text-center pt-12 bg-[#7852A9]'>
+                                    <h3 className="text-3xl">2025</h3>
+                                </div>
+                                <div className='journey-diamand bg-[#7852A9] mt-4'>
+                                </div>
+                                <div className='journey-text py-3 text-center mt-4 bg-[#7852A9]'>
+                                    <p className='text-xs'>
+                                        GLOBAL EXPANSION, DEEPER INSIGHT
+                                    </p>
+                                </div>
+                                <div className='text-center py-6'>
+                                    <p className='text-sm'>
+                                        Now partnering closely with <b>Enterprise teams</b> across <b>North America, EMEA, and APAC</b>, we continue to scale our platform – releasing deeper dashboard features and expanding our global impact.
+                                    </p>
+                                </div>
                             </div>
 
-                        </div>
-                        <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
-                            <img src="/icons/momentum builds.png" width={200} alt="" />
-                            <div className='journey-div text-center pt-12 bg-[#9C28B1]'>
-                                <h3 className="text-3xl">2023</h3>
-                            </div>
-                            <div className='journey-diamand bg-[#9C28B1] mt-4'>
-                            </div>
-                            <div className='journey-text py-3 text-center mt-4 bg-[#9C28B1]'>
-                                <p className='text-sm'>
-                                    MOMENTUM BUILDS
-                                </p>
-                            </div>
-                            <div className='text-center py-6'>
-                                <p className='text-sm'>
-                                    TOXPAND partners with some of the <b>biggest brands in B2B</b>, earning a reputation as a long-term strategic ally – not a transactional vendor. </p>
-                            </div>
-                        </div>
-                        <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
-                            <img src="/icons/intelligence in motion.png" width={200} alt="" />
-                            <div className='journey-div text-center pt-12 bg-[#3F51B5]'>
-                                <h3 className="text-3xl">2024</h3>
-                            </div>
-                            <div className='journey-diamand bg-[#3F51B5] mt-4'>
-                            </div>
-                            <div className='journey-text py-3 text-center mt-4 bg-[#3F51B5]'>
-                                <p className='text-sm'>
-                                    INTELLIGENCE IN MOTION
-                                </p>
-                            </div>
-                            <div className='text-center py-6'>
-                                <p className='text-sm'>
-                                    We launch our <b>client-facing Campaign Performance dashboard</b>, giving customers full visibility into engagement and results – powered by real-time first-party data and actionable insights.
-                                </p>
-                            </div>
-                        </div>
-                        <div className=" rounded-lg p-6 text-white shadow-lg flex flex-col items-center">
-                            <img src="/icons/global expansion.png" width={200} alt="" />
-                            <div className='journey-div text-center pt-12 bg-[#7852A9]'>
-                                <h3 className="text-3xl">2025</h3>
-                            </div>
-                            <div className='journey-diamand bg-[#7852A9] mt-4'>
-                            </div>
-                            <div className='journey-text py-3 text-center mt-4 bg-[#7852A9]'>
-                                <p className='text-xs'>
-                                    GLOBAL EXPANSION, DEEPER INSIGHT
-                                </p>
-                            </div>
-                            <div className='text-center py-6'>
-                                <p className='text-sm'>
-                                    Now partnering closely with <b>Enterprise teams</b> across <b>North America, EMEA, and APAC</b>, we continue to scale our platform – releasing deeper dashboard features and expanding our global impact.
-                                </p>
-                            </div>
                         </div>
 
-                    </div>
 
 
 
 
 
 
-
-                    {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                        
                         <div className="bg-gradient-to-b from-[#6A1B9A] to-black rounded-lg p-4 md:p-6 shadow-lg flex flex-col items-center">
                             <img src="/icons/the spark.png" width={120} height={120} alt="The Spark" className="w-24 md:w-32 h-auto" />
@@ -253,8 +256,9 @@ export default function About() {
                             </div>
                         </div>
                     </div> */}
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
 
             {/* Quote Section */}
             <section className='p-8 md:p-12 text-white bg-gradient-to-r from-[#6a1b9a] to-[#3f51b5]'>
@@ -266,10 +270,10 @@ export default function About() {
             </section>
 
             {/* How We're Different Section */}
-            <section className="bg-black text-white bg-cover bg-center" style={{
-                backgroundImage: 'url("/backgrounds/bg3.jpg")',
+            <section className=" text-white bg-cover bg-center" style={{
+                backgroundImage: 'url("/backgrounds/GALAXY 6.png")', backgroundSize: 'cover',
             }}>
-                <div className="bg-black bg-opacity-80 p-6 md:p-12">
+                <div className=" bg-opacity-80 p-6 md:p-12">
                     <div className="max-w-7xl mx-auto">
                         {/* Title */}
                         <div className="text-center mb-8 md:mb-12">
@@ -345,7 +349,7 @@ export default function About() {
             </section>
 
             {/* CTA Section */}
-            <section className='bg-black p-6 md:p-12 text-white'>
+            <section className=' p-6 md:p-12 text-white'>
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-2xl md:text-4xl font-bold text-[#7852A9] mb-4">
                         WANT TO CONNECT

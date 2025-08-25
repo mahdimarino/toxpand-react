@@ -271,7 +271,7 @@ export default function Fandq() {
                                 <h4 className='text-lg md:text-xl text-[#7852A9] font-bold'>{section.title}</h4>
                                 <ul className='mt-2 md:mt-4 space-y-2'>
                                     {section.items.map((item, i) => (
-                                        <li key={i} className='text-xs md:text-sm'>{item}</li>
+                                        <li key={i} className='text-xs text-black md:text-sm'>{item}</li>
                                     ))}
                                 </ul>
                             </div>

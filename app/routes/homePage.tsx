@@ -153,56 +153,68 @@ export default function HomePage() {
                 >
                     {/* Row 1 */}
                     <div className="flex justify-center space-x-24 mb-12">
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="100% FIRST PARTY DATA"
-                            delay={0.1}
-                            finalPosition={{ x: -200, y: 0 }}
-                            rowType="first"
-                        />
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="BEST IN CLASS SERVICE"
-                            delay={0.1}
-                            finalPosition={{ x: 200, y: 0 }}
-                            rowType="first"
-                        />
+                        <a href="/GlobalReach">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="100% FIRST PARTY DATA"
+                                delay={0.1}
+                                finalPosition={{ x: -200, y: 0 }}
+                                rowType="first"
+                            />
+                        </a>
+                        <a href="/About">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="BEST IN CLASS SERVICE"
+                                delay={0.1}
+                                finalPosition={{ x: 200, y: 0 }}
+                                rowType="first"
+                            />
+                        </a>
                     </div>
 
                     {/* Second Row (300px) */}
                     <div className="flex justify-center space-x-24 mb-12">
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="LIVE INTENT TRACKING"
-                            delay={0.3}
-                            finalPosition={{ x: -300, y: 0 }}
-                            rowType="second"
-                        />
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="PIPELINE ESTIMATOR "
-                            delay={0.3}
-                            finalPosition={{ x: 300, y: 0 }}
-                            rowType="second"
-                        />
+                        <a href="/RealTimeInsights">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="LIVE INTENT TRACKING"
+                                delay={0.3}
+                                finalPosition={{ x: -300, y: 0 }}
+                                rowType="second"
+                            />
+                        </a>
+                        <a href="/ScoreCard">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="PIPELINE ESTIMATOR "
+                                delay={0.3}
+                                finalPosition={{ x: 300, y: 0 }}
+                                rowType="second"
+                            />
+                        </a>
                     </div>
 
                     {/* Third Row (200px) */}
                     <div className="flex justify-center space-x-24">
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="SIGNAL-LED TACTICS"
-                            delay={0.5}
-                            finalPosition={{ x: -200, y: 0 }}
-                            rowType="third"
-                        />
-                        <LinkBox
-                            imageUrl="/icons/atom.png"
-                            text="CLARITY AT SCALE  "
-                            delay={0.5}
-                            finalPosition={{ x: 200, y: 0 }}
-                            rowType="third"
-                        />
+                        <a href="/EngagementTactics">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="SIGNAL-LED TACTICS"
+                                delay={0.5}
+                                finalPosition={{ x: -200, y: 0 }}
+                                rowType="third"
+                            />
+                       </a>
+                        <a href="/Fandq">
+                            <LinkBox
+                                imageUrl="/icons/atom.png"
+                                text="CLARITY AT SCALE  "
+                                delay={0.5}
+                                finalPosition={{ x: 200, y: 0 }}
+                                rowType="third"
+                            />
+                        </a>
                     </div>
                 </div>
             </section>

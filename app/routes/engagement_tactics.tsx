@@ -206,7 +206,7 @@ export default function EngagementTactics() {
                     {/* Logo Carousel */}
                     <div className="mt-6 md:mt-10 mx-2 md:mx-10">
                         <div className="overflow-x-auto scrollbar-hide">
-                            <div className="flex space-x-4 px-4 py-6 bg-white w-fit snap-x snap-mandatory">
+                            <div className="flex space-x-4 px-4 py-6  w-fit snap-x snap-mandatory">
                                 {[
                                     "/companyLogos/Salesforce.com_logo.svg.png",
                                     "/companyLogos/Marketo_logo.png",
@@ -219,7 +219,7 @@ export default function EngagementTactics() {
                                 ].map((src, index) => (
                                     <div
                                         key={index}
-                                        className="min-w-[80px] md:min-w-[120px] h-[60px] md:h-[80px] flex items-center justify-center border rounded-md snap-start bg-white p-2"
+                                        className="min-w-[80px] md:min-w-[120px] h-[60px] md:h-[80px] flex items-center justify-center   snap-start  p-2"
                                     >
                                         <img
                                             src={src}

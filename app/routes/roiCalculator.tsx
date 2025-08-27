@@ -261,7 +261,7 @@ const RoiCalculator: React.FC = () => {
                                     <label className="w-full md:w-48 text-sm font-medium text-gray-700">First Day for Leads</label>
                                     <input
                                         type="date"
-                                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                        className="text-black w-full rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                         id="startingDate"
                                         value={inputs.startingDate}
                                         onChange={handleInputChange}
@@ -273,7 +273,7 @@ const RoiCalculator: React.FC = () => {
                                     <label className="w-full md:w-48 text-sm font-medium text-gray-700">Last Day for Revenue</label>
                                     <input
                                         type="date"
-                                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                        className="w-full text-black rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                         id="endingDate"
                                         value={inputs.endingDate}
                                         onChange={handleInputChange}
@@ -282,10 +282,10 @@ const RoiCalculator: React.FC = () => {
 
                                 {/* Input Group 3 */}
                                 <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                                    <label className="w-full md:w-48 text-sm font-medium text-gray-700">Number of Leads</label>
+                                    <label className="w-full  md:w-48 text-sm font-medium text-gray-700">Number of Leads</label>
                                     <input
                                         type="number"
-                                        className="w-full rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                        className="w-full text-black rounded-md border-gray-300 shadow-sm focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                         id="numberOfLeads"
                                         placeholder="300"
                                         value={inputs.numberOfLeads}
@@ -302,7 +302,7 @@ const RoiCalculator: React.FC = () => {
                                         </div>
                                         <input
                                             type="number"
-                                            className="block w-full pl-7 pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                            className="block text-black w-full pl-7 pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                             id="avgDealSize"
                                             placeholder="50000"
                                             value={inputs.avgDealSize}
@@ -317,7 +317,7 @@ const RoiCalculator: React.FC = () => {
                                     <div className="relative w-full rounded-md shadow-sm">
                                         <input
                                             type="number"
-                                            className="block w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                            className="block text-black w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                             id="mqlToReEngagements"
                                             placeholder="10"
                                             min="0"
@@ -337,7 +337,7 @@ const RoiCalculator: React.FC = () => {
                                     <div className="relative w-full rounded-md shadow-sm">
                                         <input
                                             type="number"
-                                            className="block w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                            className="block text-black w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                             id="reEngagementsToApptSets"
                                             placeholder="20"
                                             min="0"
@@ -357,7 +357,7 @@ const RoiCalculator: React.FC = () => {
                                     <div className="relative w-full rounded-md shadow-sm">
                                         <input
                                             type="number"
-                                            className="block w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                            className="block text-black w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                             id="meetingShowRate"
                                             placeholder="50"
                                             min="0"
@@ -377,7 +377,7 @@ const RoiCalculator: React.FC = () => {
                                     <div className="relative w-full rounded-md shadow-sm">
                                         <input
                                             type="number"
-                                            className="block w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
+                                            className="block text-black w-full pr-12 rounded-md border-gray-300 focus:border-[#7852A9] focus:ring-[#7852A9] p-2 border"
                                             id="closedWon"
                                             placeholder="20"
                                             min="0"

@@ -13,12 +13,14 @@ export function Navbar() {
                     {/* Column 1 - Logo */}
                     <div className="w-full md:w-1/4 mb-4 md:mb-0 flex items-center pl-6">
                         {/* Logo */}
-                        <div className="md:h-12 w-20 md:w-40 flex items-center justify-center rounded">
-                            <img
-                                src="/backgrounds/xlogo2light.webp"
-                                alt=""
-                            />
-                        </div>
+                       <a href="/">
+                            <div className="md:h-12 w-20 md:w-40 flex items-center justify-center rounded">
+                                <img
+                                    src="/backgrounds/xlogo2light.webp"
+                                    alt=""
+                                />
+                            </div>
+                       </a>
 
                         {/* Burger Button - only on small screens */}
                         <button

@@ -285,7 +285,7 @@ export default function Fandq() {
                         HAVE A COMPLIANCE OR DUE DILIGENCE QUESTION WE HAVEN'T ANSWERED?
                     </h1>
                     <p className="text-sm md:text-base text-white mt-2">
-                        Reach out to our Privacy Officer at privacy@taxpand.com or request our full compliance playbook.
+                        Reach out to our Privacy Officer at privacy@toxpand.com or request our full compliance playbook.
                     </p>
                     <h1 className="text-xl md:text-3xl mt-4 md:mt-6 font-bold text-[#7852A9]">
                         LET'S BUILD TACTICS THAT <span className="text-white">SPARK PIPELINE</span>

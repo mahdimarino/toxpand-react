@@ -358,9 +358,9 @@ export default function About() {
                         Whether you're ready to launch or just curious about how we work, we're happy to talk.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
-                        <a href='/Contact' className="brand-button">
+                        {/* <a href='/Contact' className="brand-button">
                             CONTACT US
-                        </a>
+                        </a> */}
                         <a href='/Contact' className="brand-button">
                             BOOK A STRATEGY CALL
                         </a>

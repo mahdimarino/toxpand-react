@@ -128,9 +128,9 @@ export default function EngagementTactics() {
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col items-center justify-center mb-12">
+                {/* <div className="w-full flex flex-col items-center justify-center mb-12">
                     <button className="strategy-button mt-20">SEE DEMANDFUSION IN ACTION</button>
-                </div>
+                </div> */}
             </section>
 
 
@@ -199,7 +199,7 @@ export default function EngagementTactics() {
                     <div className="text-center mt-8 md:mt-12 md:px-12 px-2">
                         <p className="text-base md:text-xl md:px-12">
                             We make the lead handoff seamless. We can integrate with your CRM or any Marketing Automation System. Our delivery capabilities include (but not limited to:)
-                            <br className="hidden md:block" /> Leads delivered seamlessly to:
+                            {/* <br className="hidden md:block" /> Leads delivered seamlessly to: */}
                         </p>
                     </div>
 

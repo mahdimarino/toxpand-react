@@ -238,7 +238,7 @@ export default function HomePage() {
                     </p>
 
                     <div className="gap-4 flex flex-row items-center justify-between mt-6">
-                        <button className="brand-button text-white">HOW IT WORKS</button>
+                        <a href='#this' className="brand-button text-white">HOW IT WORKS</a>
                     </div>
                 </div>
 
@@ -311,14 +311,14 @@ export default function HomePage() {
                         ))}
                     </div>
                     <div className="gap-4 flex flex-row items-center justify-between my-12">
-                        <button className="brand-button text-white">EXPLORE ENGAGEMENT TACTICS</button>
+                        <a href='/EngagementTactics' className="brand-button text-white">EXPLORE ENGAGEMENT TACTICS</a>
                     </div>
 
 
                 </div>
 
             </section>
-            <section className='p-6 md:p-12'>
+            <section id='this' className='p-6 md:p-12'>
 
                 <div className="w-full  mx-auto flex flex-col items-center justify-center md:m-6"
                 >
@@ -518,7 +518,9 @@ export default function HomePage() {
                                     <p className='mt-2'>By Job Function, By Industry, By Region, By Company Size</p>
                                 </div>
 
-                                <button className="brand-button mt-10 relative top-10">SEE OUR GLOBAL REACH</button>
+                               <div>
+                                    <a href='/GlobalReach' className="brand-button mt-10 relative top-10">SEE OUR GLOBAL REACH</a>
+                               </div>
                             </div>
                         </div>
                     </div>
@@ -543,7 +545,7 @@ export default function HomePage() {
                                     <p className='mt-2'>Just verified engagement at scale.</p>
                                 </div>
 
-                                <button className="brand-button mt-10 relative top-10">BOOK A STRATEGY CALL</button>
+                                <a href='/Contact' className="brand-button mt-10 relative top-10">BOOK A STRATEGY CALL</a>
                             </div>
                         </div>
                     </div>

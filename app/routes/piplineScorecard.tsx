@@ -355,7 +355,7 @@ export default function ScoreCard() {
                         WANT A PERSONALIZED <span className="text-white">AI-DRIVEN PIPELINE AUDIT?</span>
                     </h1>
                     <p className="text-center text-lg text-white">
-                        Let TDXPAND analyze your lead sources, conversion flows, and ROI opportunities:
+                        Let TOXPAND analyze your lead sources, conversion flows, and ROI opportunities:
                     </p>
                     <div className="gap-4 flex flex-row items-center justify-between mt-6">
                         <a href='/Contact'  className="brand-button text-white">REQUEST FREE AUDIT</a>

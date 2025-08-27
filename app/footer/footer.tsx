@@ -22,10 +22,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-bold mb-2 md:mb-4 text-lg">Company</h3>
                         <ul className="space-y-2 mt-2 md:mt-4">
-                            <li><a href="/Home" className="hover:underline text-sm md:text-base">Home</a></li>
-                            <li><a href="/careers" className="hover:underline text-sm md:text-base">Careers</a></li>
+                            <li><a href="/" className="hover:underline text-sm md:text-base">Home</a></li>
+                            {/* <li><a href="/careers" className="hover:underline text-sm md:text-base">Careers</a></li> */}
                             <li><a href="/About" className="hover:underline text-sm md:text-base">About us</a></li>
                             <li><a href="/Fandq" className="hover:underline text-sm md:text-base">FAQs</a></li>
+                            <li><a href="https://analytics.toxpand.com/dashboard/login" className="hover:underline text-sm md:text-base">Login</a></li>
                         </ul>
                     </div>
 
@@ -72,7 +73,7 @@ export function Footer() {
                 </div>
                 <div className="flex md:justify-center">
                     <div className="flex flex-col md:flex-row md:items-center gap-3  space-y-2 md:space-y-0">
-                        <a href="/https://app.termly.io/policy-viewer/policy.html?policyUUID=26cb9492-d883-4376-af54-14d5aeca132c" className="text-sm hover:text-[#9A2CAD]"> Privacy Policy</a>
+                        <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=26cb9492-d883-4376-af54-14d5aeca132c" className="text-sm hover:text-[#9A2CAD]"> Privacy Policy</a>
                         <p className='hidden md:block'>|</p>
                         <a href="/TermsAndConditions" className="text-sm hover:text-[#9A2CAD]">Terms & Conditions</a>
                         <p className='hidden md:block'>|</p>
@@ -80,7 +81,7 @@ export function Footer() {
                         <a href="/doNotSellMyInfo" className="text-sm hover:text-[#9A2CAD]">Personal Information</a>
                     </div>
                 </div>
-                <div className="flex md:justify-end">
+                {/* <div className="flex md:justify-end">
                     <div className="flex md:flex-row items-center gap-3  space-y-2 md:space-y-0">
                         <a href="">
                             <img src="/icons/fb.png" width={40} alt="" />
@@ -95,7 +96,7 @@ export function Footer() {
                             <img src="/icons/whatsapp.png" width={40} alt="" />
                         </a>
                     </div>
-                </div>
+                </div> */}
             </div>
 
 

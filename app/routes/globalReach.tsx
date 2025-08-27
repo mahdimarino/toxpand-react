@@ -1,276 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navbar } from '~/header/navbar';
 import { Footer } from '~/footer/footer';
+import $ from "jquery";
+import "jqvmap/dist/jqvmap.min.css";
 
-// Define types for our data
-type JobFunction = 'sales' | 'marketing' | 'engineering' | 'finance' | 'hr' | '';
-type Geography = 'northAmerica' | 'southAmerica' | 'europe' | 'asia' | 'africa' | 'oceania' | '';
-type Industry = 'technology' | 'healthcare' | 'finance' | 'manufacturing' | 'retail' | '';
-
-interface HeatmapData {
-    regions: string[];
-    functions: string[];
-    values: number[][];
-}
-
-interface HeatmapCellProps {
-    value: number;
-    title: string;
-}
-
-// Heatmap Cell Component
-const HeatmapCell: React.FC<HeatmapCellProps> = ({ value, title }) => {
-    const getColor = (val: number) => {
-        if (val >= 100000) return '#4B2E68'; // deep purple
-        if (val >= 80000) return '#5E3E84'; // dark violet
-        if (val >= 60000) return '#7852A9'; // main base color
-        if (val >= 40000) return '#9B7BC2'; // soft lavender-purple
-        if (val >= 20000) return '#C3A8E0'; // light pastel purple
-        return '#E3D6F5';
-    };
-
-    const formatNumber = (num: number) => {
-        if (num >= 1000) return `${(num / 1000).toFixed(0)}k`;
-        return num.toString();
-    };
-
-    return (
-        <div
-            className="heatmap-cell"
-            style={{ backgroundColor: getColor(value) }}
-            title={title}
-        >
-            {formatNumber(value)}
-        </div>
-    );
-};
-
-// Heatmap Component
-const Heatmap: React.FC<{ data: HeatmapData }> = ({ data }) => {
-    return (
-        <div className="heatmap-container">
-            <div className="heatmap-title">Subscriber Distribution</div>
-            <div className="heatmap">
-                {/* Header row */}
-                <div className="heatmap-header">
-                    <div className="heatmap-corner">Job Function →</div>
-                    {data.regions.map(region => (
-                        <div key={region} className="heatmap-region-header">{region}</div>
-                    ))}
-                </div>
-
-                {/* Data rows */}
-                {data.functions.map((func, i) => (
-                    <div key={func} className="heatmap-row">
-                        <div className="heatmap-function-header">{func}</div>
-                        {data.values[i].map((value, j) => (
-                            <HeatmapCell
-                                key={`${i}-${j}`}
-                                value={value}
-                                title={`${func} - ${data.regions[j]}: ${value.toLocaleString()} subscribers`}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
-
-            {/* Legend */}
-            <div className="heatmap-legend">
-                {[
-                    { color: '#E3D6F5', label: '0-20K' },   // very light lavender
-                    { color: '#C3A8E0', label: '20-40K' },  // soft pastel purple
-                    { color: '#9B7BC2', label: '40-60K' },  // medium lavender
-                    { color: '#7852A9', label: '60-80K' },  // base purple
-                    { color: '#5E3E84', label: '80-100K' }, // dark violet
-                    { color: '#4B2E68', label: '100K+' }    // deep purple
-                ].map((item, index) => (
-                    <div key={index} className="legend-item">
-                        <div className="legend-color" style={{ backgroundColor: item.color }}></div>
-                        <span>{item.label}</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
-// Main Page Component
 export default function GlobalReach() {
-    const [jobFunction, setJobFunction] = useState<JobFunction>('');
-    const [geography, setGeography] = useState<Geography>('');
-    const [industry, setIndustry] = useState<Industry>('');
-    const [heatmapData, setHeatmapData] = useState<HeatmapData>({
-        regions: ["North America", "South America", "Europe", "Asia", "Africa", "Oceania"],
-        functions: ["Sales", "Marketing", "Engineering", "Finance"],
-        values: [
-            [45000, 32000, 78000, 56000, 23000, 38000],
-            [52000, 41000, 68000, 49000, 31000, 42000],
-            [89000, 65000, 125000, 98000, 45000, 67000],
-            [61000, 48000, 95000, 72000, 38000, 54000]
-        ]
-    });
-
-    // Fake data for the heatmap
-    const dataMap: Record<string, Partial<HeatmapData>> = {
-        // Job functions
-        sales: {
-            values: [
-                [65000, 52000, 98000, 76000, 43000, 58000],
-                [72000, 61000, 88000, 69000, 51000, 62000],
-                [109000, 85000, 145000, 118000, 65000, 87000],
-                [81000, 68000, 115000, 92000, 58000, 74000]
-            ]
-        },
-        marketing: {
-            values: [
-                [35000, 22000, 58000, 36000, 13000, 28000],
-                [42000, 31000, 48000, 29000, 11000, 22000],
-                [69000, 45000, 105000, 78000, 25000, 47000],
-                [41000, 28000, 75000, 52000, 18000, 34000]
-            ]
-        },
-        engineering: {
-            values: [
-                [75000, 62000, 118000, 86000, 53000, 68000],
-                [82000, 71000, 108000, 89000, 61000, 72000],
-                [119000, 95000, 155000, 128000, 75000, 97000],
-                [91000, 78000, 125000, 102000, 68000, 84000]
-            ]
-        },
-        finance: {
-            values: [
-                [25000, 12000, 38000, 26000, 3000, 18000],
-                [32000, 21000, 28000, 19000, 1000, 12000],
-                [59000, 35000, 85000, 58000, 5000, 27000],
-                [31000, 18000, 55000, 32000, 8000, 14000]
-            ]
-        },
-        hr: {
-            values: [
-                [15000, 8000, 28000, 16000, 5000, 12000],
-                [22000, 11000, 18000, 9000, 3000, 8000],
-                [49000, 25000, 75000, 48000, 15000, 27000],
-                [21000, 8000, 45000, 22000, 6000, 10000]
-            ]
-        },
-        // Geographies
-        northAmerica: {
-            regions: ["North America"],
-            values: [
-                [95000], [102000], [139000], [111000]
-            ]
-        },
-        southAmerica: {
-            regions: ["South America"],
-            values: [
-                [25000], [32000], [59000], [31000]
-            ]
-        },
-        europe: {
-            regions: ["Europe"],
-            values: [
-                [55000], [62000], [99000], [71000]
-            ]
-        },
-        asia: {
-            regions: ["Asia"],
-            values: [
-                [85000], [92000], [129000], [101000]
-            ]
-        },
-        africa: {
-            regions: ["Africa"],
-            values: [
-                [5000], [12000], [39000], [11000]
-            ]
-        },
-        oceania: {
-            regions: ["Oceania"],
-            values: [
-                [35000], [42000], [79000], [51000]
-            ]
-        },
-        // Industries
-        technology: {
-            values: [
-                [75000, 62000, 118000, 86000, 53000, 68000],
-                [82000, 71000, 108000, 89000, 61000, 72000],
-                [119000, 95000, 155000, 128000, 75000, 97000],
-                [91000, 78000, 125000, 102000, 68000, 84000]
-            ]
-        },
-        healthcare: {
-            values: [
-                [35000, 22000, 58000, 36000, 13000, 28000],
-                [42000, 31000, 48000, 29000, 11000, 22000],
-                [69000, 45000, 105000, 78000, 25000, 47000],
-                [41000, 28000, 75000, 52000, 18000, 34000]
-            ]
-        },
-        manufacturing: {
-            values: [
-                [45000, 32000, 78000, 56000, 23000, 38000],
-                [52000, 41000, 68000, 49000, 31000, 42000],
-                [89000, 65000, 125000, 98000, 45000, 67000],
-                [61000, 48000, 95000, 72000, 38000, 54000]
-            ]
-        },
-        retail: {
-            values: [
-                [25000, 12000, 48000, 26000, 3000, 18000],
-                [32000, 21000, 38000, 19000, 1000, 12000],
-                [59000, 35000, 95000, 58000, 5000, 27000],
-                [31000, 18000, 65000, 32000, 8000, 14000]
-            ]
-        }
-    };
-
-    // Update heatmap when filters change
     useEffect(() => {
-        updateHeatmap();
-    }, [jobFunction, geography, industry]);
+        // Expose jQuery globally
+        (window as any).jQuery = $;
+        (window as any).$ = $;
 
-    const updateHeatmap = () => {
-        // Start with default data
-        let newData: HeatmapData = {
-            regions: ["North America", "South America", "Europe", "Asia", "Africa", "Oceania"],
-            functions: ["Sales", "Marketing", "Engineering", "Finance"],
-            values: [
-                [45000, 32000, 78000, 56000, 23000, 38000],
-                [52000, 41000, 68000, 49000, 31000, 42000],
-                [89000, 65000, 125000, 98000, 45000, 67000],
-                [61000, 48000, 95000, 72000, 38000, 54000]
-            ]
-        };
-
-        // Apply job function filter if selected
-        if (jobFunction && dataMap[jobFunction]) {
-            const jobData = dataMap[jobFunction];
-            if (jobData.values) newData.values = jobData.values as number[][];
-        }
-
-        // Apply geography filter if selected
-        if (geography && dataMap[geography]) {
-            const geoData = dataMap[geography];
-            if (geoData.regions) newData.regions = geoData.regions;
-            if (geoData.values) newData.values = geoData.values as number[][];
-        }
-
-        // Apply industry filter if selected
-        if (industry && dataMap[industry]) {
-            const industryData = dataMap[industry];
-            if (industryData.values) newData.values = industryData.values as number[][];
-        }
-
-        setHeatmapData(newData);
-    };
-
-    const handleReset = () => {
-        setJobFunction('');
-        setGeography('');
-        setIndustry('');
-    };
-
+        // Dynamically import jqvmap only in the browser
+        import("jqvmap/dist/jquery.vmap.min.js").then(() => {
+            import("jqvmap/dist/maps/jquery.vmap.world.js").then(() => {
+                ($("#vmap") as any).vectorMap({
+                    map: "world_en",
+                    backgroundColor: "transparent",
+                    borderColor: "#818181",
+                    borderOpacity: 0.25,
+                    borderWidth: 1,
+                    color: "#7852A9",
+                    enableZoom: true,
+                    hoverColor: "#c9dfaf",
+                    normalizeFunction: "linear",
+                    showTooltip: true,
+                });
+            });
+        });
+    }, []);
     return (
         <>
                     <Navbar />
@@ -318,8 +75,8 @@ export default function GlobalReach() {
                         </p>
                         <div className='my-4 md:my-6 w-full'>
                             <select
-                                value={jobFunction}
-                                onChange={(e) => setJobFunction(e.target.value as JobFunction)}
+                                // value={jobFunction}
+                                // onChange={(e) => setJobFunction(e.target.value as JobFunction)}
                                 className="w-full border-0 border-t-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Job Function</option>
@@ -330,8 +87,8 @@ export default function GlobalReach() {
                                 <option value="hr">Human Resources</option>
                             </select>
                             <select
-                                value={geography}
-                                onChange={(e) => setGeography(e.target.value as Geography)}
+                                // value={geography}
+                                // onChange={(e) => setGeography(e.target.value as GeographyType)}
                                 className="w-full border-0 border-t-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Geography</option>
@@ -343,8 +100,8 @@ export default function GlobalReach() {
                                 <option value="oceania">Oceania</option>
                             </select>
                             <select
-                                value={industry}
-                                onChange={(e) => setIndustry(e.target.value as Industry)}
+                                // value={industry}
+                                // onChange={(e) => setIndustry(e.target.value as Industry)}
                                 className="w-full border-0 border-t-3 border-b-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Industry</option>
@@ -355,23 +112,23 @@ export default function GlobalReach() {
                                 <option value="retail">Retail</option>
                             </select>
                         </div>
-                        <div className="flex gap-2 md:gap-4 my-4 md:my-6 w-full justify-center">
+                        <div className="flex flex-wrap gap-2 md:gap-4 my-4 md:my-6 w-full justify-center">
                             <button
-                                onClick={handleReset}
-                                className="brand-button text-white text-sm md:text-base px-4 py-2"
+                                // onClick={handleReset}
+                                className="brand-button text-white text-sm md:text-base px-4 py-2 bg-[#7852A9] hover:bg-[#5E3E84] transition-colors"
                             >
                                 RESET
                             </button>
                             <button
-                                onClick={updateHeatmap}
-                                className="brand-button text-white text-sm md:text-base px-4 py-2"
+                                // onClick={updateHeatmap}
+                                className="brand-button text-white text-sm md:text-base px-4 py-2 bg-[#7852A9] hover:bg-[#5E3E84] transition-colors"
                             >
                                 SEE RESULT
                             </button>
                         </div>
                     </div>
-                    <div className="md:w-2/3 w-full bg-white text-black p-4 md:p-8 flex items-center justify-center min-h-[300px]">
-                        <Heatmap data={heatmapData} />
+                    <div className="md:w-2/3 w-full  text-black p-4  flex items-center justify-center  min-h-[400px]">
+                        <div id="vmap" style={{ width: "800px", height: "500px" }} />
                     </div>
                 </div>
             </section>

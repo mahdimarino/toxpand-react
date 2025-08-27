@@ -518,9 +518,11 @@ export default function HomePage() {
                                     <p className='mt-2'>By Job Function, By Industry, By Region, By Company Size</p>
                                 </div>
 
-                               <div>
-                                    <a href='/GlobalReach' className="brand-button mt-10 relative top-10">SEE OUR GLOBAL REACH</a>
-                               </div>
+                                <form action="/globalReach">
+                                    <button className="brand-button mt-10 relative top-10">SEE OUR GLOBAL REACH</button>
+                               </form>
+                                    
+                               
                             </div>
                         </div>
                     </div>
@@ -545,7 +547,10 @@ export default function HomePage() {
                                     <p className='mt-2'>Just verified engagement at scale.</p>
                                 </div>
 
-                                <a href='/Contact' className="brand-button mt-10 relative top-10">BOOK A STRATEGY CALL</a>
+                              
+                                <form action="/Contact">
+                                    <button className="brand-button mt-10 relative top-10">BOOK A STRATEGY CALL</button>
+                                </form>
                             </div>
                         </div>
                     </div>

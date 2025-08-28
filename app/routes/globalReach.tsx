@@ -4,30 +4,181 @@ import { Footer } from '~/footer/footer';
 import $ from "jquery";
 import "jqvmap/dist/jqvmap.min.css";
 
+// Define types for our selections
+type JobFunction = 'sales' | 'marketing' | 'engineering' | 'finance' | 'hr' | '';
+type GeographyType = 'northAmerica' | 'southAmerica' | 'europe' | 'asia' | 'africa' | 'oceania' | '';
+type Industry = 'technology' | 'healthcare' | 'finance' | 'manufacturing' | 'retail' | '';
+
+// Continent to country code mapping
+const continentCountries: Record<string, string[]> = {
+    northAmerica: ['us', 'ca', 'mx', 'gl', 'bm', 'gt', 'sv', 'hn', 'ni', 'cr', 'pa', 'bs', 'cu', 'jm', 'ht', 'do', 'pr'],
+    southAmerica: ['br', 'ar', 'cl', 'co', 'pe', 've', 'ec', 'bo', 'py', 'uy', 'sr', 'gf', 'gy', 'fk'],
+    europe: ['gb', 'fr', 'de', 'it', 'es', 'pl', 'ro', 'nl', 'be', 'se', 'cz', 'gr', 'pt', 'hu', 'at', 'ch', 'ie', 'dk', 'fi', 'no', 'sk', 'bg', 'rs', 'hr', 'lt', 'si', 'lv', 'ee', 'is', 'al', 'ba', 'mk', 'me', 'cy', 'lu', 'mt', 'ad', 'li', 'mc', 'sm', 'va'],
+    asia: ['cn', 'in', 'ru', 'jp', 'id', 'pk', 'tr', 'th', 'kr', 'vn', 'ph', 'my', 'kz', 'sa', 'ir', 'uz', 'mm', 'iq', 'af', 'ye', 'sy', 'kh', 'tj', 'np', 'lk', 'bd', 'la', 'jo', 'az', 'ae', 'il', 'tw', 'hk', 'kg', 'tm', 'sg', 'ge', 'mn', 'om', 'kw', 'qa', 'bh', 'am', 'ps', 'bt', 'mv', 'bn', 'tl'],
+    africa: ['ng', 'eg', 'za', 'dz', 'sd', 'ly', 'ma', 'ke', 'et', 'gh', 'cm', 'ci', 'mg', 'mz', 'ang', 'ne', 'bf', 'ml', 'zw', 'tn', 'ss', 'sn', 'td', 'so', 'er', 'cf', 'rw', 'bj', 'gn', 'ug', 'zm', 'sl', 'mw', 'tg', 'lr', 'mr', 'na', 'bw', 'gm', 'ga', 'ls', 'gw', 'gq', 'mu', 'eq', 'dj', 're', 'km', 'cv', 'sc', 'eh', 'st', 'sh'],
+    oceania: ['au', 'nz', 'pg', 'fj', 'sb', 'vu', 'nc', 'pf', 'ws', 'ki', 'fm', 'to', 'mh', 'pw', 'nr', 'tv']
+};
+
+// Mock data for demonstration
+const mockData = {
+    northAmerica: { count: 18500000, color: "#7852A9" },
+    southAmerica: { count: 7200000, color: "#5E3E84" },
+    europe: { count: 15200000, color: "#4A2F6B" },
+    asia: { count: 19800000, color: "#3B2556" },
+    africa: { count: 6800000, color: "#2E1C43" },
+    oceania: { count: 4500000, color: "#221532" }
+};
+
 export default function GlobalReach() {
+    const [jobFunction, setJobFunction] = useState<JobFunction>('');
+    const [geography, setGeography] = useState<GeographyType>('');
+    const [industry, setIndustry] = useState<Industry>('');
+    const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const mapInitialized = useRef(false);
+    const mapInstance = useRef<any>(null);
+    const allCountries = useRef<string[]>([]);
+
     useEffect(() => {
         // Expose jQuery globally
         (window as any).jQuery = $;
         (window as any).$ = $;
 
-        // Dynamically import jqvmap only in the browser
-        import("jqvmap/dist/jquery.vmap.min.js").then(() => {
-            import("jqvmap/dist/maps/jquery.vmap.world.js").then(() => {
-                ($("#vmap") as any).vectorMap({
-                    map: "world_en",
-                    backgroundColor: "transparent",
-                    borderColor: "#818181",
-                    borderOpacity: 0.25,
-                    borderWidth: 1,
-                    color: "#7852A9",
-                    enableZoom: true,
-                    hoverColor: "#c9dfaf",
-                    normalizeFunction: "linear",
-                    showTooltip: true,
+        // Only initialize the map once
+        if (!mapInitialized.current) {
+            // Dynamically import jqvmap only in the browser
+            import("jqvmap/dist/jquery.vmap.min.js").then(() => {
+                import("jqvmap/dist/maps/jquery.vmap.world.js").then(() => {
+                    mapInstance.current = ($("#vmap") as any).vectorMap({
+                        map: "world_en",
+                        backgroundColor: "transparent",
+                        borderColor: "#818181",
+                        borderOpacity: 0.25,
+                        borderWidth: 1,
+                        color: "#7852A9",
+                        enableZoom: true,
+                        hoverColor: "#49f6ffff",
+                        normalizeFunction: "linear",
+                        showTooltip: true,
+                        onRegionClick: (event: any, code: string) => {
+                            // Handle click on region if needed
+                        },
+                        onLoad: function (event: any, map: any) {
+                            // Store all country codes when map is loaded
+                            allCountries.current = Object.keys(map);
+                        }
+                    });
+                    mapInitialized.current = true;
                 });
             });
-        });
+        }
+
+        return () => {
+            // Clean up the map when component unmounts
+            if (mapInstance.current) {
+                try {
+                    mapInstance.current.remove();
+                } catch (e) {
+                    console.log("Error removing map:", e);
+                }
+            }
+        };
     }, []);
+
+    const updateHeatmap = () => {
+        setIsLoading(true);
+        if (geography === 'africa') {
+            mapInstance.current = ($("#vmap") as any).vectorMap({
+            
+                
+                
+                map: "world_en",
+                backgroundColor: "transparent",
+                borderColor: "#818181",
+                borderOpacity: 0.25,
+                borderWidth: 1,
+                colors: {
+                    // Set all countries to a default color
+                    ...Object.fromEntries(allCountries.current.map(code => [code, "#333344"])),
+                    // Set African countries to red
+                    ...Object.fromEntries(continentCountries.africa.map(code => [code, "red"]))
+                },
+                enableZoom: true,
+                hoverColor: "green",
+                normalizeFunction: "linear",
+                showTooltip: true,
+                onRegionClick: (event: any, code: string) => {
+                    // Handle click on region if needed
+                },
+                onLoad: function (event: any, map: any) {
+                    // Store all country codes when map is loaded
+                    allCountries.current = Object.keys(map);
+                }
+            
+                
+               
+            });
+        }
+
+        // Simulate API call with timeout
+        setTimeout(() => {
+
+            if (geography && mapInstance.current) {
+                // Highlight selected geography
+                const colors: Record<string, string> = {};
+
+                // Set all countries to a dim color initially
+                allCountries.current.forEach(countryCode => {
+                    colors[countryCode] = "red"; // Dim color for all countries
+                });
+
+                // Highlight the selected continent with its specific color
+                if (geography in continentCountries) {
+                    const countries = continentCountries[geography];
+                    countries.forEach(code => {
+                        if (allCountries.current.includes(code)) {
+                            colors[code] = mockData[geography as keyof typeof mockData].color;
+                        }
+                    });
+                    setSubscriberCount(mockData[geography as keyof typeof mockData].count);
+                }
+
+                // Update the map colors
+                mapInstance.current.setColors(colors);
+            } else {
+                // Reset to default if no geography selected
+                if (mapInstance.current) {
+                    const defaultColors: Record<string, string> = {};
+
+                    allCountries.current.forEach(countryCode => {
+                        defaultColors[countryCode] = "red"; // Default color
+                    });
+                    mapInstance.current.setColors(defaultColors);
+                }
+                setSubscriberCount(null);
+            }
+
+            setIsLoading(false);
+        }, 800);
+    };
+
+    const handleReset = () => {
+        setJobFunction('');
+        setGeography('');
+        setIndustry('');
+        setSubscriberCount(null);
+
+        // Reset map to show all regions with default color
+        if (mapInstance.current) {
+            const defaultColors: Record<string, string> = {};
+
+            allCountries.current.forEach(countryCode => {
+                defaultColors[countryCode] = "#333344"; // Default color
+            });
+            mapInstance.current.setColors(defaultColors);
+        }
+    };
+
     return (
         <>
                     <Navbar />
@@ -62,7 +213,10 @@ export default function GlobalReach() {
                 </div>
             </section>
 
-            <section className="px-6 md:px-12">
+
+            {/* /////////////////////////////////////////////////////////////////////////////// */}
+
+            <section className="px-6 md:px-12  pb-16">
                 <div className="w-full max-w-full md:max-w-[75%] mx-auto flex flex-col items-center justify-center my-6 md:my-12">
                     <h1 className="text-center text-2xl md:text-3xl text-white">
                         EXPLORE OUR GLOBAL REACH
@@ -75,8 +229,8 @@ export default function GlobalReach() {
                         </p>
                         <div className='my-4 md:my-6 w-full'>
                             <select
-                                // value={jobFunction}
-                                // onChange={(e) => setJobFunction(e.target.value as JobFunction)}
+                                value={jobFunction}
+                                onChange={(e) => setJobFunction(e.target.value as JobFunction)}
                                 className="w-full border-0 border-t-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Job Function</option>
@@ -87,8 +241,8 @@ export default function GlobalReach() {
                                 <option value="hr">Human Resources</option>
                             </select>
                             <select
-                                // value={geography}
-                                // onChange={(e) => setGeography(e.target.value as GeographyType)}
+                                value={geography}
+                                onChange={(e) => setGeography(e.target.value as GeographyType)}
                                 className="w-full border-0 border-t-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Geography</option>
@@ -100,8 +254,8 @@ export default function GlobalReach() {
                                 <option value="oceania">Oceania</option>
                             </select>
                             <select
-                                // value={industry}
-                                // onChange={(e) => setIndustry(e.target.value as Industry)}
+                                value={industry}
+                                onChange={(e) => setIndustry(e.target.value as Industry)}
                                 className="w-full border-0 border-t-3 border-b-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
                                 <option value="">Industry</option>
@@ -114,21 +268,36 @@ export default function GlobalReach() {
                         </div>
                         <div className="flex flex-wrap gap-2 md:gap-4 my-4 md:my-6 w-full justify-center">
                             <button
-                                // onClick={handleReset}
+                                onClick={handleReset}
                                 className="brand-button text-white text-sm md:text-base px-4 py-2 bg-[#7852A9] hover:bg-[#5E3E84] transition-colors"
                             >
                                 RESET
                             </button>
                             <button
-                                // onClick={updateHeatmap}
-                                className="brand-button text-white text-sm md:text-base px-4 py-2 bg-[#7852A9] hover:bg-[#5E3E84] transition-colors"
+                                onClick={updateHeatmap}
+                                disabled={isLoading}
+                                className="brand-button text-white text-sm md:text-base px-4 py-2 bg-[#7852A9] hover:bg-[#5E3E84] disabled:bg-gray-400 transition-colors"
                             >
-                                SEE RESULT
+                                {isLoading ? 'LOADING...' : 'SEE RESULT'}
                             </button>
                         </div>
+
+                        {/* Display results */}
+                        {subscriberCount !== null && (
+                            <div className="mt-4 p-4 bg-[#7852A9] text-white text-center w-full">
+                                <h3 className="text-xl font-bold">{geography?.replace(/([A-Z])/g, ' $1').toUpperCase()}</h3>
+                                <p className="text-3xl mt-2">{subscriberCount.toLocaleString()}</p>
+                                <p className="text-sm mt-2">verified contacts</p>
+                            </div>
+                        )}
                     </div>
-                    <div className="md:w-2/3 w-full  text-black p-4  flex items-center justify-center  min-h-[400px]">
-                        <div id="vmap" style={{ width: "800px", height: "500px" }} />
+                    <div className="md:w-2/3 w-full text-black p-4 flex items-center justify-center min-h-[400px]  rounded-lg relative">
+                        <div id="vmap" style={{ width: "100%", height: "500px", }} />
+                        {isLoading && (
+                            <div className="absolute inset-0 flex items-center justify-center  b rounded-lg">
+                                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

@@ -6,7 +6,7 @@ export function Navbar() {
     return (
         
         <nav className="bg-black text-white  ">
-            <div className="container mx-auto">
+            <div className="container-fluid mx-auto">
                 {/* Main Nav Row */}
                 <div className="flex flex-col md:flex-row items-center px-12">
 

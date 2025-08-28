@@ -6,11 +6,11 @@ export default function Carousel() {
 
     // Sample card data
     const cards = [
-        { id: 1, star: 5, name: 'Data & Analytics', text: 'The TOXPAND team is a true pleasure to work with, always flexible and creative to help tackle any challenges that might come up.' },
-        { id: 2, star: 4.5, name: 'IT Services & Consulting', text: 'The Toxpand team have been super amazing in delivery high quality leads for us. They have been very thorough on making sure they provide us with best leads possible within our target audience. Communication has been second to none, and they have been super patient with our legal process in getting the contracts over the line.' },
-        { id: 3, star: 5, name: 'Cybersecurity', text: 'We used TOXPAND for the first time to pilot a content syndication campaign and they delivered! We are very happy with the communcation, delivery, quality and the price and look forward to working with them again.' },
-        { id: 4, star: 4.5, name: 'Cybersecurity', text: 'Great communications. On time delivery of leads.' },
-        { id: 5, star: 4.5, name: 'Cybersecurity', text: 'Jason and Vince are great to work with!' },
+        { id: 1, star: 5, name: '"Data & Analytics"', text: 'The TOXPAND team is a true pleasure to work with, always flexible and creative to help tackle any challenges that might come up.' },
+        { id: 2, star: 4.5, name: '"IT Services & Consulting"', text: 'The Toxpand team have been super amazing in delivery high quality leads for us. They have been very thorough on making sure they provide us with best leads possible within our target audience. Communication has been second to none, and they have been super patient with our legal process in getting the contracts over the line.' },
+        { id: 3, star: 5, name: '"Cybersecurity"', text: 'We used TOXPAND for the first time to pilot a content syndication campaign and they delivered! We are very happy with the communcation, delivery, quality and the price and look forward to working with them again.' },
+        { id: 4, star: 4.5, name: '"Cybersecurity"', text: 'Great communications. On time delivery of leads.' },
+        { id: 5, star: 4.5, name: '"Cybersecurity"', text: 'Jason and Vince are great to work with!' },
        
     ];
 

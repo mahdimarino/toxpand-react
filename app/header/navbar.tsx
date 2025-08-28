@@ -11,7 +11,7 @@ export function Navbar() {
                 <div className="flex flex-col md:flex-row items-center px-12">
 
                     {/* Column 1 - Logo */}
-                    <div className="w-full md:w-1/4 mb-4 md:mb-0 flex items-center pl-6">
+                    <div className="w-full md:w-1/5 mb-4 md:mb-0 flex items-center pl-6">
                         {/* Logo */}
                        <a href="/">
                             <div className="md:h-12 w-20 md:w-40 flex items-center justify-center rounded">
@@ -50,7 +50,7 @@ export function Navbar() {
                    
 
                     {/* Column 2 - Navigation Links */}
-                    <div className="w-full hidden md:block md:flex-1 md:w-3/4 ">
+                    <div className="w-full hidden md:block md:flex-1 md:w-4/5 ">
                         {/* Row 1 - 3 Links + 2 Buttons */}
                         <div className="flex flex-col md:flex-row items-center md:gap-13  space-y-2 py-4 md:space-y-0">
                             <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
@@ -78,6 +78,8 @@ export function Navbar() {
                             <a href="/globalReach" className="text-sm hover:text-[#9A2CAD]">GLOBAL REACH</a>
                             <a href="">|</a>
                             <a href="/RealTimeInsights" className="text-sm hover:text-[#9A2CAD]">REAL-TIME INSIGHTS</a>
+                            <a href="">|</a>
+                            <a href="https://analytics.toxpand.com/dashboard/login" className="text-sm hover:text-[#9A2CAD]">LOGIN</a>
                         </div>
                     </div>
                 </div>

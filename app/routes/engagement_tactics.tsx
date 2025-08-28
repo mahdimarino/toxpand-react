@@ -205,7 +205,7 @@ export default function EngagementTactics() {
 
                     {/* Logo Carousel */}
                     <div className="mt-6 md:mt-10 mx-2 md:mx-10">
-                        <div className="overflow-x-auto scrollbar-hide">
+                        <div className="overflow-x-auto scrollbar-hide bg-white">
                             <div className="flex space-x-4 px-4 py-6  w-fit snap-x snap-mandatory">
                                 {[
                                     "/companyLogos/Salesforce.com_logo.svg.png",

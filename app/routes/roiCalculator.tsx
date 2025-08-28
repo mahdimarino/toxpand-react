@@ -43,7 +43,7 @@ const RoiCalculator: React.FC = () => {
                 color: function ({ value, seriesIndex, dataPointIndex, w }: any) {
                     const totalPoints = w.globals.series[seriesIndex].length;
                     if (dataPointIndex === totalPoints - 1) return '#00ffff';
-                    return dataPointIndex % 2 === 0 ? '#D2D5DA' : '#58595B';
+                    return dataPointIndex % 2 === 0 ? '#7852A9' : '#2F3D86';
                 }
             },
             {

@@ -295,7 +295,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <p className="text-lg md:text-xl font-bold">ETHICAL FIRST-PARTY DATA</p>
-                                    <p className='text-sm md:text-base'>52M+ global contacts, all opt-in and fully compliant</p>
+                                    <p className='text-sm md:text-base'>62M+ global contacts, all opt-in and fully compliant</p>
                                 </div>
                             </div>
 

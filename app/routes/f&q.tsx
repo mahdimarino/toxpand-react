@@ -79,10 +79,10 @@ export default function Fandq() {
             ]
         },
         {
-            category: "DemandFusion™ AI",
+            category: "DemandFusion AI",
             questions: [
                 {
-                    question: "What is DemandFusion™?",
+                    question: "What is DemandFusion?",
                     answer: "It's our proprietary AI engine that fuels intelligent campaign delivery by merging real-time signals, persona targeting, and predictive behavior patterns."
                 },
                 {

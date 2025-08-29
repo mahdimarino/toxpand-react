@@ -52,26 +52,21 @@ export function Navbar() {
                     {/* Column 2 - Navigation Links */}
                     <div className="w-full hidden md:block md:flex-1 md:w-4/5 ">
                         {/* Row 1 - 3 Links + 2 Buttons */}
-                        <div className="flex flex-col md:flex-row items-center md:gap-13  space-y-2 py-4 md:space-y-0">
-                            <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
-                            <a href="">|</a>
-                            <a href="/RoiCalculator" className="text-sm hover:text-[#9A2CAD]">ROI CALCULATOR</a>
-                            <a href="">|</a>
-
-                            <a href="/ScoreCard" className="text-sm hover:text-[#9A2CAD]">PIPELINE PERFORMANCE SCORECARD</a>
-                            <div className="flex flex-col md:flex-row items-center justify-end gap-3  space-y-2  md:space-y-0">
+                        <div className="flex flex-col md:flex-row items-between justify-center md:gap-13  space-y-2 py-4 md:space-y-0">
+                            
+                            <a href="/RoiCalculator" className="brand-button text-white w-full md:w-auto">ROI CALCULATOR</a>
+                           
+                            <a href="/ScoreCard" className="brand-button text-white w-full md:w-auto">PIPELINE PERFORMANCE SCORECARD</a>
+                           
 
                                 <a href="/RequestProposal" className="brand-button text-white w-full md:w-auto">REQUEST PROPOSAL</a>
                                 <a href="/Contact" className="brand-button text-white w-full md:w-auto">Schedule a Call</a>
-                            </div>
+                            
                         </div>
 
                         {/* Row 2 - 5 Links */}
                         <div className="flex flex-col md:flex-row items-center gap-10 space-y-2 md:space-y-0 py-6 border-t-1 border-[#7852A9]">
-                            
-                            <a href="/Fandq" className="text-sm hover:text-[#9A2CAD]">FAQS</a>
-                            <a href="">|</a>
-                            <a href="/About" className="text-sm hover:text-[#9A2CAD]">ABOUT US</a>
+                            <a href="/" className="text-sm hover:text-[#9A2CAD]">HOME</a>
                             <a href="">|</a>
                             <a href="/EngagementTactics" className="text-sm hover:text-[#9A2CAD]">ENGAGEMENT TACTICS</a>
                             <a href="">|</a>
@@ -79,6 +74,14 @@ export function Navbar() {
                             <a href="">|</a>
                             <a href="/RealTimeInsights" className="text-sm hover:text-[#9A2CAD]">REAL-TIME INSIGHTS</a>
                             <a href="">|</a>
+                            <a href="/About" className="text-sm hover:text-[#9A2CAD]">ABOUT US</a>
+                            <a href="">|</a>
+                            <a href="/Fandq" className="text-sm hover:text-[#9A2CAD]">FAQS</a>
+                            <a href="">|</a>
+                           
+                            
+                            
+                         
                             <a href="https://analytics.toxpand.com/dashboard/login" className="text-sm hover:text-[#9A2CAD]">LOGIN</a>
                         </div>
                     </div>

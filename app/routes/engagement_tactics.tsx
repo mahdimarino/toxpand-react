@@ -158,7 +158,7 @@ export default function EngagementTactics() {
                             {
                                 icon: "/icons/brand awareness.png",
                                 title: "BRAND AWARENESS CAMPAIGNS",
-                                description: "Reach the right buyers before they enter the funnel. Using DemandFusion™, we activate targeted outreach across your ideal personas and accounts – building recognition and early-stage engagement."
+                                description: "Reach the right buyers before they enter the funnel. Using DemandFusion, we activate targeted outreach across your ideal personas and accounts – building recognition and early-stage engagement."
                             },
                             {
                                 icon: "/icons/content syndication.png",
@@ -206,7 +206,7 @@ export default function EngagementTactics() {
                     {/* Logo Carousel */}
                     <div className="mt-6 md:mt-10 mx-2 md:mx-10">
                         <div className="overflow-x-auto scrollbar-hide bg-white">
-                            <div className="flex space-x-4 px-4 py-6  w-fit snap-x snap-mandatory">
+                            <div className="flex space-x-4 px-4 py-6 justify-between w-full  w-fit snap-x snap-mandatory">
                                 {[
                                     "/companyLogos/Salesforce.com_logo.svg.png",
                                     "/companyLogos/Marketo_logo.png",

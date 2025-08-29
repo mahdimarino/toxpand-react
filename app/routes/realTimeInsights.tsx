@@ -105,7 +105,7 @@ export default function RealTimeInsights() {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                     }} className="md:w-1/2 w-full  text-black p-2 md:p-8 flex flex-col items-center justify-center">
                         <h1 className='text-xl md:text-3xl text-white'>
-                            TOP ENGAGEMENT BY COMPANY SIZE
+                            TOP ENGAGEMENT BY INDUSTRY
                         </h1>
 
                         <div className='my-6 flex flex-col gap-3'>
@@ -160,7 +160,7 @@ export default function RealTimeInsights() {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                     }} className="md:w-1/2 w-full text-black p-2 md:p-8 flex flex-col items-center ">
                         <h1 className='text-xl md:text-3xl font-bold text-white'>
-                            Top Performing Content Types
+                            TOP PERFORMING CONTENT TYPES
                         </h1>
                         <p className='text-white text-xl'>
                             (by Engagement Rate)
@@ -224,7 +224,7 @@ export default function RealTimeInsights() {
                             backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         }} className="py-6 w-full  text-black  flex flex-col items-center justify-center">
                             <h1 className='text-xl md:text-3xl font-bold text-white'>
-                                Top Engagement by Company Size
+                                TOP ENGAGEMENT BY COMPANY SIZE
                             </h1>
 
 
@@ -244,7 +244,7 @@ export default function RealTimeInsights() {
                                     {/* Row 1 */}
                                     <div className="flex items-center  col-span-3 pr-4 mt">
                                         <div className=" bg-[#7852A9] p-2">
-                                            <h1 className='text-xl text-white text-center'>500  <br /> <span className='text-xs'>Employees</span></h1>
+                                            <h1 className='text-xl text-white text-center'>Up to 500 &nbsp; <br /> <span className='text-xs'>Employees</span></h1>
                                         </div>
                                         <h3 className="text-sm text-white w-[200px] ml-8">SMB</h3>
                                         <p className="text-sm text-white ">Hands-on guides, ROI calculators</p>
@@ -253,7 +253,7 @@ export default function RealTimeInsights() {
                                     {/* Row 2 */}
                                     <div className="flex items-center  col-span-3">
                                         <div className=" bg-[#7852A9] p-2">
-                                            <h1 className='text-xl text-white text-center'>5000  <br /> <span className='text-xs'>Employees</span></h1>
+                                            <h1 className='text-xl text-white text-center'>501 – 4999  <br /> <span className='text-xs'>Employees</span></h1>
                                         </div>
                                         <h3 className="text-sm text-white w-[200px] ml-8">Mid-Market</h3>
                                         <p className="text-sm text-white ">Solution overviews, comparison tools</p>
@@ -262,7 +262,7 @@ export default function RealTimeInsights() {
                                     {/* Row 3 */}
                                     <div className="flex items-center  col-span-3 border-b-1 border-[#2F3D86]">
                                         <div className=" bg-[#7852A9] p-2">
-                                            <h1 className='text-xl text-white text-center'>500 <br /> <span className='text-xs'>Employees</span></h1>
+                                            <h1 className='text-xl text-white text-center'>501 – 4999  <br /> <span className='text-xs'>Employees</span></h1>
                                         </div>
                                         <h3 className="text-sm text-white w-[200px] ml-8">Enterprise</h3>
                                         <p className="text-sm text-white ">Executive-level reports, risk frameworks</p>

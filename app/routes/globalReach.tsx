@@ -196,7 +196,7 @@ export default function GlobalReach() {
                             GLOBAL REACH
                         </h1>
                         <p className="text-lg md:text-2xl mx-auto max-w-1xl">
-                            designed to convert signal into sales momentum.
+                            Designed to convert signal into sales momentum.
                         </p>
                     </div>
                 </div>
@@ -264,6 +264,8 @@ export default function GlobalReach() {
                                 <option value="finance">Finance</option>
                                 <option value="manufacturing">Manufacturing</option>
                                 <option value="retail">Retail</option>
+                                <option value="Industry">All Industry</option>
+
                             </select>
                         </div>
                         <div className="flex flex-wrap gap-2 md:gap-4 my-4 md:my-6 w-full justify-center">
@@ -342,7 +344,7 @@ export default function GlobalReach() {
                             },
                             {
                                 img: "/backgrounds/r1.png",
-                                content: "REAL-TIME ENRICHMENT AND SIGNAL-MATCHING VIA DEMANDFUSION™"
+                                content: "REAL-TIME ENRICHMENT AND SIGNAL-MATCHING VIA DEMANDFUSION"
                             }
                         ].map((card, index) => (
                             <div
@@ -394,23 +396,23 @@ export default function GlobalReach() {
                 <div className='flex flex-col md:flex-row px-4 md:px-12'>
                     <div className="md:w-1/3 w-full text-white py-6 md:py-12 flex flex-col">
                         <div className='mb-4 md:mb-6'>
-                            <h2 className="text-xl md:text-2xl font-bold text-[#7852A9]">GLOBAL BY NATURE,</h2>
-                            <h2 className="text-xl md:text-2xl font-bold">LOCAL BY SIGNAL</h2>
+                            <h2 className="text-xl md:text-3xl font-bold text-[#7852A9]">GLOBAL BY NATURE,</h2>
+                            <h2 className="text-xl md:text-3xl font-bold">LOCAL BY SIGNAL</h2>
                         </div>
                         <div className='mb-4 md:mb-6'>
-                            <h2 className="text-xl md:text-2xl font-bold">A WORLD OF REACH.</h2>
-                            <h2 className="text-xl md:text-2xl font-bold">A SIGNAL-LED APPROACH.</h2>
+                            <h2 className="text-xl md:text-3xl font-bold">A WORLD OF REACH.</h2>
+                            <h2 className="text-xl md:text-3xl font-bold">A SIGNAL-LED APPROACH.</h2>
                         </div>
-                        <p className='py-3 md:py-6 text-sm md:text-base'>From North America to APAC, we activate global programs with local intelligence and compliance baked in.</p>
-                        <h1 className='py-3 md:py-6 text-lg md:text-xl'>TOP PERFORMING GEOS:</h1>
+                        <p className='py-3 md:py-6 text-sm md:text-base md:text-xl'>From North America to APAC, we activate global programs with local intelligence and compliance baked in.</p>
+                        <h1 className='py-3 md:py-6 text-lg md:text-3xl'>TOP PERFORMING GEOS:</h1>
                         <ul className="list-disc list-inside pl-2 md:pl-4 grid grid-cols-2 gap-1">
-                            <li className='text-xs'>United States</li>
-                            <li className='text-xs'>Canada</li>
-                            <li className='text-xs'>United Kingdom</li>
-                            <li className='text-xs'>Germany</li>
-                            <li className='text-xs'>France</li>
-                            <li className='text-xs'>Nordics</li>
-                            <li className='text-xs'>APAC</li>
+                            <li className='text-xl'>United States</li>
+                            <li className='text-xl'>Canada</li>
+                            <li className='text-xl'>United Kingdom</li>
+                            <li className='text-xl'>Germany</li>
+                            <li className='text-xl'>France</li>
+                            <li className='text-xl'>Nordics</li>
+                            <li className='text-xl'>APAC</li>
                         </ul>
                     </div>
                     <div className="md:w-2/3 w-full text-black p-4 md:p-8 flex items-center justify-center">

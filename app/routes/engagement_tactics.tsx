@@ -253,12 +253,12 @@ export default function EngagementTactics() {
                         <div className="w-full hidden md:block md:w-5/12 py-6 px-2 md:px-6">
                             <div className="pyramid">
                                 {[
-                                    { text: "Lead Capture", bg: "bg-[#1b2a6d]" },
-                                    { text: "Welcome Email", bg: "bg-[#3f51b5]" },
-                                    { text: "Nurture Sequence", bg: "bg-[#9c27b0]" },
-                                    { text: "Promo/Offer", bg: "bg-[#6a1b9a]" },
-                                    { text: "Conversion", bg: "bg-[#7851a9]" },
-                                    { text: "Re-Engagement", bg: "bg-[#4c2e86]" }
+                                    { text: "PPC", bg: "bg-[#1b2a6d]" },
+                                    { text: "MQLs", bg: "bg-[#3f51b5]" },
+                                    { text: "HQLs", bg: "bg-[#9c27b0]" },
+                                    { text: "SQLs", bg: "bg-[#6a1b9a]" },
+                                    { text: "Nurture", bg: "bg-[#7851a9]" },
+                                    { text: "", bg: "bg-[#7851a9]" }
                                 ].map((item, index) => (
                                     <div key={index} className={`pyramid__section flex justify-center items-center ${item.bg}`}>
                                         {item.text}
@@ -268,58 +268,84 @@ export default function EngagementTactics() {
                         </div>
 
                         {/* Process Cards Column */}
-                        <div className="w-full md:w-7/12 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="w-full md:w-7/12 grid grid-cols-1 sm:grid-cols-4">
                             {[
                                 {
-                                    icon: "/icons/lead capture.png",
+                                    icon: "/update/1.png",
                                     title: "Lead Capture",
-                                    description: "Turn website visitors into subscribers by offering high-value lead samples, reports, or exclusive data insights in exchange for their email.",
+                                    description: "Email Marketing Campaign Launch Details​",
                                     bg: "bg-[#1b2a6d]"
                                 },
                                 {
-                                    icon: "/icons/Promo.png",
+                                    icon: "/update/2.png",
                                     title: "Promo/Offer",
-                                    description: "Drive conversions with time-sensitive discounts, bulk deals, or bonus leads–create urgency to motivate quick purchasing decisions.",
+                                    description: "Data Inputs, Content Casting A.I. tool. Modeling, Assets/Creatives are checked along with the abstracts​​",
                                     bg: "bg-[#3f51b5]"
                                 },
                                 {
-                                    icon: "/icons/welcome email.png",
+                                    icon: "/update/3.png",
                                     title: "Welcome Email",
-                                    description: "Impress new subscribers with instant value-deliver free leads, build credibility, and introduce your data solutions within 24 hours.",
+                                    description: "Landing Pages and Email samples are shared with the client for Approval​​​",
                                     bg: "bg-[#9c27b0]"
                                 },
                                 {
-                                    icon: "/icons/Conversion.png",
+                                    icon: "/update/4.png",
                                     title: "Conversion",
-                                    description: "Finalize sales with clear CTAs, seamless checkout, and post-purchase upsells to maximize customer lifetime value.",
+                                    description: "Email Sends are scheduled as per the campaign pacing requirements​​​​",
                                     bg: "bg-[#6a1b9a]"
                                 },
                                 {
-                                    icon: "/icons/nurture sequence.png",
+                                    icon: "/update/8.png",
                                     title: "Nurture",
-                                    description: "Educate leads over 7-14 days with case studies, trend reports, and testimonials to prove your data's accuracy and RDI potential.",
+                                    description: "QC team also checks the data accuracy on LinkedIn and Google (Also, we ensure no personal emails are captured)​​​​​​",
                                     bg: "bg-[#7851a9]"
                                 },
                                 {
-                                    icon: "/icons/re engagement.png",
+                                    icon: "/update/7.png",
+                                    title: "Nurture",
+                                    description: "QC team matches​ the leads against the ​campaign parameters​​​​​​",
+                                    bg: "bg-[#7851a9]"
+                                },
+                                {
+                                    icon: "/update/6.png",
+                                    title: "Nurture",
+                                    description: "Data checked and captured is shared with the QC team​​​​​​​",
+                                    bg: "bg-[#7851a9]"
+                                },
+                                {
+                                    icon: "/update/5.png",
                                     title: "Re-engagement",
-                                    description: "Recapture inactive subscribers by offering fresh lead samples, limited-time deals, or personalized data recommendations.",
+                                    description: "Post Approval campaign details are shared with the digital team​​",
                                     bg: "bg-[#4c2e86]"
                                 }
                             ].map((item, index) => (
-                                <div key={index} className="p-4">
-                                    <div className="flex flex-col items-center">
-                                        <img width={48} height={48} src={item.icon} alt={item.title} className="w-12 h-12 md:w-16 md:h-16" />
-                                        <div className={`mt-3 ${item.bg} p-2 w-50  text-center text-sm md:text-base`}>
-                                            {item.title}
-                                        </div>
-                                        <div className='mt-3 text-xs text-center'>
+                                <div key={index} className="relative p-4">
+                                    <div className="flex flex-col items-center ">
+                                        <img
+                                            width={48}
+                                            height={48}
+                                            src={item.icon}
+                                            alt={item.title}
+                                            className="w-12 h-12 md:w-16 md:h-16 hover:scale-110 transition-transform duration-300"
+                                        />
+                                        {(index === 0 || index === 1 || index === 2) && (
+                                            <span className="text-5xl absolute top-[40px] right-0 transform -translate-y-1/2 w-6 h-6 text-[white]">&#8594;</span>
+                                               )}
+
+                                        {(index === 4 || index === 5 || index === 6) && (
+                                            <span className="text-5xl absolute top-[40px] right-0 transform -translate-y-1/2 w-6 h-6 text-[white]">&#8592;</span>
+                                        )}
+                                        <div className="mt-3 text-xs text-center">
                                             <p className="md:leading-6">{item.description}</p>
                                         </div>
                                     </div>
+
+                                    {/* Arrow logic */}
+                                    
                                 </div>
                             ))}
                         </div>
+
                     </div>
                 </div>
             </section>

@@ -15,6 +15,8 @@ export default [
     route("TermsAndConditions","routes/terms-and-conditions.tsx"),
     route("DoNotSellMyInfo","routes/doNotSellMyInfo.tsx"),
     route("WorldMap","routes/worldMap.tsx"),
+    route("ThankYou","routes/thankYou.tsx"),
+
 
     
 

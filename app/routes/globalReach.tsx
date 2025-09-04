@@ -62,25 +62,30 @@ const regionToContinent: Record<string, string> = {
     'Africa': 'africa',
     'APAC (Asia Pacific)': 'asia',
     'Asia': 'asia',
-    'Canada': 'northAmerica',
+    'Canada': 'canada',
+
     'DACH (Germany, Austria, Switzerland)': 'europe',
     'Europe': 'europe',
     'FR (France)': 'europe',
     'North America': 'northAmerica',
     'Oceania': 'oceania',
     'South America': 'southAmerica',
-    'United Kingdom': 'europe',
-    'United States': 'northAmerica'
+    'United Kingdom': 'uk',
+    'United States': 'unitedStates'
 };
 
 // Color palette for different continents
 const continentColors: Record<string, string> = {
     northAmerica: "#49f6ffff",
     southAmerica: "#49f6ffff",
+    canada: "#49f6ffff",
+    unitedStates: "#49f6ffff",
     europe: "#49f6ffff",
     asia: "#49f6ffff",
     africa: "#49f6ffff",
-    oceania: "#49f6ffff"
+    oceania: "#49f6ffff",
+    uk: "#49f6ffff",
+
 };
 
 // Data from the Excel file (simplified representation)
@@ -1397,7 +1402,7 @@ export default function GlobalReach() {
             // For specific regions that aren't entire continents, we need special handling
             if (region === 'United States') {
                 // Highlight only the United States
-                colors['us'] = continentColors['northAmerica'];
+                colors['us'] = continentColors['unitedStates'];
                 
                 
             }
@@ -1456,7 +1461,7 @@ export default function GlobalReach() {
             }
             else if (region === 'United Kingdom') {
                 // Highlight only the United Kingdom
-                colors['gb'] = continentColors['europe'];
+                colors['gb'] = continentColors['uk'];
             }
              else if (region === 'DACH(Germany, Austria, Switzerland)') {
                 // Highlight Germany, Austria, and Switzerland
@@ -1576,7 +1581,7 @@ export default function GlobalReach() {
                                 onChange={(e) => setIndustry(e.target.value as Industry)}
                                 className="w-full border-0 border-t-3 border-b-3 border-solid border-[#7852A9] py-3 md:py-4 text-sm md:text-base"
                             >
-                                <option value="">Industry</option>
+                                <option value="">All Industry</option>
                                 {allIndustries.map(ind => (
                                     <option key={ind} value={ind}>{ind}</option>
                                 ))}

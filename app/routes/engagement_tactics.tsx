@@ -260,8 +260,8 @@ export default function EngagementTactics() {
                                     { text: "Nurture", bg: "bg-[#7851a9]" },
                                     { text: "", bg: "bg-[#7851a9]" }
                                 ].map((item, index) => (
-                                    <div key={index} className={`pyramid__section flex justify-center items-center ${item.bg}`}>
-                                        {item.text}
+                                    <div key={index} className={`pyramid__section text-xl text-bold flex justify-center items-center ${item.bg}`}>
+                                        <b> {item.text}</b>
                                     </div>
                                 ))}
                             </div>

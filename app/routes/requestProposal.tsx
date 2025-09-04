@@ -175,7 +175,7 @@ export default function CampaignBookingForm() {
         fileInputRef.current?.click();
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Validate required fields
@@ -187,9 +187,33 @@ export default function CampaignBookingForm() {
         setErrors(newErrors);
 
         if (Object.keys(newErrors).length === 0) {
-            // Form is valid, submit data
-            console.log('Form submitted:', formData);
-            // Here you would typically send the data to your API
+            try {
+                // Form is valid, submit data to API
+                const response = await fetch('https://analytics.toxpand.com/api/external-campaign-booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // Add any additional headers required by the API
+                        // 'Authorization': 'Bearer your-token-here' // if authentication is needed
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('API Response:', result);
+
+                // Handle successful submission (e.g., show success message, reset form, etc.)
+                // alert('Form submitted successfully!');
+
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                // Handle error (e.g., show error message to user)
+                // alert('There was an error submitting the form. Please try again.');
+            }
         } else {
             // Scroll to first error
             const firstError = Object.keys(newErrors)[0];

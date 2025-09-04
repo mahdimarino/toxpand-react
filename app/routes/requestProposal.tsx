@@ -205,9 +205,9 @@ export default function CampaignBookingForm() {
 
                 const result = await response.json();
                 console.log('API Response:', result);
-
+                window.location.href = 'https://www.toxpand.com/thank_you.html';
                 // Handle successful submission (e.g., show success message, reset form, etc.)
-                 alert('Form submitted successfully!');
+                //  alert('Form submitted successfully!');
 
             } catch (error) {
                 console.error('Error submitting form:', error);

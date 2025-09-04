@@ -207,7 +207,7 @@ export default function CampaignBookingForm() {
                 console.log('API Response:', result);
 
                 // Handle successful submission (e.g., show success message, reset form, etc.)
-                // alert('Form submitted successfully!');
+                 alert('Form submitted successfully!');
 
             } catch (error) {
                 console.error('Error submitting form:', error);

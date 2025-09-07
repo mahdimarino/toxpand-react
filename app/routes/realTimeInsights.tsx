@@ -262,7 +262,7 @@ export default function RealTimeInsights() {
                                     {/* Row 3 */}
                                     <div className="flex items-center  col-span-3 border-b-1 border-[#2F3D86]">
                                         <div className=" bg-[#7852A9] p-2">
-                                            <h1 className='text-xl text-white text-center'>501 – 4999  <br /> <span className='text-xs'>Employees</span></h1>
+                                            <h1 className='text-xl text-white text-center'>&nbsp; &nbsp; 5000+ &nbsp; &nbsp; <br /> <span className='text-xs'>Employees</span></h1>
                                         </div>
                                         <h3 className="text-sm text-white w-[200px] ml-8">Enterprise</h3>
                                         <p className="text-sm text-white ">Executive-level reports, risk frameworks</p>

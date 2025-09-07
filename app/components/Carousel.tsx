@@ -11,7 +11,12 @@ export default function Carousel() {
         { id: 3, star: 5, name: '"Cybersecurity"', text: 'We used TOXPAND for the first time to pilot a content syndication campaign and they delivered! We are very happy with the communcation, delivery, quality and the price and look forward to working with them again.' },
         { id: 4, star: 4.5, name: '"Cybersecurity"', text: 'Great communications. On time delivery of leads.' },
         { id: 5, star: 4.5, name: '"Cybersecurity"', text: 'Jason and Vince are great to work with!' },
-       
+        { id: 6, star: 4.5, name: '"Cybersecurity"', text: 'Clean lead lists that have already been scrubbed and no late lead deliveries.' },
+        { id: 7, star: 4.5, name: '"Cybersecurity"', text: `We have 7 meetings confirmed at the moment. We're seeing great activity on the campaign, but we won't see the full productivity of the leads until at least Q2, 2024.` },
+        { id: 8, star: 4.5, name: '"Cybersecurity"', text: 'So far, I love that the data is coming in clean. Customer Success Team is great to work with!' },
+        { id: 9, star: 4.5, name: '"Legal Software"', text: 'Some of these companies and titles are amazing!!!!' },
+
+
     ];
 
     // Check if mobile on mount and resize

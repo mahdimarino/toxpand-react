@@ -10,6 +10,7 @@ interface ContactFormData {
 }
 
 export default function Contact() {
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const [formData, setFormData] = useState<ContactFormData>({
         name: '',
         email: '',
@@ -30,7 +31,6 @@ export default function Contact() {
         setMessage('');
 
         try {
-            // Update this URL to your actual Laravel API endpoint
             const response = await fetch('https://analytics.toxpand.com/api/contact-us', {
                 method: 'POST',
                 headers: {
@@ -40,21 +40,45 @@ export default function Contact() {
                 body: JSON.stringify(formData)
             });
 
+            // Check if response is OK
+            if (!response.ok) {
+                let errorMessage = `Server returned ${response.status} status`;
+
+                // Try to get error message from response body
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || errorData.error || errorMessage;
+                } catch (parseError) {
+                    // If we can't parse JSON, use status text
+                    errorMessage = response.statusText || errorMessage;
+                }
+
+                throw new Error(errorMessage);
+            }
+
             const data = await response.json();
 
             if (data.success) {
                 setMessage(data.message);
-                // Redirect or reset form
                 if (data.redirect_url) {
                     window.location.href = data.redirect_url;
                 } else {
                     setFormData({ name: '', email: '', subject: '', comment: '' });
                 }
             } else {
-                setMessage('There was an error submitting the form. Please try again.');
+                setMessage(data.message || 'There was an error submitting the form. Please try again.');
             }
         } catch (error) {
-            setMessage('There was an error submitting the form. Please try again.');
+            console.error('Error details:', error);
+
+            // Handle different error types
+            if (error instanceof Error) {
+                setMessage(error.message);
+            } else if (typeof error === 'string') {
+                setMessage(error);
+            } else {
+                setMessage('There was an unexpected error submitting the form. Please try again.');
+            }
         } finally {
             setIsSubmitting(false);
         }

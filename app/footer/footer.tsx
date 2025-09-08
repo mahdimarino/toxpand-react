@@ -12,7 +12,7 @@ export function Footer() {
                     {/* Logo Column */}
                     <div className="flex flex-col items-start">
                         <img
-                            src="https://toxpand.com/assets/images/icons/xlogo2light.png"
+                            src="/backgrounds/xlogo2light.webp"
                             alt="Logo"
                             className="w-32 md:w-40 mb-4"
                         />

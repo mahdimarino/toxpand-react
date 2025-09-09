@@ -20,8 +20,8 @@ interface LinkBoxProps {
 
 export function meta({ }: MetaArgs) {
     return [
-        { title: "New React Router App" },
-        { name: "description", content: "Welcome to React Router!" },
+        { title: "ToXPAND" },
+        { name: "description", content: "Welcome to ToXPAND!" },
     ];
 }
 
